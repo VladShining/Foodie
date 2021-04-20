@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body {
+    margin: 0; 
+    padding: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: url('https://picsum.photos/id/307/1920/1080/?blur=3');
+    background-size: cover;
+    scrollbar-width: none;
+
+}
+::-webkit-scrollbar{
+    display: none;
+}

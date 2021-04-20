@@ -1,0 +1,112 @@
+{
+  "configVersion": 1,
+  "timestamp": 1618908507218,
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/5-es2015.6e54a7503e494ff8b4b2.js",
+        "/5-es5.6e54a7503e494ff8b4b2.js",
+        "/6-es2015.7494fa5a007bd2732af3.js",
+        "/6-es5.7494fa5a007bd2732af3.js",
+        "/favicon.ico",
+        "/index.html",
+        "/main-es2015.506a7c353f18fb56e92d.js",
+        "/main-es5.506a7c353f18fb56e92d.js",
+        "/manifest.webmanifest",
+        "/polyfills-es2015.86fe891df1c35783a7d8.js",
+        "/polyfills-es5.6de5e0dc8c1fddc3a7eb.js",
+        "/runtime-es2015.4549478abda72fc0ec35.js",
+        "/runtime-es5.4549478abda72fc0ec35.js",
+        "/styles.7c810f3cecbe25c1ca6c.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/assets/fav.ico",
+        "/assets/gold.svg",
+        "/assets/gold2.svg",
+        "/assets/icons/144.png",
+        "/assets/icons/152.png",
+        "/assets/icons/192.png",
+        "/assets/icons/384.png",
+        "/assets/icons/72.png",
+        "/assets/icons/96.png",
+        "/assets/icons/hamburger128.png",
+        "/assets/icons/hamburger256.png",
+        "/assets/icons/hamburger512.png",
+        "/assets/icons/icon-128x128.png",
+        "/assets/icons/icon-144x144.png",
+        "/assets/icons/icon-152x152.png",
+        "/assets/icons/icon-192x192.png",
+        "/assets/icons/icon-384x384.png",
+        "/assets/icons/icon-512x512.png",
+        "/assets/icons/icon-72x72.png",
+        "/assets/icons/icon-96x96.png"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/5-es2015.6e54a7503e494ff8b4b2.js": "a66f50a0584e522087d9f4325d75b33088998ea5",
+    "/5-es5.6e54a7503e494ff8b4b2.js": "9fccd13738c5a0062177d67fc8f13d840a3b1fec",
+    "/6-es2015.7494fa5a007bd2732af3.js": "1af94e0ae43b4ee90617e57931f1eade61ba2d2c",
+    "/6-es5.7494fa5a007bd2732af3.js": "5c9d47296131d141108564269dc4c17a5539fec5",
+    "/assets/fav.ico": "73129de40a96aed4c42bd6a4742c8ee4e71068ab",
+    "/assets/gold.svg": "1744430b172557f1b3e0bf1309f398fd966251d5",
+    "/assets/gold2.svg": "74c16c8c2c626d868bcf48aaf1c7738753bf2e05",
+    "/assets/icons/144.png": "da9fd296a8b3e382aaefc003a99051351dfe1b09",
+    "/assets/icons/152.png": "6814466741bc5fca389cda9bd599464d096e7a78",
+    "/assets/icons/192.png": "481dd446588d4956c775ffb5525c43b7c5ef89a7",
+    "/assets/icons/384.png": "da2eee7d2106959bbade72d3f7df68d6751e3203",
+    "/assets/icons/72.png": "fd93ce307c3a2b313858f03197991a08a6c8de5b",
+    "/assets/icons/96.png": "0400fe44e2aad9c3c44aeb0ca550350eb7582f7d",
+    "/assets/icons/hamburger128.png": "b95948e736ca720fdade33ba996ea537a2f4f1e6",
+    "/assets/icons/hamburger256.png": "ba6016561fee96023f4a5618b0f34459e62d3468",
+    "/assets/icons/hamburger512.png": "c9b78e956930286ce53146d5f2c8a4da636e7ff2",
+    "/assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
+    "/assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
+    "/assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
+    "/assets/icons/icon-192x192.png": "1abd80d431a237a853ce38147d8c63752f10933b",
+    "/assets/icons/icon-384x384.png": "329749cd6393768d3131ed6304c136b1ca05f2fd",
+    "/assets/icons/icon-512x512.png": "559d9c4318b45a1f2b10596bbb4c960fe521dbcc",
+    "/assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
+    "/assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
+    "/favicon.ico": "22f6a4a3bcaafafb0254e0f2fa4ceb89e505e8b2",
+    "/index.html": "e26bd91b219598b240a3ee7385172039b1f36ff8",
+    "/main-es2015.506a7c353f18fb56e92d.js": "4ed396adcbd963a0c65d54badfadc58421519fdc",
+    "/main-es5.506a7c353f18fb56e92d.js": "8a9b3854dd10c063207dedf4716b6ec9e5e7b81e",
+    "/manifest.webmanifest": "b577b363dad0663a04f5b8e1af58267764299e7c",
+    "/polyfills-es2015.86fe891df1c35783a7d8.js": "72ad4ccc0a3916ae4598199447cdeadd6d380570",
+    "/polyfills-es5.6de5e0dc8c1fddc3a7eb.js": "f32c7aaca8b60df7a9dfa6cb8f2b7751b5d0832c",
+    "/runtime-es2015.4549478abda72fc0ec35.js": "fbec53dec602d7f87a171031e0bda03b1df4979b",
+    "/runtime-es5.4549478abda72fc0ec35.js": "870148a115d5039e11ae722609c862bd47c0f669",
+    "/styles.7c810f3cecbe25c1ca6c.css": "38b6915de1cc7d225545e120ca7f7911373ca526"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}

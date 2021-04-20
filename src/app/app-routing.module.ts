@@ -1,11 +1,26 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { ForOforComponent } from './for-ofor/for-ofor.component';
+import { AuthGuard } from './service/auth.guard';
 
-
-const routes: Routes = [];
+const routes: Routes = [
+  {
+    path: 'auth',
+    loadChildren: () =>
+      import('./pages/auth/auth.module').then((m) => m.AuthModule),
+  },
+  {
+    path: 'root',
+    loadChildren: () =>
+      import('./pages/root/root.module').then((m) => m.RootModule),
+    canActivate: [AuthGuard],
+  },
+  { path: '', redirectTo: 'auth', pathMatch: 'full' },
+  { path: '**', component: ForOforComponent },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
