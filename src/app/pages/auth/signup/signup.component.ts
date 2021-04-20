@@ -23,6 +23,7 @@ export class SignupComponent implements OnInit {
 
   initForm() {
     this.signUpForm = this.formBuilder.group({
+      name: [''],
       email: ['', [Validators.required, Validators.email]],
       password: [
         '',
@@ -31,11 +32,13 @@ export class SignupComponent implements OnInit {
     });
   }
   onSubmit() {
+    const name = this.signUpForm.get('name').value;
     const email = this.signUpForm.get('email').value;
     const password = this.signUpForm.get('password').value;
     this.authService.createNewUser(email, password).then(
       () => {
         this.router.navigate(['/root']);
+        console.log(name);
       },
       (errors) => {
         this.errorMessages = errors;
