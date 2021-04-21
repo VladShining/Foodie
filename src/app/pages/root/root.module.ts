@@ -17,5 +17,6 @@ import { SharedComponent } from 'src/app/component/shared/shared.component';
     SharedComponent,
   ],
   imports: [CommonModule, RootRoutingModule],
+  bootstrap: [RootComponent],
 })
 export class RootModule {}
