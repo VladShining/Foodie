@@ -28,12 +28,16 @@ $foodie2-theme: mat-light-theme($foodie2-primary, $foodie2-accent, $foodie2-warn
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
 body {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    height:100vh;
+    flex-direction: column;
     margin: 0; 
     padding: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
-    background: url('https://picsum.photos/id/307/1920/1080/?blur=3');
+    background: url('https://picsum.photos/id/292/1920/1080/?blur=2');
     background-size: cover;
     scrollbar-width: none;
 
@@ -42,5 +46,4 @@ body {
     display: none;
 }
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+@import './app/styles/index.scss';

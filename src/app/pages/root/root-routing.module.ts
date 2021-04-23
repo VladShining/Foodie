@@ -30,6 +30,7 @@ const routes: Routes = [
         path: 'recip',
         component: RecipComponent,
       },
+      { path: '', redirectTo: 'home' },
     ],
   },
   { path: '**', redirectTo: '' },

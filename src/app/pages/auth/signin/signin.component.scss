@@ -1,0 +1,30 @@
+.container{
+    border-radius:5%;
+    overflow: scroll;
+    box-shadow: 0 0.5% 1% rgba(0,0,0,.3);
+    backdrop-filter:blur(30px);
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    width: 50vw;
+    height: 50vh;
+    flex-direction: column;
+}
+.containerForm{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    form{
+        display: flex;
+        align-items:center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+.container .overlay{
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+}

@@ -1,5 +1,5 @@
-<div class="container right-panel-active">
-    <div class="container__form container--signup">
+<div class="container">
+    <div class="containerForm">
         <form [formGroup]="signUpForm" (ngSubmit)= "onSubmit()" class="form" id="form1">
             <h2 class="form__title">Sign Up</h2>
             <input type="text" placeholder="User" class="form-control" formControlName="name" id="name"/>
@@ -9,11 +9,7 @@
             <p class="text-danger">_______{{ errorMessages }}_____</p>
         </form>
     </div>
-    <div class="container__overlay">
-        <div class="overlay">
-            <div class="overlay__panel overlay--left">
-                <button class="btn" id="signIn" [routerLink]="['/auth/login']" routerLinkActive="router-link-active"  >Sign In</button>
-            </div>
-        </div>
+    <div class="overlay">
+        <button class="btn" id="signIn" [routerLink]="['/auth/login']" routerLinkActive="router-link-active"  >Sign In</button>
     </div>
 </div>
