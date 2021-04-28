@@ -12,9 +12,11 @@ import { LoaderComponent } from 'src/app/component/loader/loader.component';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorService } from 'src/app/service/interceptor.service';
+import { FooterComponent } from 'src/app/component/footer/footer.component';
 
 @NgModule({
   declarations: [
+    FooterComponent,
     LoaderComponent,
     HomeComponent,
     RecipComponent,
