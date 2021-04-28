@@ -42,7 +42,7 @@ export class SigninComponent implements OnInit {
         this.loader.isLoading = false;
       },
       (errors) => {
-        this.errorMessages = errors;
+        this.errorMessages = 'Login invalid';
         this.loader.isLoading = false;
       }
     );

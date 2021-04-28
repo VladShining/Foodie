@@ -44,7 +44,7 @@ export class SignupComponent implements OnInit {
         this.loader.isLoading = false;
       },
       (errors) => {
-        this.errorMessages = errors;
+        this.errorMessages = 'Une erreur est survenue !';
         this.loader.isLoading = false;
       }
     );
