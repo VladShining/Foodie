@@ -1,4 +1,7 @@
 <div class="container">
+    <div *ngIf="loader.isLoading" class="loader-container">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar> 
+    </div>
     <div class="containerForm">
         <form [formGroup]="signUpForm" (ngSubmit)= "onSubmit()" class="form" id="form1">
             <h2 class="form__title">Sign Up</h2>

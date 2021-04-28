@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
+import { LoaderService } from 'src/app/service/loader.service';
 
 @Component({
   selector: 'app-signup',
@@ -15,6 +16,7 @@ export class SignupComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
+    public loader: LoaderService,
     private authService: AuthService
   ) {}
   ngOnInit() {
@@ -32,16 +34,18 @@ export class SignupComponent implements OnInit {
     });
   }
   onSubmit() {
+    this.loader.isLoading = true;
     const name = this.signUpForm.get('name').value;
     const email = this.signUpForm.get('email').value;
     const password = this.signUpForm.get('password').value;
     this.authService.createNewUser(email, password).then(
       () => {
         this.router.navigate(['/root']);
-        console.log(name);
+        this.loader.isLoading = false;
       },
       (errors) => {
         this.errorMessages = errors;
+        this.loader.isLoading = false;
       }
     );
   }
