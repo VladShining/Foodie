@@ -9,8 +9,11 @@ import { AuthService } from 'src/app/service/auth.service';
 })
 export class SharedComponent implements OnInit {
   authStatus: boolean;
+  title: string;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.title = 'le titre';
+  }
 }

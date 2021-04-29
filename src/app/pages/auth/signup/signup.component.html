@@ -4,12 +4,12 @@
     </div>
     <div class="containerForm">
         <form [formGroup]="signUpForm" (ngSubmit)= "onSubmit()" class="form" id="form1">
-            <h2 class="form__title">Sign Up</h2>
+            <h2 class="form__title">Creer Un Compte</h2>
             <!-- <input type="text" placeholder="User" class="form-control" formControlName="name" id="name"/> -->
             <input type="email" placeholder="Email" class="form-control" formControlName="email" id="email"/>
-            <input type="password" placeholder="Password" class="form-control" formControlName="password" id="password"/>
-            <button type="submit" class="btn" [disabled]="signUpForm.invalid">Sign Up</button>
-            <button class="btn" id="signIn" [routerLink]="['/auth/login']" routerLinkActive="router-link-active">Sign In</button>
+            <input type="password" placeholder="mot de passe" class="form-control" formControlName="password" id="password"/>
+            <button type="submit" class="btn" [disabled]="signUpForm.invalid">Enregistrer</button>
+            <button type="button" class="btn" id="signIn" [routerLink]="['/auth/login']" routerLinkActive="router-link-active">← se connecter</button>
             <p class="text-danger">{{ errorMessages }}</p>
         </form>
 </div>

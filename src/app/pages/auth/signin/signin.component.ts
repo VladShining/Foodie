@@ -12,17 +12,24 @@ import { LoaderService } from 'src/app/service/loader.service';
 export class SigninComponent implements OnInit {
   signInForm: FormGroup;
   errorMessages: string;
+  showPassword: boolean;
+  input: boolean;
+  showMe: boolean;
 
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
     public loader: LoaderService,
     private router: Router
-  ) {}
+  ) {
+    this.showMe = false;
+  }
   ngOnInit() {
     this.initForm();
   }
-
+  toggleShow() {
+    this.input = !this.input;
+  }
   initForm() {
     this.signInForm = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
@@ -44,6 +51,9 @@ export class SigninComponent implements OnInit {
       (errors) => {
         this.errorMessages = 'Login invalid';
         this.loader.isLoading = false;
+        document.getElementById('email').style.color = 'red';
+        document.getElementById('password').style.color = 'red';
+        console.clear();
       }
     );
   }
