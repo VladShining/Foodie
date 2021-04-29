@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CalendarComponent } from './calendar/calendar.component';
 import { HomeComponent } from './home/home.component';
 import { RecipComponent } from './recip/recip.component';
 import { RootComponent } from './root.component';
@@ -18,6 +19,10 @@ const routes: Routes = [
       {
         path: 'recip',
         component: RecipComponent,
+      },
+      {
+        path: 'calendar',
+        component: CalendarComponent,
       },
       {
         path: 'profil',

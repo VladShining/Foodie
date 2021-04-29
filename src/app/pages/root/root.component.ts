@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoaderService } from 'src/app/service/loader.service';
+import { MenuService } from 'src/app/service/menu.service';
 
 @Component({
   selector: 'app-root',

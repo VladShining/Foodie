@@ -11,7 +11,7 @@ import { LoaderComponent } from 'src/app/component/loader/loader.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FooterComponent } from 'src/app/component/footer/footer.component';
-import { MatAutocompleteModule } from '@angular/material/autocomplete/autocomplete-module';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { MatAutocompleteModule } from '@angular/material/autocomplete/autocomple
     RootRoutingModule,
     MatProgressBarModule,
     MatCheckboxModule,
-    // MatAutocompleteModule,
+    DragDropModule,
   ],
   bootstrap: [RootComponent],
 })
