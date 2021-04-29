@@ -1,6 +1,78 @@
 .container{
-    background: url('https://picsum.photos/id/488/1920/1080');
+    background: url('https://picsum.photos/id/488/1920/1080/?blur=3');
     height: 100vh;
     width: 100vw;
     background-size: cover;
+    display: grid;
+    grid-template-areas: 
+    ". . title . ."
+    "filter text text text ."
+    "filter app app app app"
+    ". app app app app";
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: auto;
+    column-gap: 10px;
+    justify-items: center;
+    align-items: center;
+    align-content: space-evenly;
+    // filter: blur(10px);
 }
+h1{
+    grid-area: title;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    color: sandybrown;
+    font-size: 54px;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    text-decoration: underline;
+    transition : all 0.5s;
+    &:hover{
+        -webkit-animation: neon5 1.5s ease-in-out infinite alternate;
+        -moz-animation: neon5 1.5s ease-in-out infinite alternate;
+        animation: neon5 1.5s ease-in-out infinite alternate;
+    }
+}
+p{
+    border-radius: 5px;
+    grid-area: text;
+    color : white;
+    font-size: 15px;
+    font-style: italic;
+    font-family:monospace;
+    text-align: center;
+    background: linear-gradient(217deg, rgba(255, 72, 0, 0.973), rgba(255,0,0,0) 70.71%),
+    linear-gradient(127deg, #f59404, rgba(0,255,0,0) 70.71%),
+    linear-gradient(336deg, rgba(192, 8, 183, 0.836), rgba(0,0,255,0) 70.71%);
+}
+.choose{
+  grid-area: filter;
+  align-self: center;
+  justify-self: center;
+}
+@-webkit-keyframes neon5 {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
+    }
+  }
+  
+@-moz-keyframes neon5 {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
+    }
+  }
+  @keyframes neon5 {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #FF9900, 0 0 70px #FF9900, 0 0 80px #FF9900, 0 0 100px #FF9900, 0 0 150px #FF9900;
+    }
+    to {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #FF9900, 0 0 35px #FF9900, 0 0 40px #FF9900, 0 0 50px #FF9900, 0 0 75px #FF9900;
+    }
+  }
+  

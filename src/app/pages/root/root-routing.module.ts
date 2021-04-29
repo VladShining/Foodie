@@ -3,21 +3,10 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { RecipComponent } from './recip/recip.component';
 import { RootComponent } from './root.component';
+import { ProfilComponent } from './user/profil/profil.component';
 import { UserComponent } from './user/user.component';
 
 const routes: Routes = [
-  // {
-  //   path: 'home',
-  //   component: HomeComponent,
-  // },
-  // {
-  //   path: 'recip',
-  //   component: RecipComponent,
-  // },
-  // {
-  //   path: 'user',
-  //   component: UserComponent, // à revoir pour direction profil
-  // },
   {
     path: '',
     component: RootComponent,
@@ -29,6 +18,10 @@ const routes: Routes = [
       {
         path: 'recip',
         component: RecipComponent,
+      },
+      {
+        path: 'profil',
+        component: ProfilComponent,
       },
       { path: '', redirectTo: 'home' },
     ],

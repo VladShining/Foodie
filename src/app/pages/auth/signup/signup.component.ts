@@ -25,7 +25,7 @@ export class SignupComponent implements OnInit {
 
   initForm() {
     this.signUpForm = this.formBuilder.group({
-      name: [''],
+      id: ['', [Validators.required, Validators.min(99999)]],
       email: ['', [Validators.required, Validators.email]],
       password: [
         '',
@@ -35,18 +35,21 @@ export class SignupComponent implements OnInit {
   }
   onSubmit() {
     this.loader.isLoading = true;
-    const name = this.signUpForm.get('name').value;
+    const id = this.signUpForm.get('id').value;
     const email = this.signUpForm.get('email').value;
     const password = this.signUpForm.get('password').value;
-    this.authService.createNewUser(email, password).then(
-      () => {
-        this.router.navigate(['/root']);
-        this.loader.isLoading = false;
-      },
-      (errors) => {
-        this.errorMessages = 'Une erreur est survenue !';
-        this.loader.isLoading = false;
-      }
-    );
+    if (id === 493649 || id === 238649 || id === 384857)
+      this.authService.createNewUser(email, password).then(
+        () => {
+          this.router.navigate(['/root']);
+          this.loader.isLoading = false;
+        },
+        (errors) => {
+          this.errorMessages = 'Une erreur est survenue !';
+          this.loader.isLoading = false;
+        }
+      );
+    this.loader.isLoading = false;
+    this.errorMessages = 'Une erreur est survenue !';
   }
 }

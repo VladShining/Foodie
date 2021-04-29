@@ -8,11 +8,10 @@ import { RecipComponent } from './recip/recip.component';
 import { RootComponent } from './root.component';
 import { SharedComponent } from 'src/app/component/shared/shared.component';
 import { LoaderComponent } from 'src/app/component/loader/loader.component';
-
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { InterceptorService } from 'src/app/service/interceptor.service';
 import { FooterComponent } from 'src/app/component/footer/footer.component';
+import { MatAutocompleteModule } from '@angular/material/autocomplete/autocomplete-module';
 
 @NgModule({
   declarations: [
@@ -25,7 +24,13 @@ import { FooterComponent } from 'src/app/component/footer/footer.component';
     SharedComponent,
   ],
   providers: [],
-  imports: [CommonModule, RootRoutingModule, MatProgressBarModule],
+  imports: [
+    CommonModule,
+    RootRoutingModule,
+    MatProgressBarModule,
+    MatCheckboxModule,
+    // MatAutocompleteModule,
+  ],
   bootstrap: [RootComponent],
 })
 export class RootModule {}

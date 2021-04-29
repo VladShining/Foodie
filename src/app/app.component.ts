@@ -13,11 +13,11 @@ import firebaseConfig from './env';
   template: `<router-outlet
     ><span *ngIf="isloading">loading....</span></router-outlet
   >`,
-  styleUrls: ['./styles/index.css'],
+  styleUrls: ['./styles/index.scss'],
 })
 export class AppComponent {
   isloading: boolean;
-  constructor(private router: Router) {
+  constructor(router: Router) {
     this.isloading = false;
     router.events.subscribe((event: RouterEvent) => {
       if (event instanceof RouteConfigLoadStart) {

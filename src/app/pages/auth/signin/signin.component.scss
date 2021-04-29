@@ -40,6 +40,9 @@
             padding: 10px;
                    
         }
+        input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+          }
         p{
             color: red;
             font-family: monospace;

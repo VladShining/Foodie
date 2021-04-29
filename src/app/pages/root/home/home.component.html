@@ -1,3 +1,16 @@
 <div class="container">
-    Welcome to foodie-49 
+   <h1>Welcome</h1>
+   <p class="about">
+       Foodie est une application de divertissement pour les fans de recettes cuisines.
+       Pour commencez , veuillez choisire une ou plusieur categorie de recettes
+   </p>
+   <div class="choose">
+    <ul>
+      <li *ngFor="let list of lists">
+        <mat-checkbox labelPosition="before" color="warn">
+          {{list.name}}
+        </mat-checkbox>
+      </li>
+    </ul>
+   </div>
 </div>

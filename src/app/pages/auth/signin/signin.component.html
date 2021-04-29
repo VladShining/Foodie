@@ -5,7 +5,7 @@
     <div class="containerForm">
         <form [formGroup]="signInForm" (ngSubmit)= "onSubmit()" class="form" id="form2">
             <h2 class="form__title">Authentification</h2>
-            <input type="email" placeholder="Email"class="form-control" formControlName="email" id="email"/>
+            <input type="email" placeholder="e-mail"class="form-control" formControlName="email" id="email"/>
             <input [type]="input ? 'text' : 'password'" placeholder="Mot de passe" class="form-control" formControlName="password" id="password" (click)="toggleShow()" />
             <button type="submit" class="btn" [disabled]="signInForm.invalid">Connexion</button>
             <button type="button"class="btn" id="signUp" [routerLink]="['/auth/register']" routerLinkActive="router-link-active" >Creer un compte →</button>

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
-import { AuthService } from 'src/app/service/auth.service';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-shared',
@@ -10,7 +9,7 @@ import { AuthService } from 'src/app/service/auth.service';
 export class SharedComponent implements OnInit {
   authStatus: boolean;
   title: string;
-
+  isHome: boolean;
   constructor() {}
 
   ngOnInit(): void {
