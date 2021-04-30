@@ -14,6 +14,16 @@ import { FooterComponent } from 'src/app/component/footer/footer.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { Title } from '@angular/platform-browser';
 
+import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
+
+FullCalendarModule.registerPlugins([
+  // register FullCalendar plugins
+  dayGridPlugin,
+  interactionPlugin,
+]);
+
 @NgModule({
   declarations: [
     FooterComponent,
@@ -31,6 +41,7 @@ import { Title } from '@angular/platform-browser';
     MatProgressBarModule,
     MatCheckboxModule,
     DragDropModule,
+    FullCalendarModule,
   ],
   bootstrap: [RootComponent],
 })
