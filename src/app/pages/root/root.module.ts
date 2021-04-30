@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { FullCalendarModule } from '@fullcalendar/angular';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
+
 import { RootRoutingModule } from './root-routing.module';
 import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
@@ -13,10 +17,9 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FooterComponent } from 'src/app/component/footer/footer.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { Title } from '@angular/platform-browser';
-
-import { FullCalendarModule } from '@fullcalendar/angular';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import interactionPlugin from '@fullcalendar/interaction';
+import { CalendarComponent } from './calendar/calendar.component';
+import { RecipListComponent } from './recip-list/recip-list.component';
+import { ProfilComponent } from './user/profil/profil.component';
 
 FullCalendarModule.registerPlugins([
   // register FullCalendar plugins
@@ -26,12 +29,16 @@ FullCalendarModule.registerPlugins([
 
 @NgModule({
   declarations: [
+    CalendarComponent,
     FooterComponent,
     LoaderComponent,
     HomeComponent,
     RecipComponent,
     UserComponent,
     RootComponent,
+    RecipListComponent,
+    ProfilComponent,
+    RecipListComponent,
     SharedComponent,
   ],
   providers: [Title],

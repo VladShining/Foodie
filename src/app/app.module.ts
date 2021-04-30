@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './service/auth.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { MenuService } from './service/menu.service';
+
 @NgModule({
   declarations: [AppComponent, ForOforComponent],
   imports: [
@@ -19,6 +20,7 @@ import { MenuService } from './service/menu.service';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+
     BrowserAnimationsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
