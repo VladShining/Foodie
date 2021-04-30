@@ -14,7 +14,6 @@ export class SharedComponent implements OnInit {
   authStatus: boolean;
   isHome: boolean;
   menue: boolean;
-  observeTitle: Observable<any>;
 
   constructor(private menuService: MenuService, route: ActivatedRoute) {
     this.menue = false;
@@ -25,15 +24,11 @@ export class SharedComponent implements OnInit {
     this.menue = !this.menue;
   }
   ngOnInit(): void {
-    this.observeTitle = new Observable((observer) => {
-      setInterval(() => {
-        observer.next(console.log('obs'));
-      }),
-        1000;
-    });
-    this.observeTitle.subscribe((res) => {
-      this.title = res;
-    });
-    this.title = this.menuService.outtitle;
+    this.changeTitle();
+  }
+  changeTitle() {
+    setTimeout(() => {
+      this.title = this.menuService.getTitle();
+    }, 200);
   }
 }

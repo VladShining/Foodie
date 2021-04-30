@@ -14,4 +14,7 @@ export class RootComponent implements OnInit {
   ngOnInit(): void {
     this.titre = 'vjsfdojvn';
   }
+  changetitre(newtitre: string) {
+    this.titre = newtitre;
+  }
 }
