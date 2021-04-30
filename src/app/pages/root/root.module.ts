@@ -12,6 +12,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { FooterComponent } from 'src/app/component/footer/footer.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { Title } from '@angular/platform-browser';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
     RootComponent,
     SharedComponent,
   ],
-  providers: [],
+  providers: [Title],
   imports: [
     CommonModule,
     RootRoutingModule,

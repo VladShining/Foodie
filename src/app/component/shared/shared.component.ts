@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
 import { MenuService } from 'src/app/service/menu.service';
 
 @Component({
@@ -8,12 +9,14 @@ import { MenuService } from 'src/app/service/menu.service';
   styleUrls: ['./shared.component.scss'],
 })
 export class SharedComponent implements OnInit {
+  title: string;
   list: object[];
   authStatus: boolean;
-  title: string;
   isHome: boolean;
   menue: boolean;
-  constructor(private menuService: MenuService) {
+  observeTitle: Observable<any>;
+
+  constructor(private menuService: MenuService, route: ActivatedRoute) {
     this.menue = false;
     this.list = this.menuService.menu;
   }
@@ -22,6 +25,15 @@ export class SharedComponent implements OnInit {
     this.menue = !this.menue;
   }
   ngOnInit(): void {
-    this.title = this.menuService.menu[1].label;
+    this.observeTitle = new Observable((observer) => {
+      setInterval(() => {
+        observer.next(console.log('obs'));
+      }),
+        1000;
+    });
+    this.observeTitle.subscribe((res) => {
+      this.title = res;
+    });
+    this.title = this.menuService.outtitle;
   }
 }

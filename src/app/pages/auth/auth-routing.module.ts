@@ -7,10 +7,12 @@ const routes: Routes = [
   {
     path: 'login',
     component: SigninComponent,
+    data: { title: '🔒 Authentification' },
   },
   {
     path: 'register',
     component: SignupComponent,
+    data: { title: '💾 Registration' },
   },
   {
     path: '',

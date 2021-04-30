@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { LoaderService } from 'src/app/service/loader.service';
-import { MenuService } from 'src/app/service/menu.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,10 @@ import { MenuService } from 'src/app/service/menu.service';
   styleUrls: ['./root.component.scss'],
 })
 export class RootComponent implements OnInit {
-  constructor(public loaderService: LoaderService) {}
+  titre: string;
+  constructor(public loaderService: LoaderService, route: ActivatedRoute) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.titre = 'vjsfdojvn';
+  }
 }

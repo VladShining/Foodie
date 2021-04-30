@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 import { LoaderService } from 'src/app/service/loader.service';
+import { MenuService } from 'src/app/service/menu.service';
 
 @Component({
   selector: 'app-signup',
@@ -17,8 +18,12 @@ export class SignupComponent implements OnInit {
     private formBuilder: FormBuilder,
     private router: Router,
     public loader: LoaderService,
-    private authService: AuthService
-  ) {}
+    private authService: AuthService,
+    route: ActivatedRoute,
+    menuService: MenuService
+  ) {
+    menuService.setTitle(route.snapshot.data['title']);
+  }
   ngOnInit() {
     this.initForm();
   }

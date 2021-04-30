@@ -17,6 +17,7 @@ import firebaseConfig from './env';
 })
 export class AppComponent {
   isloading: boolean;
+
   constructor(router: Router) {
     this.isloading = false;
     router.events.subscribe((event: RouterEvent) => {
@@ -26,6 +27,7 @@ export class AppComponent {
         this.isloading = false;
       }
     });
+
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
     console.clear(); //////////////////////////////////////////////

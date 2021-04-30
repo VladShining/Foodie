@@ -60,7 +60,28 @@
     height: 93vh;
     background-color: #ff5e00;
     // transition: all 1s;
+    ul{
+        margin: 0;
+        padding: 0;
+    }
     li{
         list-style: none;
+        padding:10px 0;
+        text-align: left;
+        a{
+            text-decoration: none;
+            text-transform: uppercase;
+            font-style: normal;
+            font-size: medium;
+            font-family: cursive;
+            color: white;
+            transition: all 0.2s;
+            &:hover{
+                text-decoration: dotted;
+                font-weight: 900;
+                transition: all 0.2s;
+                color: yellow;
+            }
+        }
     }
 }
