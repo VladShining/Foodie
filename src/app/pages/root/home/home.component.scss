@@ -1,8 +1,8 @@
 .container{
-    background: url('https://picsum.photos/id/488/1920/1080/?blur=3');
+    background: url('https://picsum.photos/id/488/1024/500/?blur=2');
     height: 100vh;
     width: 100vw;
-    background-size: cover;
+    background-size: contain;
     display: grid;
     grid-template-areas: 
     ". . title . ."

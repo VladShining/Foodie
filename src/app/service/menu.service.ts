@@ -11,9 +11,9 @@ export class MenuService {
   constructor(private titleService: Title) {
     this.menu = [
       { label: '🏡 Accueil', id: 1, router: '/root/home' },
-      { label: '🥘 Recette', id: 2, router: '/root/recip' },
+      { label: '🍱 Recette', id: 2, router: '/root/recip' },
       { label: '👤 Mon Profil', id: 3, router: '/root/profil' },
-      { label: '🗓️ Calendrier', id: 4, router: '/root/calendar' },
+      { label: '📅 Calendrier', id: 4, router: '/root/calendar' },
       { label: '🍲 List', id: 5, router: '/root/setting/recip' },
       { label: '👥 Utilisateur', id: 6, router: '/root/setting/users' },
     ];

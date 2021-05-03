@@ -12,6 +12,11 @@
     min-height: 500px;
     flex-direction: column;
 }
+@media screen and (max-width: 605px) {
+    .container{
+        width: 300px;
+    }
+}
 .containerForm{
     display: flex;
     align-items:center;
@@ -71,7 +76,7 @@
    
     a{
         position: absolute;
-        color: #888;
+        color: #ccc;
         font-family: monospace;
         font-size: 15px;
         text-align:center;

@@ -10,9 +10,11 @@ import firebaseConfig from './env';
 
 @Component({
   selector: 'app-root',
-  template: `<router-outlet
-    ><span *ngIf="isloading">loading....</span></router-outlet
-  >`,
+  template: `
+    <router-outlet
+      ><span class="loader" *ngIf="isloading">loading....</span></router-outlet
+    >
+  `,
   styleUrls: ['./styles/index.scss'],
 })
 export class AppComponent {

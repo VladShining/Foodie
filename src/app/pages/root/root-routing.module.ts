@@ -26,7 +26,7 @@ const routes: Routes = [
       {
         path: 'calendar',
         component: CalendarComponent,
-        data: { title: '🗓️ Calendrier' },
+        data: { title: '📅 Calendrier' },
       },
       {
         path: 'profil',
