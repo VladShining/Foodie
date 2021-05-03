@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/service/auth.service';
 })
 export class FooterComponent implements OnInit {
   authStatus: boolean;
+  year: number;
   constructor(private authService: AuthService) {}
 
   ngOnInit(): void {
@@ -21,6 +22,8 @@ export class FooterComponent implements OnInit {
         this.authStatus = false;
       }
     });
+    const date = new Date();
+    this.year = date.getFullYear();
   }
 
   onSignOut() {

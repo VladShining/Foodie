@@ -11,13 +11,17 @@ import { MenuService } from 'src/app/service/menu.service';
 export class SharedComponent implements OnInit {
   title: string;
   list: object[];
-  authStatus: boolean;
-  isHome: boolean;
   menue: boolean;
+  time: string;
 
   constructor(private menuService: MenuService, route: ActivatedRoute) {
     this.menue = false;
     this.list = this.menuService.menu;
+    setInterval(() => {
+      const date = new Date();
+      this.time = date.toLocaleTimeString();
+    }, 1000);
+    clearInterval(2000);
   }
 
   toogleMenu(): void {

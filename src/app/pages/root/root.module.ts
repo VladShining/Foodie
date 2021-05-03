@@ -13,7 +13,8 @@ import { RootComponent } from './root.component';
 import { SharedComponent } from 'src/app/component/shared/shared.component';
 import { LoaderComponent } from 'src/app/component/loader/loader.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatProgressBarModule } from '@angular/material/progress-bar';
+// import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FooterComponent } from 'src/app/component/footer/footer.component';
 import { DragDropModule } from '@angular/cdk/drag-drop';
 import { Title } from '@angular/platform-browser';
@@ -45,10 +46,11 @@ FullCalendarModule.registerPlugins([
   imports: [
     CommonModule,
     RootRoutingModule,
-    MatProgressBarModule,
+    // MatProgressBarModule,
     MatCheckboxModule,
     DragDropModule,
     FullCalendarModule,
+    MatProgressSpinnerModule,
   ],
   bootstrap: [RootComponent],
 })

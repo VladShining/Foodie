@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
     menuService.setTitle(route.snapshot.data['title']);
     menuService.changeTitle(route.snapshot.data['title']);
     this.data = route.snapshot.data['title'];
+    this.lists = menuService.menu;
   }
 
   ngOnInit(): void {}
