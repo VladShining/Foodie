@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ForOforComponent } from './for-ofor/for-ofor.component';
+import { fade } from './pages/root/animation';
 import { AuthGuard } from './service/auth.guard';
 
 const routes: Routes = [

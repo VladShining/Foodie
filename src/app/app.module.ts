@@ -11,6 +11,7 @@ import { AuthService } from './service/auth.service';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { MenuService } from './service/menu.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UpdateService } from 'src/update.service';
 
 @NgModule({
   declarations: [AppComponent, ForOforComponent],
@@ -26,7 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       enabled: environment.production,
     }),
   ],
-  providers: [AuthService, MenuService],
+  providers: [AuthService, MenuService, UpdateService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

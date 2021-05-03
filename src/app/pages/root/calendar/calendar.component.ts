@@ -13,7 +13,6 @@ let str = formatDate(new Date(), {
   day: 'numeric',
 });
 
-console.log(str);
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
