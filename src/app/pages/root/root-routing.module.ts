@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { fade, home } from './animation';
 import { CalendarComponent } from './calendar/calendar.component';
 import { HomeComponent } from './home/home.component';
 import { RecipListComponent } from './recip-list/recip-list.component';
@@ -16,22 +17,22 @@ const routes: Routes = [
       {
         path: 'home',
         component: HomeComponent,
-        data: { title: '🏡 Accueil' },
+        data: { title: '🏡 Accueil', animation: home },
       },
       {
         path: 'recip',
         component: RecipComponent,
-        data: { title: '🥘 Recette' },
+        data: { title: '🥘 Recette', animation: fade },
       },
       {
         path: 'calendar',
         component: CalendarComponent,
-        data: { title: '📅 Calendrier' },
+        data: { title: '📅 Calendrier', animation: fade },
       },
       {
         path: 'profil',
         component: ProfilComponent,
-        data: { title: '👤 Mon Profil' },
+        data: { title: '👤 Mon Profil', animation: fade },
       },
       {
         path: 'setting',
@@ -40,17 +41,17 @@ const routes: Routes = [
           {
             path: 'users',
             component: UserComponent,
-            data: { title: '⚙️👥 Configuration' },
+            data: { title: '⚙️👥 Configuration', animation: fade },
           },
           {
             path: 'profil',
             component: ProfilComponent,
-            data: { title: '⚙️👤 Configuration' },
+            data: { title: '⚙️👤 Configuration', animation: fade },
           },
           {
             path: 'recip',
             component: RecipListComponent,
-            data: { title: '⚙️🥘 Configuration' },
+            data: { title: '⚙️🥘 Configuration', animation: fade },
           },
         ],
       },

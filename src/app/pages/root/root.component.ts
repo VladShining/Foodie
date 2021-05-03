@@ -1,11 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterOutlet } from '@angular/router';
 import { LoaderService } from 'src/app/service/loader.service';
+import { fade } from './animation';
 
 @Component({
   selector: 'app-root',
   templateUrl: './root.component.html',
   styleUrls: ['./root.component.scss'],
+  animations: [fade],
 })
 export class RootComponent implements OnInit {
   titre: string;
@@ -16,5 +18,12 @@ export class RootComponent implements OnInit {
   }
   changetitre(newtitre: string) {
     this.titre = newtitre;
+  }
+  prepareRoute(outlet: RouterOutlet) {
+    return (
+      outlet &&
+      outlet.activatedRouteData &&
+      outlet.activatedRouteData['animation']
+    );
   }
 }

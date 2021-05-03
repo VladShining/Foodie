@@ -64,7 +64,8 @@
     max-width: 200px;
     height: 93vh;
     background-color: #ff5e00;
-    // transition: all 1s;
+    animation: fade 0.5s;
+
     h3{
         position: fixed;
         bottom: 3%;
@@ -94,4 +95,12 @@
             }
         }
     }
+}
+@keyframes fade {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
 }
