@@ -4,13 +4,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 import { LoaderService } from 'src/app/service/loader.service';
 import { MenuService } from 'src/app/service/menu.service';
-import { fade } from '../../root/animation';
 
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
   styleUrls: ['./signin.component.scss'],
-  animations: [fade],
 })
 export class SigninComponent implements OnInit {
   signInForm: FormGroup;
