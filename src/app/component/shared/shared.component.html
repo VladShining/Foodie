@@ -1,6 +1,6 @@
 <div class="container">
     <div class="menu" *ngIf="menue" (click)="toogleMenu()">
-        <h2 style="text-align: center; text-decoration: underline;">Menu</h2>
+        <!-- <h2 style="text-align: center; text-decoration: underline;">Menu</h2> -->
         <ul>
             <li *ngFor="let item of list">
                <a routerLink='{{item.router}}' (click)='changeTitle()'>  {{item.label}} </a>
@@ -8,8 +8,8 @@
         </ul>
         <h3> {{time}} </h3>
     </div>
-    <div class="hamburger">
-        <img  (click)="toogleMenu()" src="./../../../favicon.ico" alt="" />
+    <div class="hamburger"(click)="toogleMenu()">
+        <img   src="./../../../favicon.ico" alt="" /> Menu
     </div>
     <div class="logo">
         <img routerLink="/root" src="./../../../assets/Fichier 2.svg" alt=""/>

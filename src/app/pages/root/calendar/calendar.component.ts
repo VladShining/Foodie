@@ -7,6 +7,7 @@ import {
   FullCalendarComponent,
   formatDate,
 } from '@fullcalendar/angular';
+
 let str = formatDate(new Date(), {
   month: 'long',
   year: 'numeric',
@@ -25,6 +26,36 @@ export class CalendarComponent {
     alert('date click! ' + arg.dateStr);
   }
   calendarOptions: CalendarOptions = {
+    headerToolbar: {
+      left: 'custom1',
+      center: 'title',
+      right: 'custom2 prevYear,prev,next,nextYear',
+    },
+    customButtons: {
+      custom1: {
+        text: 'custom 1',
+        click: function () {
+          alert('clicked custom button 1!');
+        },
+      },
+      custom2: {
+        text: 'custom 2',
+        click: function () {
+          alert('clicked custom button 2!');
+        },
+      },
+      nca49: {
+        text: 'Nca-49',
+        click: function () {
+          alert('clicked custom button 2!');
+        },
+      },
+    },
+    footerToolbar: {
+      left: 'custom1,custom2',
+      center: 'nca49',
+      right: 'prev,next',
+    },
     initialView: 'dayGridMonth',
     dateClick: this.handleDateClick.bind(this),
     events: [

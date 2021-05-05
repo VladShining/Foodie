@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "esbenp.prettier-vscode"
+    ],
+    "editor.formatOnSave": false,
+// Enable per-language
+"[javascript]": {
+    "editor.formatOnSave": true
+}

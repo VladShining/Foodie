@@ -23,7 +23,7 @@ export class FooterComponent implements OnInit {
       }
     });
     const date = new Date();
-    this.year = date.getFullYear();
+    this.year = date.getUTCFullYear();
   }
 
   onSignOut() {
