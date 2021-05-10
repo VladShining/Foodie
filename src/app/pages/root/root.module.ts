@@ -23,6 +23,7 @@ import { RecipListComponent } from './recip-list/recip-list.component';
 import { ProfilComponent } from './user/profil/profil.component';
 import { CalendarCdk } from './calendar/component/calendar-cdk.component';
 import { Cdrop } from './calendar/component/cdrop.component';
+import { MatListModule } from '@angular/material/list';
 
 FullCalendarModule.registerPlugins([
   // register FullCalendar plugins
@@ -32,8 +33,8 @@ FullCalendarModule.registerPlugins([
 
 @NgModule({
   declarations: [
-    Cdrop,
-    CalendarCdk,
+    // Cdrop,
+    // CalendarCdk,
     CalendarComponent,
     FooterComponent,
     LoaderComponent,
@@ -48,6 +49,7 @@ FullCalendarModule.registerPlugins([
   ],
   providers: [Title],
   imports: [
+    MatListModule,
     CommonModule,
     RootRoutingModule,
     // MatProgressBarModule,

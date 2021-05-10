@@ -2,21 +2,76 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 import { ActivatedRoute, Router } from '@angular/router';
 import { MenuService } from 'src/app/service/menu.service';
+import firebase from 'firebase';
+import 'firebase/firestore';
+
+export interface Test {
+  initial: string;
+  data: string[];
+}
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  lists: any;
+  db: any;
+  list: any;
+  ini: string[] = [];
   @Output() data = new EventEmitter<string>();
+  // li: any;
 
   constructor(public route: ActivatedRoute, menuService: MenuService) {
     menuService.setTitle(route.snapshot.data['title']);
     menuService.changeTitle(route.snapshot.data['title']);
     this.data = route.snapshot.data['title'];
-    this.lists = menuService.menu;
+    this.db = firebase.firestore();
+    // this.ini = [];
+    this.list = [{ initial: '', data: [] }];
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getCategorie();
+  }
+
+  getCategorie() {
+    var docRef = this.db.collection('recip').doc('d6jl5IaxsNmDq9MxKo9c');
+    docRef
+      .get()
+      .then((doc) => {
+        if (doc.exists) {
+          let data: string[];
+          data = doc.data()['Catégorie:Recettes par type de plat'];
+          this.setDataCategorie(data);
+        } else {
+          console.log('No such document!');
+        }
+      })
+      .catch((error) => {
+        console.log('Error getting document:', error);
+      });
+  }
+
+  setDataCategorie(categorie: string[]) {
+    // categorie.forEach((element) => {
+    //   this.ini.push(element.substr(0, 1));
+    // });
+    // this.ini = this.ini.filter((ele, pos) => this.ini.indexOf(ele) == pos);
+    // for (let i = 0; i < this.ini.length; i++) {
+    //   let li = { initial: '', data: [] };
+    //   li.initial = this.ini[i];
+    //   li.data = categorie.filter((e) => e.startsWith(this.ini[i]));
+    //   this.list.push(li);
+    // }
+    // this.list.shift();
+    this.list = Object.entries(
+      categorie.reduce(
+        (acc, cur) => ((acc[cur[0]] = [...(acc[cur[0]] || []), cur]), acc),
+        {}
+      )
+    ).map(([key, value]) => ({ initial: key, data: value }));
+
+    console.log(this.list);
+  }
 }
