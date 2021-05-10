@@ -1,0 +1,28 @@
+contenue
+
+
+<div cdkDropListGroup>
+    <div class="example-container">
+      <h2>data.list.name[0]</h2>
+  
+      <div
+        cdkDropList
+        [cdkDropListData]="data.listOrder.flatMap(Object.keys)[0]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of data.listOrder.faltMap(Object.values)[0]" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+  
+    <div class="example-container">
+      <h2>data.list.name[1]</h2>
+  
+      <div
+        cdkDropList
+        [cdkDropListData]="data.listOrder.flatMap(Object.keys)[1]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of data.listOrder.faltMap(Object.values)[1]" cdkDrag>{{item}}</div>
+      </div>
+    </div>
+  </div>

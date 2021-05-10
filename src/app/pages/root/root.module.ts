@@ -21,6 +21,8 @@ import { Title } from '@angular/platform-browser';
 import { CalendarComponent } from './calendar/calendar.component';
 import { RecipListComponent } from './recip-list/recip-list.component';
 import { ProfilComponent } from './user/profil/profil.component';
+import { CalendarCdk } from './calendar/component/calendar-cdk.component';
+import { Cdrop } from './calendar/component/cdrop.component';
 
 FullCalendarModule.registerPlugins([
   // register FullCalendar plugins
@@ -30,6 +32,8 @@ FullCalendarModule.registerPlugins([
 
 @NgModule({
   declarations: [
+    Cdrop,
+    CalendarCdk,
     CalendarComponent,
     FooterComponent,
     LoaderComponent,
