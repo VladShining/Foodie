@@ -1,5 +1,11 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
-
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  OnInit,
+  Output,
+} from '@angular/core';
+// import { }
 import { ActivatedRoute, Router } from '@angular/router';
 import { MenuService } from 'src/app/service/menu.service';
 import firebase from 'firebase';
@@ -14,20 +20,19 @@ export interface Test {
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent implements OnInit {
   db: any;
   list: any;
   ini: string[] = [];
   @Output() data = new EventEmitter<string>();
-  // li: any;
-
+  items = Array.from({ length: 100000 }).map((_, i) => `Item #${i}`);
   constructor(public route: ActivatedRoute, menuService: MenuService) {
     menuService.setTitle(route.snapshot.data['title']);
     menuService.changeTitle(route.snapshot.data['title']);
     this.data = route.snapshot.data['title'];
     this.db = firebase.firestore();
-    // this.ini = [];
     this.list = [{ initial: '', data: [] }];
   }
 
@@ -72,6 +77,6 @@ export class HomeComponent implements OnInit {
       )
     ).map(([key, value]) => ({ initial: key, data: value }));
 
-    console.log(this.list);
+    // console.log(this.list);
   }
 }

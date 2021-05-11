@@ -6,17 +6,30 @@
        🍣🍤🍥🍡🥟🥠🥡🦀🦐🦑🍦🍧🍨🍩🍪🎂🍰🥧🍫🍬🍭🍮🍯🍼🥛☕
        <br/>  Bienvenue sur Foodies   <br/>
        🍇🍈🍉🍊🍋🍌🍍🍎🍏🍐🍑🍒🍓🥝🍅🥥🥑🍆🥔🥕🌽🌶️🌶🥒🥦🍄🥜🌰🍞🥐🥖<br>
-       Pour commencez , veuillez choisire une ou plusieur categorie de recettes ↓
+       Pour commencer, veuillez configurer votre <a [routerLink]="['/root','profil']" routerLinkActive="router-link-active" >profil 👤</a>.
    </p>
    <div class="choose">
     <mat-list>
       <div *ngFor="let item of list">
         <div mat-subheader class="head">{{item.initial}}</div>
         <mat-list-item *ngFor="let cate of item.data">
-          <div mat-line class="item" >{{cate}}</div>
+          <div mat-line class="item">{{cate}}</div>
         </mat-list-item>
-        <mat-divider></mat-divider>
       </div>
+      <mat-divider></mat-divider>
     </mat-list>
+    <div class="down" >
+     ↓
+    </div>
+   </div>
+   <div class="top">
+    <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
+      <div *cdkVirtualFor="let item of items" class="example-item">{{item}}</div>
+    </cdk-virtual-scroll-viewport>
+    <div class="down">
+      ↓
+    </div>
+   </div>
+   <div class="link">
    </div>
 </div>

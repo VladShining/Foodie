@@ -1,112 +1,111 @@
-.container{
-    border-radius:5%;
-    overflow: scroll;
-    box-shadow: 0 0.5% 1% rgba(0,0,0,.3);
-    backdrop-filter:blur(30px);
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    width: 50vw;
-    height: 50vh;
-    max-width: 400px;
-    min-height: 500px;
-    flex-direction: column;
+.container {
+  border-radius: 5%;
+  overflow: scroll;
+  box-shadow: 0 0.5% 1% rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(30px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+  height: 50vh;
+  max-width: 400px;
+  min-height: 500px;
+  flex-direction: column;
 }
 @media screen and (max-width: 605px) {
-    .container{
-        width: 300px;
-    }
+  .container {
+    width: 300px;
+  }
 }
-.containerForm{
+.containerForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  * {
+    margin: 10px;
+    width: 100%;
+  }
+  form {
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
-    *{
-        margin: 10px;
-        width: 100%;
+    h2 {
+      font-family: monospace;
+      text-align: center;
     }
-    form{
-        display: flex;
-        align-items:center;
-        justify-content: center;
-        flex-direction: column;
-        h2{
-            font-family: monospace;
-            text-align: center;
-        }
-        input{
-            box-sizing: border-box;
-            outline: 0ch;
-            height: 30px;
-            background-color:#fff0 !important;
-            border: none;
-            border-bottom: 1px solid #333 ;
-            padding: 10px;
-                   
-        }
-        input[type=number]::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-          }
-        p{
-            color: red;
-            font-family: monospace;
-            font-size: 10px;
-            text-align: center;
-        }
-        
-        .btn{
-            height: 30px;
-            cursor: pointer;
-            border-radius: 3px;
-            border: none;
-            box-sizing: border-box;
-            outline: none;
-            font-family: monospace;
-            text-transform: uppercase;
-            font-size: 12px ;
-            background-color: #fff8;
-            &:disabled{
-                background-color: transparent;
-                color: transparent;
-                border:white 1px solid;
-            }
-        }
+    input {
+      box-sizing: border-box;
+      outline: 0ch;
+      height: 30px;
+      background-color: #fff0 !important;
+      border: none;
+      border-bottom: 1px solid #333;
+      padding: 10px;
+      color: #fff;
     }
-   
-    a{
-        position: absolute;
-        color: #ccc;
-        font-family: monospace;
-        font-size: 15px;
-        text-align:center;
-        text-decoration: none;
-        vertical-align: bottom;
-        bottom: 10%;
-        &:hover{
-            color: white;
-            
-        }
+    input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
     }
-    p{
-        position:absolute;
-        font-size: 12px;
-        color: #fff;
-        bottom: 0;
-        text-align: center;
+    p {
+      color: red;
+      font-family: monospace;
+      font-size: 10px;
+      text-align: center;
     }
+
+    .btn {
+      height: 30px;
+      cursor: pointer;
+      border-radius: 3px;
+      border: none;
+      box-sizing: border-box;
+      outline: none;
+      font-family: monospace;
+      text-transform: uppercase;
+      font-size: 12px;
+      background-color: #fff8;
+      &:disabled {
+        background-color: transparent;
+        color: transparent;
+        border: white 1px solid;
+      }
+    }
+  }
+
+  a {
+    position: absolute;
+    color: #ccc;
+    font-family: monospace;
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: bottom;
+    bottom: 10%;
+    &:hover {
+      color: white;
+    }
+  }
+  p {
+    position: absolute;
+    font-size: 12px;
+    color: #fff;
+    bottom: 0;
+    text-align: center;
+  }
 }
-.container .overlay{
-    display: flex;
-    align-items:center;
-    justify-content: center;
-    flex-direction: column;
+.container .overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 .loader-container {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background: black;
-    opacity: 0.8;
-    z-index: 99;
-  }
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: black;
+  opacity: 0.8;
+  z-index: 99;
+}

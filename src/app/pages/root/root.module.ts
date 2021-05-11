@@ -24,6 +24,8 @@ import { ProfilComponent } from './user/profil/profil.component';
 import { CalendarCdk } from './calendar/component/calendar-cdk.component';
 import { Cdrop } from './calendar/component/cdrop.component';
 import { MatListModule } from '@angular/material/list';
+import { FormComponent } from './recip/form/form.component';
+import { ScrollingModule } from '@angular/cdk/scrolling';
 
 FullCalendarModule.registerPlugins([
   // register FullCalendar plugins
@@ -46,9 +48,11 @@ FullCalendarModule.registerPlugins([
     ProfilComponent,
     RecipListComponent,
     SharedComponent,
+    FormComponent,
   ],
   providers: [Title],
   imports: [
+    ScrollingModule,
     MatListModule,
     CommonModule,
     RootRoutingModule,

@@ -1,16 +1,17 @@
 .container {
   box-sizing: border-box;
   padding-top: 60px;
+  padding-bottom: 30px;
   background: url("https://picsum.photos/id/488/1024/500/?blur=2");
   height: 100vh;
   width: 100vw;
   background-size: contain;
   display: grid;
   grid-template-areas:
-    ". . title . ."
-    "filter text text text ."
-    "filter app app app app"
-    ". app app app app";
+    "recherche . title . recherche2"
+    "filter text text text mes"
+    "filter app app app mes"
+    ". app app app link";
   grid-template-columns: 20% 20% 20% 20% 20%;
   grid-template-rows: auto;
   column-gap: 0px;
@@ -19,6 +20,13 @@
   align-content: space-evenly;
 
   // filter: blur(10px);
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  &:hover {
+    color: #ff5e00;
+  }
 }
 h1 {
   text-align: center;
@@ -37,11 +45,12 @@ h1 {
 }
 p {
   font-family: cursive;
-  border-radius: 5px;
+  // border-radius: 5px;
   grid-area: text;
   color: white;
   font-size: 15px;
   text-align: center;
+  border-radius: 0 0 2rem 2rem;
   background: linear-gradient(
       217deg,
       rgba(255, 72, 0, 0.973),
@@ -62,11 +71,16 @@ p {
     position: sticky;
     top: 0;
     background-color: #ff9900;
-    z-index: 99;
-    border-radius: 0 10px 10px 0;
+    z-index: 1;
+    border-radius: 20rem 0 20rem 0;
     text-transform: uppercase;
+    justify-content: center;
     color: #fff;
     font-size: 15px;
+  }
+  .item {
+    color: #ff5e00;
+    font-family: monospace;
   }
   ul {
     margin: 0;
@@ -76,6 +90,46 @@ p {
     width: 45px;
     list-style: none;
   }
+}
+.top {
+  height: 100%;
+  text-overflow: ellipsis;
+  width: 100%;
+  grid-area: mes;
+  .example-viewport {
+    height: 100%;
+    width: 100%;
+    :nth-child(odd) {
+      background-color: #ff5e00;
+      color: #fff;
+    }
+    // border: 1px solid black;
+  }
+
+  .example-item {
+    padding-top: 20px;
+    height: 40px;
+    text-align: center;
+    color: #ff5e00;
+    border-radius: 0 10rem 0 10rem;
+  }
+}
+.down {
+  justify-content: center;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #ff5e00;
+  color: #fff;
+  bottom: 25px;
+  position: fixed;
+  width: 20px;
+  text-align: center;
+  margin-left: 9%;
+  z-index: 1;
+  border: solid 1px white;
+}
+.link {
+  grid-area: link;
 }
 @-webkit-keyframes neon5 {
   from {
