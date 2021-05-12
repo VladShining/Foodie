@@ -26,6 +26,7 @@ import { Cdrop } from './calendar/component/cdrop.component';
 import { MatListModule } from '@angular/material/list';
 import { FormComponent } from './recip/form/form.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 FullCalendarModule.registerPlugins([
   // register FullCalendar plugins
@@ -61,6 +62,8 @@ FullCalendarModule.registerPlugins([
     DragDropModule,
     FullCalendarModule,
     MatProgressSpinnerModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   bootstrap: [RootComponent],
 })
