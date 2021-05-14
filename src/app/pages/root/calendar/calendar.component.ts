@@ -7,6 +7,7 @@ import {
   FullCalendarComponent,
   formatDate,
 } from '@fullcalendar/angular';
+import frLocale from '@fullcalendar/core/locales/fr';
 
 let str = formatDate(new Date(), {
   month: 'long',
@@ -26,11 +27,15 @@ export class CalendarComponent {
     alert('date click! ' + arg.dateStr);
   }
   calendarOptions: CalendarOptions = {
+    businessHours: true,
+    locales: [frLocale],
+    locale: 'fr',
     headerToolbar: {
-      left: 'custom1',
+      left: 'custom1 month,week,day,list',
       center: 'title',
-      right: 'custom2 prevYear,prev,next,nextYear',
+      right: 'custom2 prevYear,prev today next,nextYear',
     },
+
     customButtons: {
       custom1: {
         text: 'custom 1',

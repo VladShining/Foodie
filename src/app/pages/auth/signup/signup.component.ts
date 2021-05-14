@@ -10,7 +10,8 @@ import { MenuService } from 'src/app/service/menu.service';
   templateUrl: './signup.component.html',
   styleUrls: ['../signin/signin.component.scss'],
 })
-export class SignupComponent implements OnInit {
+export class SignupComponent implements OnInit
+{
   signUpForm: FormGroup;
   errorMessages: string;
 
@@ -21,16 +22,19 @@ export class SignupComponent implements OnInit {
     private authService: AuthService,
     route: ActivatedRoute,
     menuService: MenuService
-  ) {
+  )
+  {
     menuService.setTitle(route.snapshot.data['title']);
   }
-  ngOnInit() {
+  ngOnInit()
+  {
     this.initForm();
   }
 
-  initForm() {
+  initForm()
+  {
     this.signUpForm = this.formBuilder.group({
-      id: ['', [Validators.required, Validators.min(99999)]],
+      // id: ['', [Validators.required, Validators.min(99999)]],
       email: ['', [Validators.required, Validators.email]],
       password: [
         '',
@@ -38,25 +42,29 @@ export class SignupComponent implements OnInit {
       ],
     });
   }
-  onSubmit() {
+  onSubmit()
+  {
     this.loader.isLoading = true;
-    const id = this.signUpForm.get('id').value;
+    // const id = this.signUpForm.get('id').value;
     const email = this.signUpForm.get('email').value;
     const password = this.signUpForm.get('password').value;
-    if (id === 493649 || id === 238649 || id === 384857)
-      this.authService.createNewUser(email, password).then(
-        () => {
-          this.router.navigate(['/root']);
-          this.loader.isLoading = false;
-        },
-        (errors) => {
-          this.errorMessages = 'Une erreur est survenue !';
-          this.loader.isLoading = false;
-        }
-      );
-    else {
-      this.errorMessages = 'Une erreur est survenue !';
-      this.loader.isLoading = false;
-    }
+    // if (id === 493649 || id === 238649 || id === 384857)
+    this.authService.createNewUser(email, password).then(
+      () =>
+      {
+        this.router.navigate(['/root']);
+        this.loader.isLoading = false;
+      },
+      (errors) =>
+      {
+        this.errorMessages = 'Une erreur est survenue !';
+        this.loader.isLoading = false;
+      }
+    );
+    // else
+    // {
+    // this.errorMessages = 'Une erreur est survenue !';
+    this.loader.isLoading = false;
+    // }
   }
 }

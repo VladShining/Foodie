@@ -14,7 +14,7 @@ const routes: Routes = [
     path: 'root',
     loadChildren: () =>
       import('./pages/root/root.module').then((m) => m.RootModule),
-    canActivate: [AuthGuard],
+    // canActivate: [AuthGuard],
   },
   { path: '', redirectTo: 'auth', pathMatch: 'full' },
   { path: '**', component: ForOforComponent },
@@ -24,4 +24,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

@@ -1,14 +1,17 @@
 <div class="container">
-   <h1>Welcome👋</h1>
-   <p class="about">
+  <h1>Welcome👋</h1>
+  <p class="about">
     🍖🥩🥓🍔🍟🍕🌭🥪🌮🌯
     🥙🥚 🍳🥘🍲🥣🥗🍿🥫🍱🍘🍙🍚🍛🍜🍝🍠🍢
-       🍣🍤🍥🍡🥟🥠🥡🦀🦐🦑🍦🍧🍨🍩🍪🎂🍰🥧🍫🍬🍭🍮🍯🍼🥛☕
-       <br/>  Bienvenue sur Foodies   <br/>
-       🍇🍈🍉🍊🍋🍌🍍🍎🍏🍐🍑🍒🍓🥝🍅🥥🥑🍆🥔🥕🌽🌶️🌶🥒🥦🍄🥜🌰🍞🥐🥖<br>
-       Pour commencer, veuillez configurer votre <a [routerLink]="['/root','profil']" routerLinkActive="router-link-active" >profil 👤</a>.
-   </p>
-   <div class="choose">
+    🍣🍤🍥🍡🥟🥠🥡🦀🦐🦑🍦🍧🍨🍩🍪🎂🍰🥧🍫🍬🍭🍮🍯🍼🥛☕
+    <br /> Bienvenue sur Foodies <br />
+    🍇🍈🍉🍊🍋🍌🍍🍎🍏🍐🍑🍒🍓🥝🍅🥥🥑🍆🥔🥕🌽🌶️🌶🥒🥦🍄🥜🌰🍞🥐🥖<br>
+
+    <span *ngIf="isUserNotExist">Pour commencer, veuillez configurer votre <a [routerLink]="['/root','profil']"
+        routerLinkActive="router-link-active">profil 👤</a>.
+    </span>
+  </p>
+  <div class="choose">
     <mat-list>
       <div *ngFor="let item of list">
         <div mat-subheader class="head">{{item.initial}}</div>
@@ -18,25 +21,25 @@
       </div>
       <mat-divider></mat-divider>
     </mat-list>
-    <div class="down" >
-     ↓
+    <div class="down">
+      ↓
     </div>
-   </div>
-   <div class="top">
+  </div>
+  <div class="top">
     <cdk-virtual-scroll-viewport itemSize="50" class="example-viewport">
       <div *cdkVirtualFor="let item of items" class="example-item">{{item}}</div>
     </cdk-virtual-scroll-viewport>
     <div class="down">
       ↓
     </div>
-   </div>
-   <div class="board">
-     
-   </div>
-   <!-- <div class="link">
+  </div>
+  <div class="board">
+
+  </div>
+  <!-- <div class="link">
      nca@49 3.649
    </div> -->
-   <!-- <div class="anim">
+  <!-- <div class="anim">
     <div id="loader">
     </div>
    </div> -->

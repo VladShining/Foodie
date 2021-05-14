@@ -8,6 +8,7 @@ import { RecipComponent } from './recip/recip.component';
 import { RootComponent } from './root.component';
 import { ProfilComponent } from './user/profil/profil.component';
 import { UserComponent } from './user/user.component';
+import { UserGuard } from './user.guard';
 
 const routes: Routes = [
   {
@@ -23,11 +24,13 @@ const routes: Routes = [
         path: 'recip',
         component: RecipComponent,
         data: { title: '🥘 Recette', animation: fade },
+        canActivate: [UserGuard],
       },
       {
         path: 'calendar',
         component: CalendarComponent,
         data: { title: '📅 Calendrier', animation: fade },
+        canActivate: [UserGuard],
       },
       {
         path: 'profil',
@@ -36,6 +39,7 @@ const routes: Routes = [
       },
       {
         path: 'setting',
+        canActivate: [UserGuard],
         children: [
           { path: '', redirectTo: '/root/home', pathMatch: 'full' },
           {

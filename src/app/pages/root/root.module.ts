@@ -27,6 +27,7 @@ import { MatListModule } from '@angular/material/list';
 import { FormComponent } from './recip/form/form.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserRegisterService } from './user/user.register.service';
 
 FullCalendarModule.registerPlugins([
   // register FullCalendar plugins
@@ -51,7 +52,7 @@ FullCalendarModule.registerPlugins([
     SharedComponent,
     FormComponent,
   ],
-  providers: [Title],
+  providers: [Title, UserRegisterService],
   imports: [
     ScrollingModule,
     MatListModule,
@@ -67,4 +68,4 @@ FullCalendarModule.registerPlugins([
   ],
   bootstrap: [RootComponent],
 })
-export class RootModule {}
+export class RootModule { }
