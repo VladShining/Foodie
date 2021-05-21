@@ -1,5 +1,4 @@
-import
-{
+import {
   ChangeDetectionStrategy,
   Component,
   EventEmitter,
@@ -13,8 +12,7 @@ import firebase from 'firebase';
 import 'firebase/firestore';
 import { UserRegisterService } from '../user/user.register.service';
 
-export interface Test
-{
+export interface Test {
   initial: string;
   data: string[];
 }
@@ -25,8 +23,7 @@ export interface Test
   styleUrls: ['./home.component.scss'],
   // changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HomeComponent implements OnInit
-{
+export class HomeComponent implements OnInit {
   isUserNotExist: boolean;
   db: any;
   list: any;
@@ -36,9 +33,12 @@ export class HomeComponent implements OnInit
 
   LOADER_INTERVAL: number;
 
-  constructor(public route: ActivatedRoute, menuService: MenuService, user: UserRegisterService)
-  {
-    this.isUserNotExist = !(user.getCurrentUserExist());
+  constructor(
+    public route: ActivatedRoute,
+    menuService: MenuService,
+    user: UserRegisterService
+  ) {
+    this.isUserNotExist = !user.getCurrentUserExist();
     menuService.setTitle(route.snapshot.data['title']);
     menuService.changeTitle(route.snapshot.data['title']);
     this.data = route.snapshot.data['title'];
@@ -47,37 +47,41 @@ export class HomeComponent implements OnInit
     this.LOADER_INTERVAL = 1600;
   }
 
-  ngOnInit(): void
-  {
+  ngOnInit(): void {
     this.getCategorie();
     setInterval(this.loader, this.LOADER_INTERVAL);
+    this.db.enablePersistence().catch((err) => {
+      if (err.code == 'failed-precondition') {
+        // Multiple tabs open, persistence can only be enabled
+        // in one tab at a a time.
+        // ...
+      } else if (err.code == 'unimplemented') {
+        // The current browser does not support all of the
+        // features required to enable persistence
+        // ...
+      }
+    });
   }
 
-  getCategorie()
-  {
+  getCategorie() {
     var docRef = this.db.collection('recip').doc('d6jl5IaxsNmDq9MxKo9c');
     docRef
       .get()
-      .then((doc) =>
-      {
-        if (doc.exists)
-        {
+      .then((doc) => {
+        if (doc.exists) {
           let data: string[];
           data = doc.data()['Catégorie:Recettes par type de plat'];
           this.setDataCategorie(data);
-        } else
-        {
+        } else {
           console.log('No such document!');
         }
       })
-      .catch((error) =>
-      {
+      .catch((error) => {
         console.log('Error getting document:', error);
       });
   }
 
-  setDataCategorie(categorie: string[])
-  {
+  setDataCategorie(categorie: string[]) {
     // categorie.forEach((element) => {
     //   this.ini.push(element.substr(0, 1));
     // });
@@ -98,5 +102,5 @@ export class HomeComponent implements OnInit
 
     // console.log(this.list);
   }
-  loader() { }
+  loader() {}
 }
