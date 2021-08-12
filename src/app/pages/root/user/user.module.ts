@@ -5,17 +5,11 @@ import { UserRoutingModule } from './user-routing.module';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UserFormComponent } from './components/user-form/user-form.component';
 import { UserProfilComponent } from './components/user-profil/user-profil.component';
-
+import { UserProfilService } from './services/user-profil.service';
 
 @NgModule({
-  declarations: [
-    UserListComponent,
-    UserFormComponent,
-    UserProfilComponent
-  ],
-  imports: [
-    CommonModule,
-    UserRoutingModule
-  ]
+  declarations: [UserListComponent, UserFormComponent, UserProfilComponent],
+  imports: [CommonModule, UserRoutingModule],
+  providers: [UserProfilService],
 })
-export class UserModule { }
+export class UserModule {}

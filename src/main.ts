@@ -13,4 +13,4 @@ platformBrowserDynamic()
   .bootstrapModule(AppModule)
   .catch((err) => console.error(err));
 
-initFirebase(firebaseConfig, 'collection', 'document');
+initFirebase(firebaseConfig, 'col', 'doc');

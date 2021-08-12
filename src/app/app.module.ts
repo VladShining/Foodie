@@ -13,9 +13,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './service/auth.service';
 import { WildCardComponent } from './pages/wild-card/wild-card.component';
 import { MainComponent } from './pages/main/main.component';
+import { LoaderComponent } from './components/loader/loader.component';
 
 @NgModule({
-  declarations: [AppComponent, WildCardComponent, MainComponent],
+  declarations: [AppComponent, WildCardComponent, MainComponent, LoaderComponent],
   imports: [
     HttpClientModule,
     BrowserAnimationsModule,

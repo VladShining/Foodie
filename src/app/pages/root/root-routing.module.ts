@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { WildCardComponent } from '../wild-card/wild-card.component';
 import { RootComponent } from './root.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     component: RootComponent,
@@ -11,7 +11,6 @@ const routes: Routes = [
       {
         path: 'user',
         data: {
-          routerLink: '/root/user',
           title: 'utilisateur',
         },
         loadChildren: () =>
@@ -20,7 +19,6 @@ const routes: Routes = [
       {
         path: 'recip',
         data: {
-          routerLink: '/root/recip',
           title: 'recettes',
         },
         loadChildren: () =>
@@ -29,7 +27,6 @@ const routes: Routes = [
       {
         path: 'calendar',
         data: {
-          routerLink: '/root/calendar',
           title: 'calendrier',
         },
         loadChildren: () =>

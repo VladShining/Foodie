@@ -1,2 +1,7 @@
-<p>root works!</p>
-<router-outlet></router-outlet>
+<div class="container" [@routeAnimations]="prepareRoute(outlet)">
+   <h1>Root</h1>
+   <input id="cleave" placeholder="tape" />
+   <root-nav ></root-nav>
+   <button (click)="logout()" >logout</button>
+   <router-outlet #outlet="outlet"></router-outlet>
+</div>
