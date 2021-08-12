@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { User } from '../../interface/user';
 import { UserProfilService } from '../../services/user-profil.service';
 
@@ -9,9 +9,18 @@ import { UserProfilService } from '../../services/user-profil.service';
 })
 export class UserProfilComponent implements OnInit {
   user: User;
+  editMode: boolean = false;
   constructor(private userProfil: UserProfilService) {
     this.user = this.userProfil.getCurrentUserProfil();
   }
 
   ngOnInit(): void {}
+  editUser() {
+    this.editMode = true;
+    console.log('modifier');
+  }
+  saveUser() {
+    this.editMode = false;
+    console.log('sauvegarde effectuer');
+  }
 }

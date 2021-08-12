@@ -1,7 +1,35 @@
 <div class="container">
     <h2>profil</h2>
-    <p>nom :{{user.firstName}}</p>
-    <p>prenom :{{user.lastName}}</p>
-    <p>email : {{user.email}}</p>
-    <p>password : {{user.password}}</p>
+    <div *ngIf="editMode">
+        <input />
+        <button (click)="editMode=false">annuler</button>
+        <button (click)="htmlInsideModal.open()">save</button>
+    </div>
+    <div *ngIf="!editMode">
+        <p>nom :{{user.firstName}}</p> 
+        <p>prenom :{{user.lastName}}</p>
+        <p>email : {{user.email}}</p>
+        <p>password : {{user.password}}</p>
+        <button (click) = "editUser()">edit</button>
+        <button (click)="nestedModal.open()">nested modal</button>
+    </div>
 </div>
+<modal #htmlInsideModal>
+  <ng-template #modalHeader><h2>HTML inside modal</h2></ng-template>
+  <ng-template #modalBody>
+    <p>sur d'enregistrer ?</p>
+    <button (click)="saveUser();htmlInsideModal.close()">save</button>
+
+  </ng-template>
+</modal>
+<modal [closeOnOutsideClick]=false #nestedModal>
+    <ng-template #modalHeader><h2>Nested modal</h2></ng-template>
+    <ng-template #modalBody>
+      Nested modals can be created by simply adding a &lt;modal&gt; inside a &lt;modal&gt;
+      ...
+      <button (click)="nestedModalX.open()">Open nested modal</button>
+      <modal #nestedModalX>
+        <ng-template #modalBody>This is the nested modal content.</ng-template>
+      </modal>
+    </ng-template>
+  </modal>
