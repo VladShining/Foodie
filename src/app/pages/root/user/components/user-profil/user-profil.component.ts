@@ -10,8 +10,11 @@ import { firebaseAuth, firebaseStore } from 'src/environments/firebase';
   styleUrls: ['./user-profil.component.scss'],
 })
 export class UserProfilComponent implements OnInit {
+  user: User;
   editMode: boolean = false;
-  constructor(private userProfil: UserProfilService) {}
+  constructor(private userProfil: UserProfilService) {
+    this.user = { email: '', firstName: '', lastName: '', password: '***' };
+  }
   @ViewChild('firstName') firstName: ElementRef | undefined;
   @ViewChild('lastName') lastName: ElementRef | undefined;
   @ViewChild('userWelcome', { static: true }) userWelcome:
@@ -24,7 +27,12 @@ export class UserProfilComponent implements OnInit {
     | ModalComponent
     | undefined;
   ngOnInit(): void {
-    this.userProfil.getCurrentUserProfil().then((user) => this.initUser(user));
+    this.userProfil.getCurrentUserProfil().then((user) => {
+      this.user.email = user.email;
+      this.user.firstName = user.firstName;
+      this.user.lastName = user.lastName;
+      this.initUser(user);
+    });
   }
   editUser() {
     this.editMode = true;

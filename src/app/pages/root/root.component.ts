@@ -20,15 +20,15 @@ export class RootComponent implements OnInit {
     console.log(ref);
   }
   ngOnInit(): void {
-    (<HTMLInputElement>document.getElementById('cleave')).value = '05:55';
+    (<HTMLInputElement>document.getElementById('cleave')).value = '00:00';
     this.time1 = new Cleave('#cleave', {
       time: true,
       timePattern: ['h', 'm'],
     });
     this.time1 = new Cleave('#val', {
       date: true,
-      delimiter: '-',
-      datePattern: ['Y', 'm', 'd'],
+      delimiter: '/',
+      datePattern: ['d', 'm', 'Y'],
     });
   }
   prepareRoute(outlet: RouterOutlet) {
