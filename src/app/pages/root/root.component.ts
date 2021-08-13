@@ -14,12 +14,21 @@ import { routes } from './root-routing.module';
 })
 export class RootComponent implements OnInit {
   time1: any;
+  cleave: string = '';
   constructor(private authService: AuthService, private router: Router) {}
-
+  show(ref: string) {
+    console.log(ref);
+  }
   ngOnInit(): void {
+    (<HTMLInputElement>document.getElementById('cleave')).value = '05:55';
     this.time1 = new Cleave('#cleave', {
       time: true,
       timePattern: ['h', 'm'],
+    });
+    this.time1 = new Cleave('#val', {
+      date: true,
+      delimiter: '-',
+      datePattern: ['Y', 'm', 'd'],
     });
   }
   prepareRoute(outlet: RouterOutlet) {

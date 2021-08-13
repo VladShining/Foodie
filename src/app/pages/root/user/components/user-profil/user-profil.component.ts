@@ -1,6 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { ModalComponent } from 'angular-custom-modal';
 import { User } from '../../interface/user';
 import { UserProfilService } from '../../services/user-profil.service';
+import { firebaseAuth, firebaseStore } from 'src/environments/firebase';
 
 @Component({
   selector: 'app-user-profil',
@@ -8,19 +10,57 @@ import { UserProfilService } from '../../services/user-profil.service';
   styleUrls: ['./user-profil.component.scss'],
 })
 export class UserProfilComponent implements OnInit {
-  user: User;
   editMode: boolean = false;
-  constructor(private userProfil: UserProfilService) {
-    this.user = this.userProfil.getCurrentUserProfil();
+  constructor(private userProfil: UserProfilService) {}
+  @ViewChild('firstName') firstName: ElementRef | undefined;
+  @ViewChild('lastName') lastName: ElementRef | undefined;
+  @ViewChild('userWelcome', { static: true }) userWelcome:
+    | ModalComponent
+    | undefined;
+  @ViewChild('successSaveUser', { static: true }) successSaveUser:
+    | ModalComponent
+    | undefined;
+  @ViewChild('saveUserConfirmation', { static: true }) saveUserConfirmation:
+    | ModalComponent
+    | undefined;
+  ngOnInit(): void {
+    this.userProfil.getCurrentUserProfil().then((user) => this.initUser(user));
   }
-
-  ngOnInit(): void {}
   editUser() {
     this.editMode = true;
-    console.log('modifier');
   }
   saveUser() {
+    this.saveFirstName(this.firstName?.nativeElement.value);
+    this.saveLastName(this.lastName?.nativeElement.value);
+    this.saveUserConfirmation?.close();
+    this.successSaveUser?.open();
     this.editMode = false;
-    console.log('sauvegarde effectuer');
+  }
+  initUser(user: any) {
+    if (
+      user.firstName === '' ||
+      user.lastName === '' ||
+      !user.firstName ||
+      !user.lastName
+    ) {
+      this.userWelcome?.open();
+      this.editUser();
+    } else this.editMode = false;
+  }
+  saveFirstName(val: string) {
+    firebaseStore()
+      .collection('users')
+      .doc(firebaseAuth().currentUser?.uid)
+      .set({ firstName: val }, { merge: true })
+      .then()
+      .catch();
+  }
+  saveLastName(val: string) {
+    firebaseStore()
+      .collection('users')
+      .doc(firebaseAuth().currentUser?.uid)
+      .set({ lastName: val }, { merge: true })
+      .then()
+      .catch();
   }
 }

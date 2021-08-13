@@ -8,19 +8,33 @@ export class UserProfilService {
   user: User;
   constructor(private auth: AuthService) {
     this.user = { firstName: '', email: '', password: '', lastName: '' };
+    this.initUser();
   }
-
-  getCurrentUserProfil() {
+  initUser() {
     const userId = firebaseAuth().currentUser?.uid;
-    this.user.email = firebaseAuth().currentUser?.email || '';
-
     firebaseStore()
       .collection('users')
-      .doc(userId)
+      ?.doc(userId)
       .get()
-      .then((res) => {
-        this.user.password = res.data()?.password;
+      .then((user) => {
+        userId && sessionStorage.setItem(userId, JSON.stringify(user.data()));
       });
-    return this.user;
   }
+  getUserProfilOnStorage(UserId: any) {
+    const user = JSON.parse(sessionStorage.getItem(UserId) || '');
+  }
+  async getCurrentUserProfil() {
+    const currentUserId = firebaseAuth().currentUser?.uid;
+    let currentUser: any;
+    await firebaseStore()
+      .collection('users')
+      ?.doc(currentUserId)
+      .get()
+      .then((user) => {
+        currentUser = user.data();
+      });
+    return currentUser;
+  }
+
+  saveUser() {}
 }

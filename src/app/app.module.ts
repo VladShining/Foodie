@@ -14,15 +14,22 @@ import { AuthService } from './service/auth.service';
 import { WildCardComponent } from './pages/wild-card/wild-card.component';
 import { MainComponent } from './pages/main/main.component';
 import { LoaderComponent } from './components/loader/loader.component';
+import { ModalModule } from 'angular-custom-modal';
 
 @NgModule({
-  declarations: [AppComponent, WildCardComponent, MainComponent, LoaderComponent],
+  declarations: [
+    AppComponent,
+    WildCardComponent,
+    MainComponent,
+    LoaderComponent,
+  ],
   imports: [
     HttpClientModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
     BrowserModule,
+    ModalModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
