@@ -1,5 +1,6 @@
+@import "~bootstrap/scss/bootstrap";
 @import "./app/styles/index.scss";
-
+@import "../node_modules/angular-calendar/css/angular-calendar.css";
 * {
   font-family: "Roboto Mono";
 }
@@ -10,3 +11,5 @@ body {
   background-attachment: fixed;
   scrollbar-width: thin;
 }
+
+/* Importing Bootstrap SCSS file. */

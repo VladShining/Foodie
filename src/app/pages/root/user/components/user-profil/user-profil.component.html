@@ -4,7 +4,7 @@
         <input id="firstName" placeholder="firstName" #firstName/>
         <input id="lastName" placeholder="lastName" #lastName/>
         <button (click)="editMode=false">annuler</button>
-        <button (click)="saveUserConfirmation.open();">save</button>
+        <button (click)="saveUserConfirmation.open()">save</button>
     </div>
     <div *ngIf="!editMode">
         <p>nom :{{user.firstName}}</p> 
@@ -21,7 +21,7 @@
   </ng-template>
   <ng-template #modalBody>
     <p>Pour commencer , veuillez compléter votre profil</p>
-    <button (click)="userWelcome.close();">ok</button>
+    <button (click)="userWelcome.close()">ok</button>
   </ng-template>
 </modal>
 
@@ -42,6 +42,6 @@
   </ng-template>
   <ng-template #modalBody>
     <p>utlisateur enregistrer avec succes</p>
-    <button (click)="successSaveUser.close();">ok</button>
+    <button (click)="successSaveUser.close()">ok</button>
   </ng-template>
 </modal>

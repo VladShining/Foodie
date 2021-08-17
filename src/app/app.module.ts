@@ -15,6 +15,7 @@ import { WildCardComponent } from './pages/wild-card/wild-card.component';
 import { MainComponent } from './pages/main/main.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { ModalModule } from 'angular-custom-modal';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ModalModule } from 'angular-custom-modal';
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000',
     }),
+    NgbModule,
   ],
   providers: [UpdateService, AuthService],
   bootstrap: [AppComponent],

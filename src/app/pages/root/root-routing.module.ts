@@ -30,7 +30,9 @@ export const routes: Routes = [
           title: 'calendrier',
         },
         loadChildren: () =>
-          import('./calendar/calendar.module').then((m) => m.CalendarModule),
+          import('./calendar/calendar.module').then(
+            (m) => m.CalendarRecipModule
+          ),
       },
       {
         path: '',

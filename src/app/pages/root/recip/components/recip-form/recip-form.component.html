@@ -1,1 +1,18 @@
-<p>recip-form works!</p>
+<h2>creer un nouveau recette</h2>
+<form #recip="ngForm" (ngSubmit)="onSubmit(recip)">
+  <input class="form-control" name="name" ngModel id="name" type="text" placeholder="nom" />
+  <input class="form-control" name="tag" ngModel id="tag" type="text" placeholder="tag" />
+  <input class="form-control" name="categorie" ngModel id="categorie" type="text" placeholder="categorie" />
+  <input class="form-control" name="time" ngModel id="time" type="text" placeholder="temp" />
+  <textarea id="recip" type="text" placeholder="recette">recette </textarea>
+  <button type="submit">Submit</button>
+</form>
+<!-- <modal #userWelcome >
+    <ng-template #modalHeader>
+      <h3>Confirmation Utilisateur</h3>
+    </ng-template>
+    <ng-template #modalBody>
+      <p>Pour commencer , veuillez compléter votre profil</p>
+      <button (click)="userWelcome.close();">ok</button>
+    </ng-template>
+  </modal> -->
