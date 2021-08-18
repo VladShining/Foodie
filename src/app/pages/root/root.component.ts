@@ -15,21 +15,21 @@ import { routes } from './root-routing.module';
 export class RootComponent implements OnInit {
   time1: any;
   cleave: string = '';
-  constructor(private authService: AuthService, private router: Router) {}
+  constructor(private router: Router) {}
   show(ref: string) {
     console.log(ref);
   }
   ngOnInit(): void {
-    (<HTMLInputElement>document.getElementById('cleave')).value = '00:00';
-    this.time1 = new Cleave('#cleave', {
-      time: true,
-      timePattern: ['h', 'm'],
-    });
-    this.time1 = new Cleave('#val', {
-      date: true,
-      delimiter: '/',
-      datePattern: ['d', 'm', 'Y'],
-    });
+    // (<HTMLInputElement>document.getElementById('cleave')).value = '00:00';
+    // this.time1 = new Cleave('#cleave', {
+    //   time: true,
+    //   timePattern: ['h', 'm'],
+    // });
+    // this.time1 = new Cleave('#val', {
+    //   date: true,
+    //   delimiter: '/',
+    //   datePattern: ['d', 'm', 'Y'],
+    // });
   }
   prepareRoute(outlet: RouterOutlet) {
     return (
@@ -37,9 +37,6 @@ export class RootComponent implements OnInit {
       outlet.activatedRouteData &&
       outlet.activatedRouteData['animation']
     );
-  }
-  logout() {
-    this.authService.signOutUser();
   }
 }
 
@@ -51,12 +48,13 @@ export class RootComponent implements OnInit {
       <li *ngFor="let menu of Menu" [routerLink]="[menu.link]" class="link">
         {{ menu.label }}
       </li>
+      <li (click)="logout()">Deconnexion</li>
     </ul>
   </div>`,
 })
 export class RootNavComponent implements OnInit {
   Menu: { label: string; link: string }[] = [];
-  constructor() {}
+  constructor(private authService: AuthService) {}
 
   ngOnInit() {
     routes.map((e) =>
@@ -64,5 +62,8 @@ export class RootNavComponent implements OnInit {
         r.path && this.Menu.push({ label: r.data?.title, link: r.path });
       })
     );
+  }
+  logout() {
+    this.authService.signOutUser();
   }
 }

@@ -13,7 +13,7 @@ export class UserProfilComponent implements OnInit {
   user: User;
   editMode: boolean = false;
   constructor(private userProfil: UserProfilService) {
-    this.user = { email: '', firstName: '', lastName: '', password: '***' };
+    this.user = { email: '', firstName: '', lastName: '', password: '******' };
   }
   @ViewChild('firstName') firstName: ElementRef | undefined;
   @ViewChild('lastName') lastName: ElementRef | undefined;

@@ -10,7 +10,7 @@
             <p class="error">{{ errorMessages }}</p>
         </form>
         <a routerLink="/auth/lost" class="link" (mouseout)="showMe=false" (mouseover)="showMe=true">Mot de passe oubliez ?</a>
-        <p *ngIf="showMe"><br/>essayez de vous en souvenir quand même ...</p>
+        <p *ngIf="showMe" class="message"><br/>essayez de vous en souvenir quand même ...</p>
     </div>
 </div>
-<ngx-spinner bdColor = "rgba(0,0,0,0.9)" size = "medium" color = "#ff5e00" type = "fire" [fullScreen] = "true"><p style="color: white" > Login ... </p></ngx-spinner>
+<ngx-spinner bdColor = "rgba(0,0,0,0.9)" size = "medium" color = "#ff5e00" type = "fire" [fullScreen] = "true"><p style="color: #ff5e00" > Login ... </p></ngx-spinner>

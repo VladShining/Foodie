@@ -1,11 +1,14 @@
+<div class="container flexible flexibleVerti" style="height: 100vh;">
 <p>Pour recuperer votre mot de passe,veuillez contacter l'admin </p>
-<form [formGroup]="resign" (ngSubmit)= "onSubmit()">
+<form [formGroup]="resign" (ngSubmit)= "onSubmit()" class="flexibleVerti">
     <input type="email" placeholder="Veuillez entrer votre email" class="form-control" formControlName="email" />
     <button type="submit" [disabled]="resign.invalid">
         envoyez
     </button>
+    <span [routerLink]="['/auth']" routerLinkActive="router-link-active" class="link">Retour</span>
 </form>
 <p><a href="mailto:vladshining@gmail.com"> vous pouvez aussi m'envoyez un email direct pour être plus rapide </a></p>
+</div>
 <modal #submitSuccess>
     <ng-template #modalHeader><h2>Message Envoyez
     </h2></ng-template>

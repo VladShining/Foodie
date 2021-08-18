@@ -1,6 +1,6 @@
 <div class="container">
-    <h2>profil</h2>
-    <div *ngIf="editMode">
+    <h1>Profil</h1>
+    <div *ngIf="editMode" class="flexibleVerti">
         <input id="firstName" placeholder="firstName" #firstName/>
         <input id="lastName" placeholder="lastName" #lastName/>
         <button (click)="editMode=false">annuler</button>
