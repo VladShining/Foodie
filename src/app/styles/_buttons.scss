@@ -1,23 +1,27 @@
-$button-width: 180px;
+$button-width: calc(2vh + 3vw + 50px);
 $button-height: 40px;
-$font-size-button-label: 1rem;
-
-button {
+$font-size-button-label: calc($button-width - 10px);
+%btn {
   border: none;
   outline: none;
   width: $button-width;
+  min-width: fit-content;
   height: $button-height;
   font-size: $font-size-button-label;
-  font-family: $Akronim;
+  font-family: $foodiesFont;
   color: $button-fonts-color;
-  text-transform: uppercase;
+  text-transform: capitalize;
+  text-shadow: none;
   box-shadow: $shadow-gradiant;
   background-color: $button-color;
+  margin: 1em 1em;
+  transition: all 0.5s;
 
   &:hover {
     color: $button-fonts-hover-color;
     cursor: pointer;
     background-color: $button-hover-color;
+    transition: all 0.5s;
   }
   &:active {
     background-color: $button-active-color;
@@ -40,8 +44,11 @@ button {
     box-shadow: $shadow-gradiant-inside;
   }
 }
-%btn {
-  @extend button;
+button {
+  @extend %btn;
+  border-radius: 7px;
+  background-color: transparent;
+  overflow-x: hidden;
 }
 .circular-btn {
   @extend %btn;

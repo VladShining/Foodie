@@ -14,6 +14,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 export class SignupComponent implements OnInit {
   signUpForm!: FormGroup;
   errorMessages!: string;
+  input!: boolean;
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -24,7 +25,9 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
     this.initForm();
   }
-
+  toggleShow() {
+    this.input = !this.input;
+  }
   initForm() {
     this.signUpForm = this.formBuilder.group({
       // id: ['', [Validators.required, Validators.min(99999)]],

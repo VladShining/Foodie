@@ -1,0 +1,12 @@
+@import "../../styles/colors";
+
+.main {
+  text-align: center;
+}
+.emojy {
+  font-size: calc(1vw + 1vh + 12px);
+  letter-spacing: 7px;
+  font-family: "Roboto Mono";
+  color: $sunny;
+  margin: 1em 0;
+}

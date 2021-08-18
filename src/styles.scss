@@ -1,9 +1,20 @@
-@import "~bootstrap/scss/bootstrap";
+// @import "~bootstrap/scss/bootstrap";
 @import "./app/styles/index.scss";
 @import "../node_modules/angular-calendar/css/angular-calendar.css";
+
 * {
-  font-family: "Roboto Mono";
+  font-family: "Marck Script", cursive;
+  text-shadow: 1px 1px white;
+  &::selection {
+    color: white;
+    background: linear-gradient(to right, $sunny, $sunny);
+  }
+  &::-moz-selection {
+    color: white;
+    background: linear-gradient(to right, $sunny, $sunny);
+  }
 }
+
 body {
   background: url("https://picsum.photos/id/292/820/400/?blur=1");
   background-size: cover;
@@ -12,4 +23,12 @@ body {
   scrollbar-width: thin;
 }
 
-/* Importing Bootstrap SCSS file. */
+a,
+a.link {
+  text-shadow: none;
+  color: $paragraph-font-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}

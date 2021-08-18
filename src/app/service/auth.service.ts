@@ -18,6 +18,7 @@ export class AuthService {
           },
           (e) => {
             rej(e);
+            console.clear();
           }
         );
     });
@@ -48,6 +49,7 @@ export class AuthService {
           },
           (e) => {
             rej(e);
+            console.clear();
           }
         );
     });

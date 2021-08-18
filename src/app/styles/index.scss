@@ -5,5 +5,29 @@
 @import "buttons.scss";
 @import "checkbox.scss";
 @import "text.scss";
+@import "input.scss";
 @import "modal.scss";
 @import "fullcalendar.scss";
+@import "container.scss";
+
+* {
+  scrollbar-width: thin;
+}
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $sunny;
+  border-radius: 7px;
+  border: 1px solid $font-color;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: #212c3d;
+}
+::-webkit-scrollbar-corner {
+  background-color: #212c3d;
+}
+a {
+  color: inherit;
+}
