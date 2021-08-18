@@ -7,15 +7,17 @@ import { SignupComponent } from './signup/signup.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { SigninLostComponent } from './signin-lost/signin-lost.component';
+import { ModalModule } from 'angular-custom-modal';
 
 @NgModule({
-  declarations: [SigninComponent, SignupComponent],
+  declarations: [SigninComponent, SignupComponent, SigninLostComponent],
   imports: [
     CommonModule,
     ReactiveFormsModule,
     FormsModule,
     NgxSpinnerModule,
-
+    ModalModule,
     AuthRoutingModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

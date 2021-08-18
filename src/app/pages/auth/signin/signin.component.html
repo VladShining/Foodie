@@ -9,7 +9,7 @@
             <button type="button"class="btn" id="signUp" [routerLink]="['/auth/signup']" routerLinkActive="router-link-active" >Creer un compte →</button>
             <p>{{ errorMessages }}</p>
         </form>
-        <a routerLink="/auth/signup" class="link" (mouseout)="showMe=false" (mouseover)="showMe=true">Mot de passe oubliez ?</a>
+        <a routerLink="/auth/lost" class="link" (mouseout)="showMe=false" (mouseover)="showMe=true">Mot de passe oubliez ?</a>
         <p *ngIf="showMe">essayez de souvenir quand même ...</p>
     </div>
 </div>
