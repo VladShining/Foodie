@@ -1,11 +1,12 @@
 $button-width: calc(2vh + 3vw + 50px);
-$button-height: 40px;
+$button-height: calc(3vh + 1vw + 10px);
 $font-size-button-label: calc($button-width - 10px);
 %btn {
   border: none;
   outline: none;
   width: $button-width;
   min-width: fit-content;
+  min-height: 20px;
   height: $button-height;
   font-size: $font-size-button-label;
   font-family: $foodiesFont;
