@@ -9,16 +9,17 @@ import { ListRecipService } from '../../service/list-recip.service';
   styleUrls: ['./recip-form.component.scss'],
 })
 export class RecipFormComponent implements OnInit {
-  @ViewChild('userWelcome', { static: true }) userWelcome:
+  @ViewChild('successSave') successSave:
     | ModalComponent
     | undefined;
   @ViewChild('recip') recip: Form | undefined;
   constructor(private recipService: ListRecipService) {}
 
   ngOnInit(): void {
-    this.userWelcome?.open();
+  
   }
   onSubmit(recip: any) {
     this.recipService.createRecip(recip.value);
+    this.successSave?.open();
   }
 }

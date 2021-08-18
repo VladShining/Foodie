@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth.service';
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import { NgxSpinnerService } from 'ngx-spinner';
 
 @Component({
   selector: 'app-signup',
@@ -16,7 +17,8 @@ export class SignupComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
-    private authService: AuthService
+    private authService: AuthService,
+    private spinner: NgxSpinnerService
   ) {}
 
   ngOnInit(): void {
@@ -35,6 +37,7 @@ export class SignupComponent implements OnInit {
   }
   onSubmit() {
     // const id = this.signUpForm.get('id').value;
+    this.spinner.show();
     const email = this.signUpForm.get('email')?.value;
     const password = this.signUpForm.get('password')?.value;
     // if (id === 493649 || id === 238649 || id === 384857)
@@ -46,9 +49,11 @@ export class SignupComponent implements OnInit {
           firebase.auth().currentUser?.uid
         );
         this.router.navigate(['/root']);
+        this.spinner.hide();
       },
       (errors) => {
         this.errorMessages = 'Une erreur est survenue !';
+        this.spinner.hide();
       }
     );
     // else

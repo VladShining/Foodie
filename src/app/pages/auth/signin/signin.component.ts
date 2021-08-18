@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
@@ -18,7 +19,8 @@ export class SigninComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private spinner: NgxSpinnerService
   ) {
     this.showMe = false;
   }
@@ -38,13 +40,16 @@ export class SigninComponent implements OnInit {
     this.initForm();
   }
   onSubmit() {
+    this.spinner.show();
     const email = this.signInForm.get('email')?.value;
     const password = this.signInForm.get('password')?.value;
     this.authService.signInUser(email, password).then(
       () => {
         this.router.navigate(['/root']);
+        this.spinner.hide();
       },
       () => {
+        this.spinner.hide();
         this.errorMessages = 'Login invalid';
       }
     );
