@@ -1,0 +1,12 @@
+.flexible {
+  justify-content: space-around;
+  margin-top: 1em;
+  * {
+    cursor: pointer;
+  }
+}
+.title {
+  text-align: center;
+  color: #ff5e00;
+  text-transform: uppercase;
+}

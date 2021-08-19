@@ -48,7 +48,9 @@ export class RootComponent implements OnInit {
       <li *ngFor="let menu of Menu" [routerLink]="[menu.link]" class="link">
         {{ menu.label }}
       </li>
-      <li (click)="logout()">Deconnexion</li>
+      <li (click)="logout()">
+        <img src="../../../assets/images/logout.svg" alt="logout" />
+      </li>
     </ul>
   </div>`,
 })

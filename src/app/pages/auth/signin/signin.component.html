@@ -4,7 +4,7 @@
             <h1>Authentification</h1>
             <input type="email" placeholder="e-mail" class="form-control" formControlName="email" id="email"/>
             <input [type]="input ? 'text' : 'password'" placeholder="Mot de passe" class="form-control" formControlName="password" id="password" />
-            <i (click)="toggleShow()" >👁️</i>
+            <img (click)="toggleShow()" src={{src}} alt="" />
             <button type="submit" class="btn signinButton" [disabled]="signInForm.invalid">Connexion</button>
             <button type="button" class="btn signinButton" id="signUp" [routerLink]="['/auth/signup']" routerLinkActive="router-link-active" >Creer un compte →</button>
             <p class="error">{{ errorMessages }}</p>

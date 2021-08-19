@@ -12,6 +12,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
   styleUrls: ['./signup.component.scss'],
 })
 export class SignupComponent implements OnInit {
+  src: string = '../../../../assets/images/!visibility.svg';
   signUpForm!: FormGroup;
   errorMessages!: string;
   input!: boolean;
@@ -25,8 +26,14 @@ export class SignupComponent implements OnInit {
   ngOnInit(): void {
     this.initForm();
   }
+  toogleEye() {
+    this.input
+      ? (this.src = '../../../../assets/images/visibility.svg')
+      : (this.src = '../../../../assets/images/!visibility.svg');
+  }
   toggleShow() {
     this.input = !this.input;
+    this.toogleEye();
   }
   initForm() {
     this.signUpForm = this.formBuilder.group({

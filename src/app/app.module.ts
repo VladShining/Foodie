@@ -17,6 +17,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { ModalModule } from 'angular-custom-modal';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
     WildCardComponent,
     MainComponent,
     LoaderComponent,
+    FooterComponent,
   ],
   imports: [
     HttpClientModule,

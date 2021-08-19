@@ -5,10 +5,10 @@ import { CalendarGridComponent } from './components/calendar-grid/calendar-grid.
 import { CalendarContainer } from './components/container/calendar.container';
 
 const routes: Routes = [
-  { path: '', component: CalendarContainer },
-  { path: 'newTask', component: CalendarFormComponent },
-  { path: 'calendar', component: CalendarGridComponent },
-  { path: '**', redirectTo: 'calendar', pathMatch: 'full' },
+  { path: 'calendar', component: CalendarContainer },
+  { path: '', component: CalendarFormComponent },
+  { path: 'newTask', component: CalendarGridComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({

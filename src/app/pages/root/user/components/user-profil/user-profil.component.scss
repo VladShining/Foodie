@@ -1,0 +1,22 @@
+.user {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  .container {
+    width: 270px;
+  }
+}
+.container > .container {
+  padding: 0;
+}
+select {
+  min-width: 148px;
+}
+textarea {
+  box-sizing: border-box;
+  width: 148px;
+  height: 30vh;
+  resize: none;
+}

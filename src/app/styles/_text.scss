@@ -33,6 +33,7 @@ p {
   font-size: $text-font-size;
   color: $text-font-color;
   font-family: $normal-text;
+  text-shadow: none !important;
 }
 span {
   font-size: $span-font-size;

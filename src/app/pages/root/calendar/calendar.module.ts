@@ -28,5 +28,6 @@ import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
       useFactory: adapterFactory,
     }),
   ],
+  exports: [CalendarFormComponent],
 })
 export class CalendarRecipModule {}

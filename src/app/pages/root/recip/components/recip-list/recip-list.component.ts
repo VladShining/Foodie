@@ -16,7 +16,7 @@ import { Recip } from '../../utils/recip';
 })
 export class RecipListComponent implements OnInit, OnChanges {
   recip: Recip[];
-  recipChange: any = {};
+  recipChange: any = { name: '' };
   constructor(private recipService: ListRecipService, private ngZone: NgZone) {
     this.recip = [
       {
@@ -35,7 +35,7 @@ export class RecipListComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.readAllRecip();
-    this.getOneRecipInTimeReel();
+    // this.getOneRecipInTimeReel();
     this.getAllRecipInTimeReel();
     // this.recipChange.subscribe((recip: any) => (this.recipChange = recip));
   }

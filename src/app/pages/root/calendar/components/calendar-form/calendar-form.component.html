@@ -1,1 +1,96 @@
-<p>calendar-form works!</p>
+<div class="flexible">     
+    <div
+        mwlCalendarPreviousView
+        [view]="view"
+        [(viewDate)]="viewDate"
+        (viewDateChange)="closeOpenMonthViewDay()"
+    >
+    &lt;&lt;
+    </div>
+    <div
+        mwlCalendarToday
+        [(viewDate)]="viewDate"
+    >
+        Aujourd'hui
+    </div>
+    <div
+        mwlCalendarNextView
+        [view]="view"
+        [(viewDate)]="viewDate"
+        (viewDateChange)="closeOpenMonthViewDay()"
+    >
+    &gt;&gt;
+    </div>
+    <div class="title">
+      {{ viewDate | calendarDate:(view + 'ViewTitle'):'fr' }}
+    </div>
+    <div
+        (click)="setView(CalendarView.Month)"
+        [class.active]="view === CalendarView.Month"
+    >
+        Mois
+    </div>
+    <div
+        (click)="setView(CalendarView.Week)"
+        [class.active]="view === CalendarView.Week"
+    >
+        Semaine
+    </div>
+    <div
+        (click)="setView(CalendarView.Day)"
+        [class.active]="view === CalendarView.Day"
+    >
+        Jour
+    </div>
+  </div>
+  <br />
+  <div [ngSwitch]="view">
+    <mwl-calendar-month-view
+      *ngSwitchCase="CalendarView.Month"
+      [viewDate]="viewDate"
+      [events]="events"
+      [refresh]="refresh"
+      [locale]="locale"
+      [weekStartsOn]="1"
+      [activeDayIsOpen]="activeDayIsOpen"
+      (dayClicked)="dayClicked($event.day)"
+      (eventClicked)="handleEvent('Clicked', $event.event)"
+      (eventTimesChanged)="eventTimesChanged($event)"
+    >
+    </mwl-calendar-month-view>
+    <mwl-calendar-week-view
+      *ngSwitchCase="CalendarView.Week"
+      [viewDate]="viewDate"
+      [events]="events"
+      [refresh]="refresh"     
+      [locale]="locale"
+      [weekStartsOn]="1"
+      (eventClicked)="handleEvent('Clicked', $event.event)"
+      (eventTimesChanged)="eventTimesChanged($event)"
+    >
+    </mwl-calendar-week-view>
+    <mwl-calendar-day-view
+      *ngSwitchCase="CalendarView.Day"
+      [viewDate]="viewDate"
+      [events]="events"
+      [refresh]="refresh"
+      [locale]="locale"
+      (eventClicked)="handleEvent('Clicked', $event.event)"
+      (eventTimesChanged)="eventTimesChanged($event)"
+    >
+    </mwl-calendar-day-view>
+  </div>
+  <br/>
+
+  <modal #dayEvent>
+    <ng-template #modalHeader><h2>dayEvent modal</h2></ng-template>
+    <ng-template #modalBody>
+      <p>sur d'enregistrer ? {{viewDate}}</p>
+      <input
+            type="color"
+            (change)="refresh.next()"
+          />
+      <button (click)="dayEvent.close();addEvent()">Enregistrer</button>
+      <button (click)="dayEvent.close()">Annuler</button>
+    </ng-template>
+  </modal>

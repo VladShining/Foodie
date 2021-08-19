@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/service/auth.service';
   styleUrls: ['./signin.component.scss'],
 })
 export class SigninComponent implements OnInit {
+  src: string = '../../../../assets/images/!visibility.svg';
   signInForm!: FormGroup;
   errorMessages!: string;
   showPassword!: boolean;
@@ -24,8 +25,14 @@ export class SigninComponent implements OnInit {
   ) {
     this.showMe = false;
   }
+  toogleEye() {
+    this.input
+      ? (this.src = '../../../../assets/images/visibility.svg')
+      : (this.src = '../../../../assets/images/!visibility.svg');
+  }
   toggleShow() {
     this.input = !this.input;
+    this.toogleEye();
   }
   initForm() {
     this.signInForm = this.formBuilder.group({

@@ -17,10 +17,14 @@ export class UserProfilComponent implements OnInit {
   }
   @ViewChild('firstName') firstName: ElementRef | undefined;
   @ViewChild('lastName') lastName: ElementRef | undefined;
+  @ViewChild('pass') pass: ElementRef | undefined;
   @ViewChild('userWelcome', { static: true }) userWelcome:
     | ModalComponent
     | undefined;
   @ViewChild('successSaveUser', { static: true }) successSaveUser:
+    | ModalComponent
+    | undefined;
+  @ViewChild('errorSaveUser', { static: true }) errorSaveUser:
     | ModalComponent
     | undefined;
   @ViewChild('saveUserConfirmation', { static: true }) saveUserConfirmation:
@@ -37,12 +41,27 @@ export class UserProfilComponent implements OnInit {
   editUser() {
     this.editMode = true;
   }
-  saveUser() {
-    this.saveFirstName(this.firstName?.nativeElement.value);
-    this.saveLastName(this.lastName?.nativeElement.value);
-    this.saveUserConfirmation?.close();
-    this.successSaveUser?.open();
-    this.editMode = false;
+  async saveUser() {
+    let pass = '';
+    const userId = firebaseAuth().currentUser?.uid;
+    await firebaseStore()
+      .collection('users')
+      .doc(userId)
+      .get()
+      .then((doc) => (pass = doc.data()?.password));
+    if (pass === this.pass?.nativeElement.value) {
+      this.saveFirstName(this.firstName?.nativeElement.value);
+      this.saveLastName(this.lastName?.nativeElement.value);
+      this.pass && (this.pass.nativeElement.value = '');
+      this.saveUserConfirmation?.close();
+      this.successSaveUser?.open();
+      this.editMode = false;
+    } else {
+      this.saveUserConfirmation?.close();
+      this.pass && (this.pass.nativeElement.value = '');
+      this.errorSaveUser?.open();
+    }
+    // window.location.reload();
   }
   initUser(user: any) {
     if (
