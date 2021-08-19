@@ -1,29 +1,7 @@
-$Akronim: "Akronim";
-$Megrim: "Megrim";
-$Aunchanted: "AunchantedXspace";
-$Isocp: "ISOCP2";
-$Isocteur: "ISOCTEUR";
-$foodiesFont: "Marck Script";
-
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Caveat&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap");
-
 @import url("https://fonts.googleapis.com/css2?family=Marck+Script&display=swap");
 
-@font-face {
-  font-family: "Akronim";
-  src: "../../assets/fonts/Akronim-Regular.ttf";
-}
-@font-face {
-  font-family: "Megrim";
-  src: "../../assets/fonts/Megrim-Regular.ttf";
-}
-@font-face {
-  font-family: "AunchantedXspace";
-  src: "../../assets/fonts/AunchantedXspace.ttf";
-}
 @font-face {
   font-family: "ISOCP2";
   src: "../../assets/fonts/isocp2__.ttf";
@@ -36,11 +14,20 @@ $foodiesFont: "Marck Script";
   font-family: "Marck Script", cursive;
   src: url("https://fonts.googleapis.com/css2?family=Marck+Script&display=swap");
 }
-$title-text: $Isocteur;
-$subtitle-text: $Megrim;
-$chapter-text: $Isocp;
-$paragraph-text: $Isocp;
-$subparagraph-text: $Isocp;
-$subsubpara-text: $Isocp;
-$normal-text: $Akronim;
-$span-text: $Akronim;
+
+$Isocp: "ISOCP2";
+$Isocteur: "ISOCTEUR";
+$base-font: "Marck Script";
+$roboto: "Roboto Mono", monospace;
+
+$title-text: $Isocp;
+$subtitle-text: $Isocteur;
+$chapter-text: $roboto;
+$paragraph-text: $base-font;
+$subparagraph-text: $base-font;
+$subsubpara-text: $base-font;
+$normal-text: $base-font;
+$span-text: $roboto;
+
+$button-font: $base-font;
+$input-font: $roboto;

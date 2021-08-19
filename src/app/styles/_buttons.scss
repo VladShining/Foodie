@@ -1,15 +1,19 @@
 $button-width: calc(2vh + 3vw + 50px);
 $button-height: calc(3vh + 1vw + 10px);
 $font-size-button-label: calc($button-width - 10px);
+
 %btn {
   border: none;
   outline: none;
   width: $button-width;
   min-width: fit-content;
-  min-height: 20px;
+  max-width: unset;
   height: $button-height;
+  min-height: 20px;
+  max-height: 40px;
+  font-style: italic;
   font-size: $font-size-button-label;
-  font-family: $foodiesFont;
+  font-family: $button-font;
   color: $button-fonts-color;
   text-transform: capitalize;
   text-shadow: none;
@@ -29,15 +33,6 @@ $font-size-button-label: calc($button-width - 10px);
     color: $button-fonts-active-color;
     box-shadow: $shadow-gradiant-inside;
     cursor: progress;
-  }
-  &.primary {
-    background: $primary-button-color;
-  }
-  &.secondary {
-    background: $secondary-button-color;
-  }
-  &.tertiary {
-    background: $tertiary-button-color;
   }
   &:disabled {
     background: $disabled-button-color;

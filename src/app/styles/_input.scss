@@ -1,13 +1,13 @@
-input,
-select,
-textarea {
+%input {
   margin: 1em 1em;
+  width: 80%;
   border: none;
   padding: 7px;
   outline: none;
+  font-family: $input-font;
+  font-style: italic;
   box-sizing: border-box;
   border-radius: 5px;
-  border: solid 1px white;
   background: #ffffffaa;
   box-shadow: inset 5px 5px 11px #c8c9cc, inset -5px -5px 11px #ffffff;
   color: $sunny;
@@ -18,9 +18,23 @@ textarea {
   }
   //   font-size: 50%;
 }
+%input-underline {
+  @extend %input;
+  background: transparent;
+  border-bottom: 1px solid $dark-color;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 3px;
+}
+input,
+select,
+textarea {
+  @extend %input;
+}
 input[type="color"] {
   padding: 0;
 }
+
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
@@ -29,10 +43,12 @@ textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
-select:-webkit-autofill:focus {
+select:-webkit-autofill:focus,
+input:-internal-autofill-selected {
   border: none;
+  background: red !important;
   -webkit-text-fill-color: $sunny;
-  // transition: background-color 5000s ease-in-out 0s;
+  @extend %input;
 }
 ::placeholder {
   color: $sunny;

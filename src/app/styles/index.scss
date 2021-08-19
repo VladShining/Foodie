@@ -7,7 +7,6 @@
 @import "text.scss";
 @import "input.scss";
 @import "modal.scss";
-@import "fullcalendar.scss";
 @import "container.scss";
 
 * {
@@ -30,4 +29,5 @@
 }
 a {
   color: inherit;
+  text-shadow: inherit;
 }

@@ -7,9 +7,9 @@ $sidenav-menu-height: 60px;
 
 //FONT
 $title-font-size: calc(1vh + 2vw + 5px);
-$subtitle-font-size: 3em;
-$chapter-font-size: 2em;
-$paragraph-font-size: 1.5em;
+$subtitle-font-size: calc(1vh + 1.5vw + 5px);
+$chapter-font-size: calc(1vh + 1vw + 5px);
+$paragraph-font-size: calc(1vh + 1vw + 2px);
 $subparagraph-font-size: 1.25em;
 $subsubpara-font-size: 1.25em;
 $text-font-size: 1em;
