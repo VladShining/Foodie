@@ -11,6 +11,48 @@ import { firebaseAuth, firebaseStore } from 'src/environments/firebase';
 })
 export class UserProfilComponent implements OnInit {
   user: User;
+  people: string[] = [
+    'vkjdfnv',
+    'fidj',
+    'voifdioufvhdiuhui',
+    'iovdfiuhdfiuh',
+    'viudfhvdiufvh',
+    'vkjdfnv',
+    'fidj',
+    'voifdioufvhdiuhui',
+    'iovdfiuhdfiuh',
+    'viudfhvdiufvh',
+    'vkjdfnv',
+    'fidj',
+    'voifdioufvhdiuhui',
+    'iovdfiuhdfiuh',
+    'viudfhvdiufvh',
+    'vkjdfnv',
+    'fidj',
+    'voifdioufvhdiuhui',
+    'iovdfiuhdfiuh',
+    'viudfhvdiufvh',
+    'vkjdfnv',
+    'fidj',
+    'voifdioufvhdiuhui',
+    'iovdfiuhdfiuh',
+    'viudfhvdiufvh',
+    'vkjdfnv',
+    'fidj',
+    'voifdioufvhdiuhui',
+    'iovdfiuhdfiuh',
+    'viudfhvdiufvh',
+    'vkjdfnv',
+    'fidj',
+    'voifdioufvhdiuhui',
+    'iovdfiuhdfiuh',
+    'viudfhvdiufvh',
+    'vkjdfnv',
+    'fidj',
+    'voifdioufvhdiuhui',
+    'iovdfiuhdfiuh',
+    'viudfhvdiufvh',
+  ];
   editMode: boolean = false;
   constructor(private userProfil: UserProfilService) {
     this.user = { email: '', firstName: '', lastName: '', password: '******' };

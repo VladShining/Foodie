@@ -16,7 +16,6 @@
     box-shadow: unset;
     border: solid 1px $font-color;
   }
-  //   font-size: 50%;
 }
 %input-underline {
   @extend %input;
@@ -27,7 +26,6 @@
   padding: 3px;
 }
 input,
-select,
 textarea {
   @extend %input;
 }
@@ -45,9 +43,10 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus,
 input:-internal-autofill-selected {
-  border: none;
-  background: red !important;
   -webkit-text-fill-color: $sunny;
+  box-shadow: none;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset;
+  transition: background-color 5000s ease-in-out 0s;
   @extend %input;
 }
 ::placeholder {

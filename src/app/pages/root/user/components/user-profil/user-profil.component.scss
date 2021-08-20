@@ -1,3 +1,5 @@
+@import "colors.scss";
+
 .user {
   display: flex;
   flex-direction: row;
@@ -13,6 +15,10 @@
 }
 .container > .container {
   padding: 0;
+  border-left: dotted 1px $sunny;
+  div {
+    padding-left: 0.5em;
+  }
 }
 select {
   min-width: 148px;

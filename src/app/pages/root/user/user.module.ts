@@ -7,10 +7,19 @@ import { UserFormComponent } from './components/user-form/user-form.component';
 import { UserProfilComponent } from './components/user-profil/user-profil.component';
 import { ModalModule } from 'angular-custom-modal';
 import { UserProfilService } from './services/user-profil.service';
+import { UserContactService } from './services/user-contact.service';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [UserListComponent, UserFormComponent, UserProfilComponent],
-  imports: [ModalModule, CommonModule, UserRoutingModule],
-  providers: [UserProfilService],
+  imports: [
+    ModalModule,
+    CommonModule,
+    UserRoutingModule,
+    FormsModule,
+    NgSelectModule,
+  ],
+  providers: [UserProfilService, UserContactService],
 })
 export class UserModule {}

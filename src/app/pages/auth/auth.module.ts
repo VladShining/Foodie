@@ -9,6 +9,7 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { SigninLostComponent } from './signin-lost/signin-lost.component';
 import { ModalModule } from 'angular-custom-modal';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [SigninComponent, SignupComponent, SigninLostComponent],
@@ -19,6 +20,7 @@ import { ModalModule } from 'angular-custom-modal';
     NgxSpinnerModule,
     ModalModule,
     AuthRoutingModule,
+    NgSelectModule,
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
