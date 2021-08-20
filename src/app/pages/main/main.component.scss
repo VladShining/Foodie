@@ -1,4 +1,5 @@
 @import "../../styles/colors";
+@import "../../styles/fonts";
 
 .main {
   text-align: center;
@@ -7,11 +8,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.emojy {
   font-size: calc(1vw + 1vh + 12px);
+}
+.title {
   letter-spacing: 7px;
-  font-family: "Roboto Mono";
+  font-family: $base-font;
   color: $sunny;
   margin: 1em 0;
 }

@@ -10,5 +10,6 @@ export class MainComponent implements OnInit {
   linkNca49() {
     window.open(`https://nca-49.web.app`);
   }
+
   ngOnInit(): void {}
 }

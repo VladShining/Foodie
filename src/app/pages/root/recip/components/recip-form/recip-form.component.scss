@@ -6,3 +6,7 @@ textarea {
 .form {
   width: 300px;
 }
+.flexibleHori {
+  align-items: stretch;
+  flex-wrap: wrap;
+}

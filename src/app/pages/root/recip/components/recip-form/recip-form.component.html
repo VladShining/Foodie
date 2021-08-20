@@ -3,24 +3,31 @@
 <div class="flexibleHori">
 <div class="form">
 <form #recip="ngForm" (ngSubmit)="onSubmit(recip)">
+  <p>Titre :</p>
   <input class="form-control" name="name" ngModel id="name" type="text" placeholder="nom" />
+  <p>Titre :</p>
   <input class="form-control" name="tag" ngModel id="tag" type="text" placeholder="tag" />
+  <p>Titre :</p>
   <input class="form-control" name="categorie" ngModel id="categorie" type="text" placeholder="categorie" />
+  <p>Titre :</p>
   <input class="form-control" name="time" ngModel id="time" type="text" placeholder="temp" />
-  <textarea id="recip" type="text" placeholder="recette"></textarea>
+  <p>Titre :</p>
+  <input class="form-control" name="time" ngModel id="time" type="text" placeholder="temp" />
   <button type="submit">Submit</button>
 </form>
 </div>
 <div class="form">
   <form #recip="ngForm" (ngSubmit)="onSubmit(recip)">
-    <input class="form-control" name="name" ngModel id="name" type="text" placeholder="nom" />
-    <input class="form-control" name="tag" ngModel id="tag" type="text" placeholder="tag" />
-    <input class="form-control" name="categorie" ngModel id="categorie" type="text" placeholder="categorie" />
-    <input class="form-control" name="time" ngModel id="time" type="text" placeholder="temp" />
+  <p>Titre :</p>
     <textarea id="recip" type="text" placeholder="recette"></textarea>
-    <button type="submit">Submit</button>
   </form>
   </div>
+  <div class="form">
+    <form #recip="ngForm" (ngSubmit)="onSubmit(recip)">
+    <p>Titre :</p>
+      <textarea id="recip" type="text" placeholder="recette"></textarea>
+    </form>
+    </div>
 </div>
 </div>
 <modal #successSave >

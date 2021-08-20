@@ -4,12 +4,11 @@ import { Component, OnInit } from '@angular/core';
   selector: 'footer-app',
   template: `<div class="container footer flexible">
     <div class="git">
-      <a href="https://github.com/VladShining/Foodie">
-        <img
-          src="../../assets/images/GitHub-Mark-120px-plus.png"
-          alt="github"
-        />
-      </a>
+      <img
+        (click)="linkGithub()"
+        src="../../assets/images/GitHub-Mark-120px-plus.png"
+        alt="github"
+      />
     </div>
     <div>&copy;{{ year }} nca-49</div>
   </div>`,
@@ -18,7 +17,9 @@ import { Component, OnInit } from '@angular/core';
 export class FooterComponent implements OnInit {
   year: string = '';
   constructor() {}
-
+  linkGithub() {
+    window.open(`https://github.com/VladShining/Foodie`);
+  }
   ngOnInit() {
     const year = new Date();
     this.year = year.getFullYear().toString();
