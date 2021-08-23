@@ -1,4 +1,4 @@
-$button-width: calc(2vh + 3vw + 50px);
+$button-width: calc(2vh + 2.5vw + 50px);
 $button-height: calc(3vh + 1vw + 10px);
 $font-size-button-label: calc($button-width - 10px);
 
@@ -42,7 +42,7 @@ $font-size-button-label: calc($button-width - 10px);
 }
 button {
   @extend %btn;
-  border-radius: 7px;
+  border-radius: 5px;
   background-color: transparent;
   overflow-x: hidden;
 }

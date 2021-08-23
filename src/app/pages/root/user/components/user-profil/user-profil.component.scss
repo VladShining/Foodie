@@ -15,9 +15,9 @@
 }
 .container > .container {
   padding: 0;
-  border-left: dotted 1px $sunny;
   div {
     padding-left: 0.5em;
+    border-left: dotted 1px $sunny;
   }
 }
 select {

@@ -22,11 +22,21 @@
         <p>Alias :</p> 
                    
         <ng-select notFoundText="Aucun alias trouvée" [items]="people"
+        bindValue="name"
+        bindLabel="labele"
         
         ></ng-select>
             
         <p>Numero :</p>
-        <input type="number" maxlength="10" max="10"/>
+        <ng-select                 
+                    [multiple]="true"
+                    [addTag]="true"
+                    [selectOnTab]="true"
+                    [isOpen]="false"
+                    placeholder="Saisissez puis entrer"
+                    notFoundText="Aucun numéro"
+                    addTagText="Ajouter un nouvel élément"
+                ></ng-select>
       
         <p>Rôle : </p>
         <input />

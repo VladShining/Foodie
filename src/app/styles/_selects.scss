@@ -3,11 +3,28 @@
   border: 1px solid white;
   border-radius: 5px;
   margin: calc(1em - 3px);
-  height: calc(2em + 2px);
+  // height: calc(2em + 2px);
+  color: $sunny;
+}
+.ng-select.ng-select-multiple .ng-select-container {
+  height: unset;
+  .ng-clear-wrapper {
+    display: none;
+  }
+  .ng-arrow-wrapper {
+    display: none;
+  }
+}
+.ng-select.ng-select-multiple
+  .ng-select-container
+  .ng-value-container
+  .ng-input
+  > input {
   color: $sunny;
 }
 .ng-select .ng-select-container {
-  min-height: 0;
+  min-height: 2em;
+
   border: none;
 }
 .ng-select.ng-select-single .ng-select-container {
@@ -60,4 +77,12 @@
   background-color: #ffffffaa;
   border-radius: 4px;
   align-items: center;
+}
+.ng-select.ng-select-multiple
+  .ng-select-container
+  .ng-value-container
+  .ng-placeholder {
+  top: unset;
+  padding-bottom: 5px;
+  padding-left: 3px;
 }
