@@ -7,7 +7,15 @@ import { User } from '../interface/user';
 export class UserProfilService {
   user: User;
   constructor(private auth: AuthService) {
-    this.user = { firstName: '', email: '', password: '', lastName: '' };
+    this.user = {
+      firstName: '',
+      email: '',
+      password: '',
+      lastName: '',
+      adresse: '',
+      numero: [''],
+      citation: '',
+    };
     this.initUser();
   }
   initUser() {
@@ -17,7 +25,7 @@ export class UserProfilService {
       ?.doc(userId)
       .get()
       .then((user) => {
-        userId && sessionStorage.setItem(userId, JSON.stringify(user.data()));
+        // userId && sessionStorage.setItem(userId, JSON.stringify(user.data()));
       });
   }
   getUserProfilOnStorage(UserId: any) {
@@ -36,5 +44,18 @@ export class UserProfilService {
     return currentUser;
   }
 
-  saveUser() {}
+  saveUser(
+    name: string,
+    lastName: string,
+    numero: string[],
+    adresse: string,
+    citation: string
+  ) {
+    firebaseStore()
+      .collection('users')
+      .doc(firebaseAuth().currentUser?.uid)
+      .set({ name, lastName, numero, adresse, citation }, { merge: true })
+      .then()
+      .catch();
+  }
 }

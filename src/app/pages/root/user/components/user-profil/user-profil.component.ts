@@ -12,53 +12,32 @@ import { firebaseAuth, firebaseStore } from 'src/environments/firebase';
 export class UserProfilComponent implements OnInit {
   user: User;
   people: string[] = [
-    'vkjdfnv',
-    'fidj',
-    'voifdioufvhdiuhui',
-    'iovdfiuhdfiuh',
-    'viudfhvdiufvh',
-    'vkjdfnv',
-    'fidj',
-    'voifdioufvhdiuhui',
-    'iovdfiuhdfiuh',
-    'viudfhvdiufvh',
-    'vkjdfnv',
-    'fidj',
-    'voifdioufvhdiuhui',
-    'iovdfiuhdfiuh',
-    'viudfhvdiufvh',
-    'vkjdfnv',
-    'fidj',
-    'voifdioufvhdiuhui',
-    'iovdfiuhdfiuh',
-    'viudfhvdiufvh',
-    'vkjdfnv',
-    'fidj',
-    'voifdioufvhdiuhui',
-    'iovdfiuhdfiuh',
-    'viudfhvdiufvh',
-    'vkjdfnv',
-    'fidj',
-    'voifdioufvhdiuhui',
-    'iovdfiuhdfiuh',
-    'viudfhvdiufvh',
-    'vkjdfnv',
-    'fidj',
-    'voifdioufvhdiuhui',
-    'iovdfiuhdfiuh',
-    'viudfhvdiufvh',
-    'vkjdfnv',
-    'fidj',
-    'voifdioufvhdiuhui',
-    'iovdfiuhdfiuh',
-    'viudfhvdiufvh',
+    'Empathique',
+    'Travaillomane',
+    'Persévérant',
+    'Promoteur',
+    'Rêveur',
+    'Rebelle',
   ];
+  numero = [];
+  perso = '';
   editMode: boolean = false;
   constructor(private userProfil: UserProfilService) {
-    this.user = { email: '', firstName: '', lastName: '', password: '******' };
+    this.user = {
+      email: '',
+      firstName: '',
+      lastName: '',
+      password: '******',
+      adresse: '',
+      numero: [''],
+      citation: '',
+    };
   }
   @ViewChild('firstName') firstName: ElementRef | undefined;
   @ViewChild('lastName') lastName: ElementRef | undefined;
+  // @ViewChild('numero') numero: ElementRef | undefined;
+  @ViewChild('adresse') adresse: ElementRef | undefined;
+  @ViewChild('citation') citation: ElementRef | undefined;
   @ViewChild('pass') pass: ElementRef | undefined;
   @ViewChild('userWelcome', { static: true }) userWelcome:
     | ModalComponent
@@ -92,8 +71,13 @@ export class UserProfilComponent implements OnInit {
       .get()
       .then((doc) => (pass = doc.data()?.password));
     if (pass === this.pass?.nativeElement.value) {
-      this.saveFirstName(this.firstName?.nativeElement.value);
-      this.saveLastName(this.lastName?.nativeElement.value);
+      this.userProfil.saveUser(
+        this.firstName?.nativeElement.value,
+        this.lastName?.nativeElement.value,
+        [''],
+        this.adresse?.nativeElement.value,
+        this.citation?.nativeElement.value
+      );
       this.pass && (this.pass.nativeElement.value = '');
       this.saveUserConfirmation?.close();
       this.successSaveUser?.open();
@@ -103,7 +87,6 @@ export class UserProfilComponent implements OnInit {
       this.pass && (this.pass.nativeElement.value = '');
       this.errorSaveUser?.open();
     }
-    // window.location.reload();
   }
   initUser(user: any) {
     if (
@@ -116,20 +99,7 @@ export class UserProfilComponent implements OnInit {
       this.editUser();
     } else this.editMode = false;
   }
-  saveFirstName(val: string) {
-    firebaseStore()
-      .collection('users')
-      .doc(firebaseAuth().currentUser?.uid)
-      .set({ firstName: val }, { merge: true })
-      .then()
-      .catch();
-  }
-  saveLastName(val: string) {
-    firebaseStore()
-      .collection('users')
-      .doc(firebaseAuth().currentUser?.uid)
-      .set({ lastName: val }, { merge: true })
-      .then()
-      .catch();
+  reload() {
+    setTimeout(() => window.location.reload(), 100);
   }
 }

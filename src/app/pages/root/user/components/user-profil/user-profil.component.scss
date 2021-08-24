@@ -29,3 +29,10 @@ textarea {
   height: 30vh;
   resize: none;
 }
+.submit {
+  position: fixed;
+  width: 95vw;
+  display: flex;
+  justify-content: center;
+  bottom: 15px;
+}

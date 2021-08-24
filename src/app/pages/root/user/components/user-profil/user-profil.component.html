@@ -10,43 +10,50 @@
         <input type="text" value="{{user.email}}" disabled/>
         <p>Password : </p>
         <input type="password" placeholder="Mot de passe !!!" [disabled] = !editMode #pass/>
-        <br>
-        <button (click) = "editMode=false"  *ngIf="editMode">Annuler</button>
-        <button (click) = "editUser()" *ngIf="!editMode">Edit</button>
-        <button (click) = "saveUserConfirmation.open()" *ngIf="editMode">Save</button>
     </div>
   </div>
   <div class="container">
-    <h1>Contact</h1>
+    <h1>Coordonnée</h1>
     <div>
-        <p>Alias :</p> 
-                   
-        <ng-select notFoundText="Aucun alias trouvée" [items]="people"
-        bindValue="name"
-        bindLabel="labele"
-        
-        ></ng-select>
-            
         <p>Numero :</p>
         <ng-select                 
                     [multiple]="true"
+                    [disabled] = !editMode
                     [addTag]="true"
                     [selectOnTab]="true"
                     [isOpen]="false"
                     placeholder="Saisissez puis entrer"
                     notFoundText="Aucun numéro"
                     addTagText="Ajouter un nouvel élément"
-                ></ng-select>
+                    [(ngModel)]="numero"
+                   
+        ></ng-select>
       
-        <p>Rôle : </p>
-        <input />
-       
-        <p>Description : </p>
-        <textarea></textarea>
-        <br>
-       
+        <p>Adresse : </p>
+        <input id="adresse"  type="text" value="{{user.adresse}}" [disabled] = !editMode #adresse/>
     </div>
   </div>
+  <div class="container">
+    <h1>Autre</h1>
+    <div>
+        <p>Personalité :</p>  
+        <ng-select notFoundText="Aucun alias trouvée" [items]="people" [disabled] = !editMode [(ngModel)]="perso"
+        bindValue="name"
+        bindLabel="labele"
+        ></ng-select>
+
+        <p>Citation : </p>
+        <textarea id="citation" value="{{user.citation}}" [disabled] = !editMode #citation></textarea>
+        <br>
+    </div>
+    <br>
+  </div>
+  <br>
+</div>
+<div class="submit">
+  <button (click) = "editMode=false"  *ngIf="editMode">Annuler</button>
+  <button (click) = "editUser()" *ngIf="!editMode">Edit</button>
+  <button (click) = "saveUserConfirmation.open()" *ngIf="editMode">Save</button>
 </div>
 <modal #userWelcome >
   <ng-template #modalHeader>
@@ -75,7 +82,7 @@
   </ng-template>
   <ng-template #modalBody>
     <p>utlisateur enregistrer avec succes</p>
-    <button (click)="successSaveUser.close()">ok</button>
+    <button (click)="successSaveUser.close();reload()">ok</button>
   </ng-template>
 </modal>
 <modal #errorSaveUser >

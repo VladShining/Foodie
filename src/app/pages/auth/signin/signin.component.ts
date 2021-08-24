@@ -53,6 +53,7 @@ export class SigninComponent implements OnInit {
     this.authService.signInUser(email, password).then(
       () => {
         this.router.navigate(['/root']);
+        this.authService.collectDataFromFirebase();
         this.spinner.hide();
       },
       () => {

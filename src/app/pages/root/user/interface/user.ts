@@ -4,4 +4,7 @@ export interface User {
   categorie?: string[];
   email: string;
   password: string;
+  numero: string[];
+  adresse: string;
+  citation: string;
 }

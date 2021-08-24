@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore';
+import { readDataInFirebase } from '../../environments/firebase';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
@@ -54,7 +55,11 @@ export class AuthService {
         );
     });
   }
-
+  collectDataFromFirebase() {
+    readDataInFirebase().then((e) => {
+      sessionStorage.setItem('calorie', JSON.stringify(e));
+    });
+  }
   signOutUser() {
     firebase.auth().signOut();
   }
