@@ -15,6 +15,7 @@ export class UserProfilService {
       adresse: '',
       numero: [''],
       citation: '',
+      perso: '',
     };
     this.initUser();
   }
@@ -49,12 +50,16 @@ export class UserProfilService {
     lastName: string,
     numero: string[],
     adresse: string,
-    citation: string
+    citation: string,
+    perso: string
   ) {
     firebaseStore()
       .collection('users')
       .doc(firebaseAuth().currentUser?.uid)
-      .set({ name, lastName, numero, adresse, citation }, { merge: true })
+      .set(
+        { name, lastName, numero, adresse, citation, perso },
+        { merge: true }
+      )
       .then()
       .catch();
   }

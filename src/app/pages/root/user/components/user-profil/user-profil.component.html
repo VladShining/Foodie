@@ -25,7 +25,7 @@
                     placeholder="Saisissez puis entrer"
                     notFoundText="Aucun numéro"
                     addTagText="Ajouter un nouvel élément"
-                    [(ngModel)]="numero"
+                    [(ngModel)]="user.numero"
                    
         ></ng-select>
       
@@ -37,9 +37,7 @@
     <h1>Autre</h1>
     <div>
         <p>Personalité :</p>  
-        <ng-select notFoundText="Aucun alias trouvée" [items]="people" [disabled] = !editMode [(ngModel)]="perso"
-        bindValue="name"
-        bindLabel="labele"
+        <ng-select notFoundText="Aucun alias trouvée" [items]="people" [disabled] = !editMode [(ngModel)]="user.perso"
         ></ng-select>
 
         <p>Citation : </p>

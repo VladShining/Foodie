@@ -7,4 +7,5 @@ export interface User {
   numero: string[];
   adresse: string;
   citation: string;
+  perso: string;
 }

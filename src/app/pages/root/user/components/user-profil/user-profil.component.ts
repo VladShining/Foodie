@@ -19,8 +19,8 @@ export class UserProfilComponent implements OnInit {
     'Rêveur',
     'Rebelle',
   ];
-  numero = [];
-  perso = '';
+  // numero = [];
+  // perso!: string;
   editMode: boolean = false;
   constructor(private userProfil: UserProfilService) {
     this.user = {
@@ -31,11 +31,11 @@ export class UserProfilComponent implements OnInit {
       adresse: '',
       numero: [''],
       citation: '',
+      perso: '',
     };
   }
   @ViewChild('firstName') firstName: ElementRef | undefined;
   @ViewChild('lastName') lastName: ElementRef | undefined;
-  // @ViewChild('numero') numero: ElementRef | undefined;
   @ViewChild('adresse') adresse: ElementRef | undefined;
   @ViewChild('citation') citation: ElementRef | undefined;
   @ViewChild('pass') pass: ElementRef | undefined;
@@ -56,6 +56,10 @@ export class UserProfilComponent implements OnInit {
       this.user.email = user.email;
       this.user.firstName = user.firstName;
       this.user.lastName = user.lastName;
+      this.user.numero = user.numero;
+      this.user.citation = user.citation;
+      this.user.adresse = user.adresse;
+      this.user.perso = user.perso;
       this.initUser(user);
     });
   }
@@ -74,9 +78,10 @@ export class UserProfilComponent implements OnInit {
       this.userProfil.saveUser(
         this.firstName?.nativeElement.value,
         this.lastName?.nativeElement.value,
-        [''],
+        this.user.numero,
         this.adresse?.nativeElement.value,
-        this.citation?.nativeElement.value
+        this.citation?.nativeElement.value,
+        this.user.perso
       );
       this.pass && (this.pass.nativeElement.value = '');
       this.saveUserConfirmation?.close();

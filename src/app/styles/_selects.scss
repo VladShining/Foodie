@@ -90,3 +90,21 @@
   background-color: transparent;
   box-shadow: unset;
 }
+.ng-select.ng-select-multiple
+  .ng-select-container
+  .ng-value-container
+  .ng-value {
+  font-size: 0.9em;
+  margin-bottom: 5px;
+  color: $sunny;
+  background-color: transparent;
+  border-radius: 2px;
+  margin-right: 5px;
+}
+.ng-select.ng-select-multiple.ng-select-disabled
+  > .ng-select-container
+  .ng-value-container
+  .ng-value {
+  background-color: transparent;
+  border: none;
+}
