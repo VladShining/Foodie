@@ -1,12 +1,27 @@
 textarea {
   width: 80%;
-  height: 20vh;
+  height: 70%;
   resize: none;
 }
 .form {
-  width: 300px;
+  width: 270px;
+  border-left: dotted 1px #ff5e00;
+  padding-left: 0.5em;
 }
 .flexibleHori {
   align-items: stretch;
   flex-wrap: wrap;
+}
+.recipForm > form {
+  width: 100%;
+  & > button {
+    position: fixed;
+    bottom: 0;
+    right: calc(50vw - 2vh - 2.5vw - 50px);
+  }
+}
+@media screen and (max-width: 660px) {
+  button {
+    right: 0 !important;
+  }
 }

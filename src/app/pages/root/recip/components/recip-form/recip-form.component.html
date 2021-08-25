@@ -1,41 +1,74 @@
 <div class="container">
 <h1>Nouveau recette</h1>
-<div class="flexibleHori">
-<div class="form">
-<form #recip="ngForm" (ngSubmit)="onSubmit(recip)">
-  <p>Nom :</p>
-  <input class="form-control" name="name" ngModel id="name" type="text" placeholder="nom" />
-  <p>Tag :</p>
-  <input class="form-control" name="tag" ngModel id="tag" type="text" placeholder="tag" />
-  <p>Catégorie :</p>
-  <input class="form-control" name="categorie" ngModel id="categorie" type="text" placeholder="categorie" />
-  <p>Temp :</p>
-  <input class="form-control" name="time" ngModel id="time" type="text" placeholder="temp" />
-  <p>Titre :</p>
-  <input class="form-control" name="time" ngModel id="time" type="text" placeholder="temp" />
-  <button type="submit">Submit</button>
-</form>
-</div>
-<div class="form">
-  <form #recip="ngForm" (ngSubmit)="onSubmit(recip)">
-  <p>Titre :</p>
-    <textarea id="recip" type="text" placeholder="recette"></textarea>
+<div class="recipForm">
+  <form #recip="ngForm" (ngSubmit)="onSubmit(recip)" class="flexibleHori">
+          <div class="form">
+              <p>Nom :</p>
+              <input class="form-control" name="name" ngModel id="name" type="text" placeholder="nom" />
+
+              <p>Tag :</p>
+                <input class="form-control" name="tag" ngModel id="tag" type="text" placeholder="tag" />
+
+              <p>Catégorie :</p>
+                <ng-select notFoundText="Aucun catégorie trouvée" [items]="allcategory" [(ngModel)]="category" name="category"
+                >
+                </ng-select>
+
+              <p>Temp de préparation :</p>
+                <input id="time1" placeholder="hh:mm" [(ngModel)]="cleave1" name="time1"  #time1 />
+
+              <p>Temp de cuisson :</p>
+                <input id="time2" placeholder="hh:mm" [(ngModel)]="cleave2" name="time2"  #time2 />
+
+          </div>
+
+          <div class="form">
+              <p>Ingrédients :</p>
+              <ng-select                 
+              [multiple]="true"
+              [addTag]="true"
+              [selectOnTab]="true"
+              [isOpen]="false"
+              placeholder="Saisissez puis entrer"
+              notFoundText="Aucun ingrédient"
+              addTagText="Ajouter une nouvelle ingrédient"
+              [(ngModel)]="ingredient"
+              name="ingredient"></ng-select>
+          </div>
+
+          <div class="form">
+            <p>Préparation :</p>
+              <textarea id="postrecip" type="text" placeholder="recette"></textarea>
+          </div>
+          <div class="form">
+            <p>Cuisson :</p>
+              <textarea id="recip" type="text" placeholder="recette"></textarea>
+          </div>
+          <div class="form">
+            <p>Décoration :</p>
+              <textarea id="afterrecip" type="text" placeholder="recette"></textarea>
+          </div>
+              <br><br>
+
+    <button type="submit">submit</button>
   </form>
-  </div>
-  <div class="form">
-    <form #recip="ngForm" (ngSubmit)="onSubmit(recip)">
-    <p>Titre :</p>
-      <textarea id="recip" type="text" placeholder="recette"></textarea>
-    </form>
-    </div>
 </div>
 </div>
 <modal #successSave >
     <ng-template #modalHeader>
-      <h3>Save success</h3>
+      <h3>Recette enregistrer</h3>
     </ng-template>
     <ng-template #modalBody>
       <p>sauvegarde effectuer avec succes</p>
       <button (click)="successSave.close();">ok</button>
     </ng-template>
-  </modal>
+</modal>
+<modal #errorSave >
+  <ng-template #modalHeader>
+    <h3>Recette erreur</h3>
+  </ng-template>
+  <ng-template #modalBody>
+    <p>erreur de sauvegarde</p>
+    <button (click)="errorSave.close();">Retour</button>
+  </ng-template>
+</modal>

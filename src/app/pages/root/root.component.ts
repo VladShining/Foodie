@@ -1,5 +1,3 @@
-import 'cleave.js/dist/cleave.js';
-declare var Cleave: any;
 import { Component, OnInit } from '@angular/core';
 import { Router, RouterOutlet } from '@angular/router';
 
@@ -13,24 +11,9 @@ import { routes } from './root-routing.module';
   animations: [fade],
 })
 export class RootComponent implements OnInit {
-  time1: any;
-  cleave: string = '';
   constructor(private router: Router) {}
-  show(ref: string) {
-    console.log(ref);
-  }
-  ngOnInit(): void {
-    // (<HTMLInputElement>document.getElementById('cleave')).value = '00:00';
-    // this.time1 = new Cleave('#cleave', {
-    //   time: true,
-    //   timePattern: ['h', 'm'],
-    // });
-    // this.time1 = new Cleave('#val', {
-    //   date: true,
-    //   delimiter: '/',
-    //   datePattern: ['d', 'm', 'Y'],
-    // });
-  }
+
+  ngOnInit(): void {}
   prepareRoute(outlet: RouterOutlet) {
     return (
       outlet &&

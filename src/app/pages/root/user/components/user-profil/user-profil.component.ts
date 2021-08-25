@@ -105,6 +105,6 @@ export class UserProfilComponent implements OnInit {
     } else this.editMode = false;
   }
   reload() {
-    setTimeout(() => window.location.reload(), 100);
+    setTimeout(() => window.location.reload(), 500);
   }
 }

@@ -38,13 +38,17 @@
 .ng-select div,
 .ng-select input,
 .ng-select span {
-  font-family: inherit;
+  font-family: "Roboto Mono", monospace;
+  font-size: 13.5px;
+  font-style: italic;
   color: $sunny;
 }
 .ng-select .ng-clear-wrapper .ng-clear {
   display: inline-block;
   text-decoration: none;
-  font-family: fantasy;
+  font-size: 1em;
+  font-family: "Roboto Mono", monospace;
+  font-style: italic;
   font-size: 1em;
 }
 .ng-dropdown-panel {

@@ -33,4 +33,15 @@ export class ListRecipService {
     });
     return allRecip;
   }
+  async getAllCategory() {
+    let allCategory: any;
+    await firebaseStore()
+      .collection('category')
+      .doc('category')
+      .get()
+      .then((category) => {
+        allCategory = category.data()?.plat;
+      });
+    return allCategory;
+  }
 }
