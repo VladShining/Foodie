@@ -46,7 +46,7 @@ export class UserProfilService {
   }
 
   saveUser(
-    name: string,
+    firstName: string,
     lastName: string,
     numero: string[],
     adresse: string,
@@ -57,7 +57,7 @@ export class UserProfilService {
       .collection('users')
       .doc(firebaseAuth().currentUser?.uid)
       .set(
-        { name, lastName, numero, adresse, citation, perso },
+        { firstName, lastName, numero, adresse, citation, perso },
         { merge: true }
       )
       .then()
