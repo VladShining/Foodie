@@ -10,6 +10,7 @@ import { AuthService } from 'src/app/service/auth.service';
   styleUrls: ['./signin.component.scss'],
 })
 export class SigninComponent implements OnInit {
+  spin: string = 'fire';
   src: string = '../../../../assets/images/!visibility.svg';
   signInForm!: FormGroup;
   errorMessages!: string;
@@ -47,6 +48,7 @@ export class SigninComponent implements OnInit {
     this.initForm();
   }
   onSubmit() {
+    this.randomSpin();
     this.spinner.show();
     const email = this.signInForm.get('email')?.value;
     const password = this.signInForm.get('password')?.value;
@@ -61,5 +63,52 @@ export class SigninComponent implements OnInit {
         this.errorMessages = 'Login invalid';
       }
     );
+  }
+  randomSpin() {
+    const spins = [
+      'square-jelly-box',
+      'ball-8bits',
+      'ball-atom',
+      'ball-beat',
+      'ball-circus',
+      'ball-climbing-dot',
+      'ball-clip-rotate',
+      'ball-clip-rotate-multiple',
+      'ball-clip-rotate-pulse',
+      'ball-elastic-dots',
+      'ball-fall',
+      'ball-fussion',
+      'ball-grid-beat',
+      'ball-grid-pulse',
+      'ball-newton-cradle',
+      'ball-pulse',
+      'ball-pulse-rise',
+      'ball-pulse-sync',
+      'ball-rotate',
+      'ball-running-dots',
+      'ball-scale',
+      'ball-scale-multiple',
+      'ball-scale-pulse',
+      'ball-scale-ripple',
+      'ball-scale-ripple-multiple',
+      'ball-spin',
+      'ball-spin-clockwise',
+      'ball-spin-clockwise-fade',
+      'ball-spin-clockwise-fade-rotating',
+      'ball-spin-fade',
+      'ball-spin-fade-rotating',
+      'ball-spin-rotate',
+      'ball-square-clockwise-spin',
+      'ball-square-spin',
+      'ball-triangle-path',
+      'ball-zig-zag',
+      'ball-zig-zag-deflect',
+      'cube-transition',
+      'fire',
+      'line-scale',
+      'line-scale-party',
+      'timer',
+    ];
+    this.spin = spins[Math.floor(Math.random() * spins.length)];
   }
 }
