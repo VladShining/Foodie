@@ -4,53 +4,69 @@
   <form #recip="ngForm" (ngSubmit)="onSubmit(recip)" class="flexibleHori">
           <div class="form">
               <p>Nom :</p>
-              <input class="form-control" name="name" ngModel id="name" type="text" placeholder="nom" />
+              <input class="form-control" name="name" ngModel id="name" type="text" placeholder="nom" required/>
 
               <p>Tag :</p>
-                <input class="form-control" name="tag" ngModel id="tag" type="text" placeholder="tag" />
+                <input class="form-control" name="tag" ngModel id="tag" type="text" placeholder="tag" required/>
 
               <p>Catégorie :</p>
-                <ng-select notFoundText="Aucun catégorie trouvée" [items]="allcategory" [(ngModel)]="category" name="category"
+                <ng-select notFoundText="Aucun catégorie trouvée" id="category" [items]="allcategory" [(ngModel)]="category" name="category" required
                 >
                 </ng-select>
 
               <p>Temp de préparation :</p>
-                <input id="time1" placeholder="hh:mm" [(ngModel)]="cleave1" name="time1"  #time1 />
+                <input id="time1" placeholder="hh:mm" [(ngModel)]="cleave1" name="time1" required #time1 />
 
               <p>Temp de cuisson :</p>
-                <input id="time2" placeholder="hh:mm" [(ngModel)]="cleave2" name="time2"  #time2 />
+                <input id="time2" placeholder="hh:mm" [(ngModel)]="cleave2" name="time2" required #time2 />
 
           </div>
 
           <div class="form">
               <p>Ingrédients :</p>
-              <ng-select                 
+              <ng-select   
+              id="ingredient"            
               [multiple]="true"
+              bindValue="label"
               [addTag]="true"
               [selectOnTab]="true"
-              [isOpen]="false"
+              [isOpen]="false" required
               placeholder="Saisissez puis entrer"
               notFoundText="Aucun ingrédient"
               addTagText="Ajouter une nouvelle ingrédient"
               [(ngModel)]="ingredient"
               name="ingredient"></ng-select>
+
+              <p>Ustensiles :</p>
+              <ng-select        
+              id="utensils" 
+              [multiple]="true"
+              [addTag]="true"
+              bindValue="label"
+              [selectOnTab]="true"
+              [isOpen]="false" required
+              placeholder="Saisissez puis entrer"
+              notFoundText="Aucun Ustensiles"
+              addTagText="Ajouter un ustensiles"
+              [(ngModel)]="utensils"
+              name="utensils"></ng-select>
           </div>
 
           <div class="form">
             <p>Préparation :</p>
-              <textarea id="postrecip" type="text" placeholder="recette"></textarea>
+              <textarea ngModel id="postrecip" type="text" placeholder="recette" name="postrecip" required></textarea>
           </div>
           <div class="form">
             <p>Cuisson :</p>
-              <textarea id="recip" type="text" placeholder="recette"></textarea>
+              <textarea ngModel id="recip" type="text" placeholder="recette" name="recip" required></textarea>
           </div>
           <div class="form">
             <p>Décoration :</p>
-              <textarea id="afterrecip" type="text" placeholder="recette"></textarea>
+              <textarea ngModel id="afterrecip" type="text" placeholder="recette" name="afterrecip"></textarea>
           </div>
               <br><br>
 
-    <button type="submit">submit</button>
+    <button type="submit" [disabled]="recip.invalid" >Enregistrer</button>
   </form>
 </div>
 </div>
@@ -60,7 +76,7 @@
     </ng-template>
     <ng-template #modalBody>
       <p>sauvegarde effectuer avec succes</p>
-      <button (click)="successSave.close();">ok</button>
+      <button (click)="successSave.close();reload()">ok</button>
     </ng-template>
 </modal>
 <modal #errorSave >
@@ -69,6 +85,6 @@
   </ng-template>
   <ng-template #modalBody>
     <p>erreur de sauvegarde</p>
-    <button (click)="errorSave.close();">Retour</button>
+    <button (click)="errorSave.close();reload()">Retour</button>
   </ng-template>
 </modal>

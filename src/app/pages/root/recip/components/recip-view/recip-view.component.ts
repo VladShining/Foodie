@@ -10,6 +10,7 @@ import { Recip } from '../../utils/recip';
 })
 export class RecipViewComponent implements OnInit {
   recip: Recip[];
+  ingre!: string;
   constructor(private recipService: UserRecipService) {
     this.recip = [
       {
@@ -17,10 +18,13 @@ export class RecipViewComponent implements OnInit {
         name: '',
         tag: '',
         category: '',
-        time: '',
+        time1: '',
+        time2: '',
+        afterrecip: '',
+        postrecip: '',
         recip: '',
-        ingredient: [''],
-        author: [''],
+        ingredient: [],
+        utensils: [],
       },
     ];
   }
@@ -34,14 +38,6 @@ export class RecipViewComponent implements OnInit {
     this.recipService.getUserRecip(user).then((recip) => {
       for (let i = 0; i < recip.length; i++) {
         this.recip[i] = {
-          id: '',
-          name: '',
-          tag: '',
-          category: '',
-          time: '',
-          recip: '',
-          ingredient: [''],
-          author: [''],
           ...recip[i],
         };
       }

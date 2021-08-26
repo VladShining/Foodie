@@ -16,7 +16,7 @@ $font-size-button-label: calc($button-width - 10px);
   font-family: $button-font;
   color: $button-fonts-color;
   text-transform: capitalize;
-  text-shadow: none;
+  text-shadow: 1px 1px $sunny;
   box-shadow: $shadow-gradiant;
   background-color: $button-color;
   margin: 1em 1em;
@@ -27,6 +27,7 @@ $font-size-button-label: calc($button-width - 10px);
     cursor: pointer;
     background-color: $button-hover-color;
     transition: all 0.5s;
+    text-shadow: none;
   }
   &:active {
     background-color: $button-active-color;

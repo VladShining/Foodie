@@ -14,13 +14,15 @@ export class RecipFormComponent implements OnInit {
   cleave1!: string;
   cleave2!: string;
   cleave: any;
-  allcategory: string[] = [''];
+  allcategory: string[] = [];
   category!: string;
   ingredient: string[] = [];
+  utensils: string[] = [];
   show(ref: string) {
     console.log(ref);
   }
   @ViewChild('successSave') successSave: ModalComponent | undefined;
+  @ViewChild('errorSave') errorSave: ModalComponent | undefined;
   @ViewChild('recip') recip: Form | undefined;
   constructor(private recipService: ListRecipService) {}
 
@@ -37,8 +39,13 @@ export class RecipFormComponent implements OnInit {
     this.recipService.getAllCategory().then((e) => (this.allcategory = e));
   }
   onSubmit(recip: any) {
-    // this.recipService.createRecip(recip.value);
-    console.log(recip);
-    this.successSave?.open();
+    this.recipService
+      .createRecip(recip.value)
+      .then(() => this.successSave?.open())
+      .catch(() => this.errorSave?.open());
+    // (<HTMLInputElement>document.getElementById('name')).value = '';
+  }
+  reload() {
+    setTimeout(() => window.location.reload(), 500);
   }
 }

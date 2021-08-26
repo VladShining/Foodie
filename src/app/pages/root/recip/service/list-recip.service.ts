@@ -8,15 +8,15 @@ import { v4 as uuidv4 } from 'uuid';
 export class ListRecipService {
   constructor() {}
 
-  createRecip(recip: Recip) {
+  async createRecip(recip: Recip) {
     const recipId = uuidv4();
     const userId = firebaseAuth().currentUser?.uid;
-    firebaseStore()
+    return firebaseStore()
       .collection('recip')
       .doc(recipId)
       .set({ ...recip, id: userId }, { merge: true })
       .then(() => {})
-      .catch();
+      .catch(() => {});
   }
   async getRecip(recipId: any) {
     return firebaseStore()

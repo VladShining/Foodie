@@ -2,11 +2,16 @@
 <h1>Mes Recettes</h1>
 <ul>
     <li *ngFor="let item of recip">
-        <p> id : {{item.id}}</p>
-        <p>name : {{item.name}}</p>
-        <p>author : {{item.author}}</p>
-        <p>recip : {{item.recip}}</p>
-        <p>tag : {{item.tag}}</p>
+        <p>Nom : {{item.name}}</p>
+        <p>Tag : {{item.tag}}</p>
+        <p>Temp de pre : {{item.time1}} min</p>
+        <p>Temp de cui : {{item.time2}} min</p>
+        <p>Prepa : {{item.postrecip}}</p>
+        <p>Cuisson : {{item.recip}}</p>
+        <p>Deco : {{item.afterrecip}}</p>
+        <p>Ingrédients : {{item.ingredient}}</p>
+        <p>Ustensiles : {{item.utensils}}</p>
+        <br>
 </li>
 </ul>
 </div>
