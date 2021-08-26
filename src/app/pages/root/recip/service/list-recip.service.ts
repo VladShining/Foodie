@@ -40,7 +40,7 @@ export class ListRecipService {
       .doc('category')
       .get()
       .then((category) => {
-        allCategory = category.data()?.plat;
+        allCategory = category.data()?.Recettes_par_type_de_plat;
       });
     return allCategory;
   }
