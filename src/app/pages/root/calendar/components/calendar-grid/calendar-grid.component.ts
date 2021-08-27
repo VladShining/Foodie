@@ -13,6 +13,15 @@ import {
 })
 export class CalendarGridComponent {
   view: CalendarView = CalendarView.Month;
+  day: string[] = [
+    'Lundi',
+    'Mardi',
+    'Mercredi',
+    'Jeudi',
+    'Vendredi',
+    'Samedi',
+    'Dimanche',
+  ];
 
   viewDate: Date = new Date();
 

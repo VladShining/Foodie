@@ -1,6 +1,10 @@
 <div class="container router" [@routeAnimations]="prepareRoute(outlet)">
    <div class="header">
-      <root-nav></root-nav>
+      <div class="navbar">
+         <img src="../../../assets/icons/72.png" alt="" (mouseover)="toogleMenu()" (mouseout)='toogleMenu()'/>
+         <root-nav></root-nav>
+       </div>
+      <app-menu></app-menu>
    </div>
    <router-outlet #outlet="outlet"></router-outlet>
 </div>

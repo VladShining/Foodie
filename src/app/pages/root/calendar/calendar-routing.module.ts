@@ -5,9 +5,9 @@ import { CalendarGridComponent } from './components/calendar-grid/calendar-grid.
 import { CalendarContainer } from './components/container/calendar.container';
 
 const routes: Routes = [
-  { path: 'calendar', component: CalendarContainer },
-  { path: '', component: CalendarFormComponent },
-  { path: 'newTask', component: CalendarGridComponent },
+  { path: '', component: CalendarContainer },
+  { path: 'form', component: CalendarFormComponent },
+  { path: 'weekly', component: CalendarGridComponent },
   { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
@@ -15,4 +15,6 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class CalendarRoutingModule {}
+export class CalendarRoutingModule {
+  constructor() {}
+}
