@@ -11,6 +11,8 @@ import { firebaseAuth, firebaseStore } from 'src/environments/firebase';
 })
 export class UserProfilComponent implements OnInit {
   user: User;
+  ImageProfilData!: string | ArrayBuffer | null;
+
   people: string[] = [
     'Empathique',
     'Travaillomane',
@@ -22,7 +24,10 @@ export class UserProfilComponent implements OnInit {
   // numero = [];
   // perso!: string;
   editMode: boolean = false;
-  constructor(private userProfil: UserProfilService) {
+  constructor(
+    private userProfil: UserProfilService,
+    private profilService: UserProfilService
+  ) {
     this.user = {
       email: '',
       firstName: '',
@@ -39,6 +44,8 @@ export class UserProfilComponent implements OnInit {
   @ViewChild('adresse') adresse: ElementRef | undefined;
   @ViewChild('citation') citation: ElementRef | undefined;
   @ViewChild('pass') pass: ElementRef | undefined;
+  @ViewChild('image', { static: true }) image: ModalComponent | undefined;
+
   @ViewChild('userWelcome', { static: true }) userWelcome:
     | ModalComponent
     | undefined;
@@ -62,6 +69,8 @@ export class UserProfilComponent implements OnInit {
       this.user.perso = user.perso;
       this.initUser(user);
     });
+
+    this.ImageProfilData = '../../../../../assets/images/Placeholder.png';
   }
   editUser() {
     this.editMode = true;
@@ -106,5 +115,31 @@ export class UserProfilComponent implements OnInit {
   }
   reload() {
     setTimeout(() => window.location.reload(), 500);
+  }
+  handleFileInput(e: any | null) {
+    let me = this;
+    let file: File = e.target.files[0];
+    let reader = new FileReader();
+    if (file.size <= 2000000) {
+      this.image?.open();
+      file && reader.readAsDataURL(file);
+      reader.onload = function () {
+        me.ImageProfilData = reader.result;
+      };
+      reader.onerror = function (error) {
+        console.log('Error: ', error);
+      };
+    }
+    // else this.biggerImage?.open();
+  }
+  btnUpload() {
+    if (this.ImageProfilData === null) {
+      alert('Please select file');
+    } else {
+      this.createImageProfil(this.ImageProfilData.toString());
+    }
+  }
+  createImageProfil(profilPicture: String) {
+    this.profilService.saveImageProfil(profilPicture).then();
   }
 }

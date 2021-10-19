@@ -63,4 +63,9 @@ export class UserProfilService {
       .then()
       .catch();
   }
+  async saveImageProfil(data: any) {
+    const currentUser = firebaseAuth().currentUser?.uid || '';
+    const path = `users/${currentUser}`;
+    // await firebaseStorage(path, 'profil', data).then();
+  }
 }

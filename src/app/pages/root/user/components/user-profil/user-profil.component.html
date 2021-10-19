@@ -12,6 +12,7 @@
         <input type="password" placeholder="Mot de passe !!!" [disabled] = !editMode #pass/>
     </div>
   </div>
+
   <div class="container">
     <h1>Contact</h1>
     <div>
@@ -33,6 +34,7 @@
         <input id="adresse"  type="text" value="{{user.adresse}}" [disabled] = !editMode #adresse/>
     </div>
   </div>
+
   <div class="container">
     <h1>Autre</h1>
     <div>
@@ -46,6 +48,18 @@
     </div>
     <br>
   </div>
+
+  <div class="container">
+    <h1>Photo</h1>
+    <div class="img">
+      <img src="{{ImageProfilData}}" alt="profil image" onerror="this.src='../../../../../assets/Placeholder.png'" (click)="profil.open()">
+    </div>
+    <div class="uploadImage">
+      <input type="file" id="file"  name="FUImage" accept=".png, .jpg, .jpeg, .gif" (change)="handleFileInput($event);"> 
+      <label for="file" class="labelImage"><img src="../../../../../assets/icons/72.png" alt="photo" ></label>
+    </div>
+  </div>
+
   <br>
 </div>
 <div class="submit">
@@ -92,3 +106,24 @@
     <button (click)="errorSaveUser.close()">ok</button>
   </ng-template>
 </modal>
+
+<modal #profil >
+  <ng-template #modalBody>
+    <div class="profilPicture">
+      <img src="{{ImageProfilData}}" alt="Profil Image">
+    </div>
+  </ng-template>
+</modal> 
+
+<modal #image >
+  <ng-template #modalHeader>
+    <h3>Profil Picture</h3>
+  </ng-template>
+  <ng-template #modalBody>
+    <div class="image">
+      <img src="{{ImageProfilData}}" alt="Selected Image">
+    </div>
+    <button (click)="image.close()">Cancel</button>
+    <button type="button" (click)="btnUpload();image.close()">Save</button> 
+  </ng-template>
+</modal> 
