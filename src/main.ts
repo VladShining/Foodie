@@ -4,9 +4,12 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
+import { initFirebase } from './environments/firebase';
+import { firebaseConfig } from './environments/firebaseConfig';
 if (environment.production) {
   enableProdMode();
 }
-
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+initFirebase(firebaseConfig);
+platformBrowserDynamic()
+  .bootstrapModule(AppModule)
+  .catch((err) => console.error(err));
