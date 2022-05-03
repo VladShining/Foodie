@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "site": "sakafo",
+    "public": "dist/sakafo",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
