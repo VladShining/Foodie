@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Marck+Script&display=swap");
+
+@font-face {
+  font-family: "ISOCP2";
+  src: "../../assets/fonts/isocp2__.ttf";
+}
+@font-face {
+  font-family: "ISOCTEUR";
+  src: "../../assets/fonts/isocteur.ttf";
+}
+@font-face {
+  font-family: "Marck Script", cursive;
+  src: url("https://fonts.googleapis.com/css2?family=Marck+Script&display=swap");
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("../../assets/fonts/Nunito-Regular.ttf");
+}
+@font-face {
+  font-family: "Nunito Bold";
+  src: url("../../assets/fonts/Nunito-Bold.ttf");
+}
+@font-face {
+  font-family: "Nunito Light";
+  src: url("../../assets/fonts/Nunito-Light.ttf");
+}
+$Isocp: "ISOCP2";
+$Isocteur: "ISOCTEUR";
+$base-font: "Nunito Light";
+$roboto: "Roboto Mono", monospace;
+$nunito: "Nunito";
+$nunito-bold: "Nunito Bold";
+$nunito-light: "Nunito Light";
+
+$title-text: $Isocp;
+$subtitle-text: $nunito-light;
+$chapter-text: $roboto;
+$paragraph-text: $base-font;
+$subparagraph-text: $base-font;
+$subsubpara-text: $base-font;
+$normal-text: $base-font;
+$span-text: $roboto;
+
+$button-font: $base-font;
+$input-font: $roboto;

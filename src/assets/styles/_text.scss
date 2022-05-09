@@ -1,0 +1,56 @@
+h1 {
+  font-size: $title-font-size;
+  color: $title-font-color;
+  font-family: $title-text !important;
+  margin: 0.2em 0 1em 0;
+}
+h2 {
+  font-size: $subtitle-font-size;
+  color: $subtitle-font-color;
+  font-family: $subtitle-text !important;
+  margin: 0.5em 0;
+  text-align: center;
+}
+h3 {
+  font-size: $chapter-font-size;
+  color: $chapter-font-color;
+  font-family: $chapter-text !important;
+  margin-bottom: 0.2em;
+}
+h4 {
+  font-size: $paragraph-font-size;
+  color: $paragraph-font-color;
+  font-family: $paragraph-text !important;
+}
+h5 {
+  font-size: $subparagraph-font-size;
+  color: $subparagraph-font-color;
+  font-family: $subparagraph-text !important;
+}
+h6 {
+  font-size: $subsubpara-font-size;
+  color: $subsubpara-font-color;
+  font-family: $subsubpara-text !important;
+}
+p {
+  font-size: $text-font-size;
+  color: $text-font-color;
+  font-family: $normal-text;
+  transition: all 0.5s;
+
+  &:hover {
+    color: $water;
+    transition: all 0.5s;
+  }
+}
+span {
+  font-size: $span-font-size;
+  color: $span-font-color;
+  transition: all 2s;
+  font-family: $span-text;
+
+  &:hover {
+    transition: all 2s;
+    color: $water;
+  }
+}

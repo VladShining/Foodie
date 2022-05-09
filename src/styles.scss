@@ -1,4 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./assets/styles/index.scss";
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+* {
+  font-family: $roboto;
+  color: $font-color;
+  &::selection {
+    color: white;
+    background: linear-gradient(to right, $sunny, $sunny);
+  }
+  &::-moz-selection {
+    color: white;
+    background: linear-gradient(to right, $sunny, $sunny);
+  }
+}
+
+body {
+  background-color: $dark-background;
+  scrollbar-width: thin;
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+}
+
+a,
+a.link {
+  color: $paragraph-font-color;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+h1 {
+  text-shadow: 1px 1px $dark-color;
+}
+.root {
+  width: 100%;
+}

@@ -1,0 +1,58 @@
+body.modal-open {
+  overflow: hidden;
+}
+@import "media.scss";
+
+.modal {
+  opacity: 0.2; /* Fade in/out animation. */
+  transition: opacity 0.2s ease-in;
+  background-color: #212c3daa !important;
+  z-index: 1051;
+}
+
+.modal-content {
+  position: relative;
+  color: $font-color;
+  background-color: $dark-color;
+  padding: 1.5em 0.5em;
+  border-radius: 7px;
+  max-width: 50vw;
+  box-shadow: 0 0 50px 1px $water;
+  border: solid 1px $water;
+  margin-left: 200px;
+}
+
+.error .modal .modal-content {
+  box-shadow: 0 0 50px 1px $ruddy;
+  border: solid 1px $ruddy;
+  color: $ruddy;
+}
+
+.modal-header {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  padding-bottom: 1em;
+}
+
+.modal-header > h2 {
+  flex: 1;
+}
+
+.modal-header .close {
+  display: none;
+}
+
+.modal-body {
+  text-align: center;
+}
+@include small-desktop {
+  .modal-content {
+    margin-left: 50px;
+  }
+}
+@include tablette {
+  .modal-content {
+    margin-left: 0;
+  }
+}

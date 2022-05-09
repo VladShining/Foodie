@@ -1,0 +1,172 @@
+%input {
+  margin: 1em 1em;
+  width: 80%;
+  border: solid 1px $font-color;
+  padding: 7px;
+  outline: none;
+  font-family: $input-font;
+  // font-size: 1em;
+  font-style: italic;
+  box-sizing: border-box;
+  border-radius: 5px;
+  background: transparent;
+  // box-shadow: inset 5px 5px 11px #c8c9cc, inset -5px -5px 11px #ffffff;
+  color: $water;
+  &:disabled {
+    background: transparent;
+    box-shadow: unset;
+    border: solid 1px $font-color;
+  }
+  &:focus {
+    border: solid 1px $water;
+    transition: box-shadow 1s;
+    box-shadow: 0 0 6px $water;
+  }
+  transition: box-shadow 1s;
+}
+
+%input-underline {
+  @extend %input;
+  background: transparent;
+  border-bottom: 1px solid $dark-color;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 3px;
+}
+
+input,
+textarea {
+  @extend %input;
+}
+
+input[type="checkbox"] {
+  margin: 0;
+  box-shadow: none;
+  &:checked {
+    border: solid 1px $water;
+    box-shadow: inset 0 0 5px 1px $water;
+  }
+  &:not(checked) {
+    border: solid 1px $dark-color;
+  }
+  &:hover {
+    border: solid 1px $water;
+  }
+}
+
+input[type="checkbox"] + label {
+  margin-left: 1em;
+  color: $water;
+}
+
+input[type="color"] {
+  padding: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="file"] {
+  display: none;
+  z-index: -1;
+}
+
+input[type="file"] + label {
+  border: solid;
+  border: solid 1px $water;
+  display: inline-block;
+  padding: 0.5em;
+  border-radius: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  img {
+    height: fit-content;
+    max-height: 20px;
+    max-width: 20px;
+  }
+  transition: all 1s;
+
+  &:hover {
+    background-color: $dark-color;
+    transition: all 1s;
+  }
+}
+
+input[type="radio"] {
+  margin: 0.5em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: -0.1rem -0.1rem 0.2rem #f1f1f1,
+    0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.4);
+  background-color: #1a2230;
+  width: 15px;
+  min-width: 15px;
+  max-width: 15px;
+  height: 15px;
+  min-height: 15px;
+  max-width: 15px;
+  border: 0px;
+  border-radius: 50%;
+  outline: 0;
+  cursor: pointer;
+  border: 1px solid #212c3d;
+}
+
+input[type="radio"]:checked {
+  background-color: #212c3d;
+  border: 1px solid $water;
+}
+
+input[type="radio"] + label {
+  cursor: pointer;
+  &:hover {
+    color: $water;
+  }
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: rgba(255, 255, 255, 0);
+  opacity: 1;
+  display: block;
+  background: url("../../assets/icons/svg/calendar-60.svg") no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  border-width: thin;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  color: rgba(255, 255, 255, 0);
+  opacity: 1;
+  display: block;
+  background: url("../../assets/icons/svg/time.svg") no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  border-width: thin;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: $water;
+  box-shadow: none;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+::placeholder {
+  color: $font-color;
+}

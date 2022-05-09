@@ -1,1 +1,22 @@
-<p>navbar works!</p>
+<div class="pub" *ngIf="isPub">
+  <app-pubbar></app-pubbar>
+</div>
+<nav class="navbar">
+  <div class="menu">
+    <img src="{{ menu }}" alt="menu" />
+    <app-menu></app-menu>
+  </div>
+  <div class="logo">
+    <img src="{{ logoSrc }}" alt="Logo" />
+    <span class="title"> {{ title }} </span>
+  </div>
+  <div class="recherche">
+    <app-searchbar></app-searchbar>
+  </div>
+  <div class="profil">
+    <img src="{{ picture }}" alt="profil" />
+    <span class="user">
+      {{ user.name }}
+    </span>
+  </div>
+</nav>

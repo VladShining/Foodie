@@ -1,0 +1,62 @@
+$button-width: calc(2vh + 2.5vw + 50px);
+$button-height: calc(3vh + 1vw + 10px);
+$font-size-button-label: calc($button-width - 10px);
+
+%btn {
+  border: none;
+  outline: none;
+  width: $button-width;
+  min-width: fit-content;
+  max-width: unset;
+  height: $button-height;
+  min-height: 20px;
+  max-height: 40px;
+  // font-style: italic;
+  font-size: $font-size-button-label;
+  font-family: $button-font;
+  color: $button-fonts-color;
+  text-transform: capitalize;
+  // text-shadow: 1px 1px $sunny;
+  // box-shadow: $shadow-gradiant;
+  // background-color: $button-color;
+  margin: 1em 1em;
+  transition: all 0.5s;
+
+  &:hover {
+    box-shadow: 0 0 5px 1px $water, inset 1px 1px 5px 1px $dark,
+      inset -1px -1px 5px 1px $font-color;
+    color: $button-fonts-hover-color;
+    cursor: pointer;
+    background-color: $button-hover-color;
+    transition: all 0.5s;
+    text-shadow: 0 0 5px $water;
+  }
+  &:active {
+    background-color: $button-active-color;
+    color: $button-fonts-active-color;
+    // box-shadow: $shadow-gradiant-inside;
+    cursor: progress;
+  }
+  &:disabled {
+    background: $disabled-button-color;
+    color: $disabled-font-color;
+    // box-shadow: $shadow-gradiant-inside;
+    border: dotted 1px $font-color;
+    &:hover {
+      box-shadow: none !important;
+    }
+  }
+}
+button {
+  @extend %btn;
+  border-radius: 5px;
+  background-color: transparent;
+  overflow-x: hidden;
+
+  border: solid 1px $water;
+}
+.circular-btn {
+  @extend %btn;
+  width: $button-height;
+  border-radius: 50%;
+}

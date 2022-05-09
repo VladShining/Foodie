@@ -10,6 +10,9 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
 import { RootGuard } from './root/services/root.guard';
+import { SearchbarComponent } from './shared/components/searchbar/searchbar.component';
+import { PubbarComponent } from './shared/components/pubbar/pubbar.component';
+import { MenuComponent } from './shared/components/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +20,9 @@ import { RootGuard } from './root/services/root.guard';
     HeaderComponent,
     NavbarComponent,
     FooterComponent,
+    SearchbarComponent,
+    PubbarComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="27.18" height="27.18" viewBox="0 0 27.18 27.18">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #11ece5;
+      }
+    </style>
+  </defs>
+  <g id="Groupe_128" data-name="Groupe 128" transform="translate(0)">
+    <path id="Tracé_60" data-name="Tracé 60" class="cls-1" d="M30.657,17.067a13.59,13.59,0,1,0,13.59,13.59A13.59,13.59,0,0,0,30.657,17.067Zm0,25.239A11.649,11.649,0,1,1,42.306,30.657,11.649,11.649,0,0,1,30.657,42.306Z" transform="translate(-17.067 -17.067)"/>
+    <path id="Tracé_61" data-name="Tracé 61" class="cls-1" d="M111.137,102.4a.971.971,0,0,0-.971.971v6.8h-6.8a.971.971,0,0,0,0,1.941h7.766a.971.971,0,0,0,.971-.971v-7.766A.971.971,0,0,0,111.137,102.4Z" transform="translate(-97.546 -97.546)"/>
+  </g>
+</svg>
