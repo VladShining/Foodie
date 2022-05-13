@@ -9,6 +9,7 @@ export class NavbarComponent implements OnInit {
   @Input() title!: string;
   @Input() user!: any;
   @Input() isPub!: boolean;
+  isOpen: boolean = false;
   constructor() {}
   logoSrc!: string;
   picture!: string;
@@ -16,5 +17,13 @@ export class NavbarComponent implements OnInit {
   ngOnInit(): void {
     this.logoSrc = '/assets/images/Placeholder.png';
     this.picture = '/assets/images/Placeholder.png';
+  }
+  toogleMenu() {
+    this.isOpen = !this.isOpen;
+  }
+  quitMenu() {
+    setTimeout(() => {
+      this.isOpen = false;
+    }, 1000);
   }
 }

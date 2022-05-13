@@ -13,6 +13,7 @@ import { RootGuard } from './root/services/root.guard';
 import { SearchbarComponent } from './shared/components/searchbar/searchbar.component';
 import { PubbarComponent } from './shared/components/pubbar/pubbar.component';
 import { MenuComponent } from './shared/components/menu/menu.component';
+import { ClickOutsideModule } from 'ng-click-outside';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { MenuComponent } from './shared/components/menu/menu.component';
     MenuComponent,
   ],
   imports: [
+    ClickOutsideModule,
     BrowserModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {

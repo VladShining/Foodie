@@ -2,9 +2,14 @@
   <app-pubbar></app-pubbar>
 </div>
 <nav class="navbar">
-  <div class="menu">
+  <div
+    class="menu"
+    (mouseenter)="toogleMenu()"
+    (mouseleave)="quitMenu()"
+    (clickOutside)="isOpen = false"
+  >
     <img src="{{ menu }}" alt="menu" />
-    <app-menu></app-menu>
+    <app-menu [isOpen]="isOpen"></app-menu>
   </div>
   <div class="logo">
     <img src="{{ logoSrc }}" alt="Logo" />
@@ -13,7 +18,7 @@
   <div class="recherche">
     <app-searchbar></app-searchbar>
   </div>
-  <div class="profil">
+  <div class="profil" [routerLink]="['users', 'all']">
     <img src="{{ picture }}" alt="profil" />
     <span class="user">
       {{ user.name }}

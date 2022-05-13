@@ -1,9 +1,9 @@
-<div class="containt menu" *ngIf="false">
+<div class="containt menu" *ngIf="isOpen">
   <ul>
-    <li>dddd</li>
-    <li>dddd</li>
-    <li>dddd</li>
-    <li>dddd</li>
-    <li>dddd</li>
+    <li [routerLink]="['main']">Main</li>
+    <li [routerLink]="['recip']">Recip</li>
+    <li [routerLink]="['sales']">Sales</li>
+    <li [routerLink]="['blogs']">Blogs</li>
+    <li [routerLink]="['entertainment']">Enter</li>
   </ul>
 </div>
