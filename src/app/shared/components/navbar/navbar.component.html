@@ -2,12 +2,7 @@
   <app-pubbar></app-pubbar>
 </div>
 <nav class="navbar">
-  <div
-    class="menu"
-    (mouseenter)="toogleMenu()"
-    (mouseleave)="quitMenu()"
-    (clickOutside)="isOpen = false"
-  >
+  <div class="menu" (click)="toogleMenu()" (clickOutside)="isOpen = false">
     <img src="{{ menu }}" alt="menu" />
     <app-menu [isOpen]="isOpen"></app-menu>
   </div>

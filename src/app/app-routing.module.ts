@@ -7,7 +7,6 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./root/root.module').then((m) => m.RootModule),
-    canActivate: [RootGuard],
   },
 
   {
@@ -41,10 +40,7 @@ const routes: Routes = [
     loadChildren: () =>
       import('./users/users.module').then((m) => m.UsersModule),
   },
-  {
-    path: '**',
-    redirectTo: '',
-  },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
