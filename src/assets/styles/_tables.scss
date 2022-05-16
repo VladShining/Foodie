@@ -10,7 +10,7 @@ $td-height: 40px;
 .table-container {
   background: transparent;
   padding-bottom: 5px;
-  border-bottom: 1px solid $water;
+  border-bottom: 1px solid $foodie;
 }
 
 table {
@@ -28,7 +28,7 @@ table {
 
   thead th {
     font-family: $nunito-bold;
-    color: $water;
+    color: $foodie;
     height: 30px;
     text-transform: capitalize;
     vertical-align: middle;
@@ -39,7 +39,7 @@ table {
     width: 100%;
     height: calc(100% - 37px);
     position: absolute;
-    border-top: 1px solid $water;
+    border-top: 1px solid $foodie;
     border-bottom: none;
     tr:nth-child(even) {
       background: $font-color;

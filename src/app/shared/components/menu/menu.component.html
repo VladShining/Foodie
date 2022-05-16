@@ -1,9 +1,7 @@
-<div class="containt menu" *ngIf="isOpen">
-  <ul>
-    <li [routerLink]="['main']">Main</li>
-    <li [routerLink]="['recip']">Recip</li>
-    <li [routerLink]="['sales']">Sales</li>
-    <li [routerLink]="['blogs']">Blogs</li>
-    <li [routerLink]="['entertainment']">Enter</li>
-  </ul>
+<div class="container menu" *ngIf="isOpen" [@inOutAnimation]>
+  <span [routerLink]="['main']">Main</span>
+  <span [routerLink]="['recip']">Recip</span>
+  <span [routerLink]="['sales']">Sales</span>
+  <span [routerLink]="['blogs']">Blogs</span>
+  <span [routerLink]="['entertainment']">Enter</span>
 </div>

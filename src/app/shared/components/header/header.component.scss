@@ -1,6 +1,5 @@
+@import "_colors";
 .header {
   width: 100%;
-  position: sticky;
-  top: 0;
-  // border: solid 1px red;
+  background-color: $light-background;
 }

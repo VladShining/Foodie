@@ -17,15 +17,15 @@ body.modal-open {
   padding: 1.5em 0.5em;
   border-radius: 7px;
   max-width: 50vw;
-  box-shadow: 0 0 50px 1px $water;
-  border: solid 1px $water;
+  box-shadow: 0 0 50px 1px $foodie;
+  border: solid 1px $foodie;
   margin-left: 200px;
 }
 
 .error .modal .modal-content {
-  box-shadow: 0 0 50px 1px $ruddy;
-  border: solid 1px $ruddy;
-  color: $ruddy;
+  box-shadow: 0 0 50px 1px $sunny;
+  border: solid 1px $sunny;
+  color: $sunny;
 }
 
 .modal-header {

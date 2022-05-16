@@ -6,11 +6,14 @@ import { UsersComponent } from './components/users/users.component';
 const routes: Routes = [
   {
     path: '',
-    // component: ProfilComponent,
     children: [
       {
         path: 'all',
         component: UsersComponent,
+      },
+      {
+        path: 'profil',
+        component: ProfilComponent,
       },
     ],
   },

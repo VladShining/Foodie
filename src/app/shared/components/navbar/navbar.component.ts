@@ -1,9 +1,27 @@
 import { Component, Input, OnInit } from '@angular/core';
-
+import {
+  trigger,
+  state,
+  style,
+  animate,
+  transition,
+} from '@angular/animations';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.scss'],
+  animations: [
+    trigger('inOutAnimation', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('0.3s ease-out', style({ opacity: 1 })),
+      ]),
+      transition(':leave', [
+        style({ opacity: 1 }),
+        animate('0.3s ease-in', style({ opacity: 0 })),
+      ]),
+    ]),
+  ],
 })
 export class NavbarComponent implements OnInit {
   @Input() title!: string;
@@ -16,14 +34,9 @@ export class NavbarComponent implements OnInit {
   menu: string = '/assets/icons/72.png';
   ngOnInit(): void {
     this.logoSrc = '/assets/images/Placeholder.png';
-    this.picture = '/assets/images/Placeholder.png';
+    this.picture = '/assets/icons/svg/single-01.svg';
   }
   toogleMenu() {
     this.isOpen = !this.isOpen;
-  }
-  quitMenu() {
-    setTimeout(() => {
-      this.isOpen = false;
-    }, 1000);
   }
 }

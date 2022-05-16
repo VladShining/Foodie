@@ -11,16 +11,16 @@
   border-radius: 5px;
   background: transparent;
   // box-shadow: inset 5px 5px 11px #c8c9cc, inset -5px -5px 11px #ffffff;
-  color: $water;
+  color: $foodie;
   &:disabled {
     background: transparent;
     box-shadow: unset;
     border: solid 1px $font-color;
   }
   &:focus {
-    border: solid 1px $water;
+    border: solid 1px $foodie;
     transition: box-shadow 1s;
-    box-shadow: 0 0 6px $water;
+    box-shadow: 0 0 6px $foodie;
   }
   transition: box-shadow 1s;
 }
@@ -43,20 +43,20 @@ input[type="checkbox"] {
   margin: 0;
   box-shadow: none;
   &:checked {
-    border: solid 1px $water;
-    box-shadow: inset 0 0 5px 1px $water;
+    border: solid 1px $foodie;
+    box-shadow: inset 0 0 5px 1px $foodie;
   }
   &:not(checked) {
     border: solid 1px $dark-color;
   }
   &:hover {
-    border: solid 1px $water;
+    border: solid 1px $foodie;
   }
 }
 
 input[type="checkbox"] + label {
   margin-left: 1em;
-  color: $water;
+  color: $foodie;
 }
 
 input[type="color"] {
@@ -81,7 +81,7 @@ input[type="file"] {
 
 input[type="file"] + label {
   border: solid;
-  border: solid 1px $water;
+  border: solid 1px $foodie;
   display: inline-block;
   padding: 0.5em;
   border-radius: 5px;
@@ -123,13 +123,13 @@ input[type="radio"] {
 
 input[type="radio"]:checked {
   background-color: #212c3d;
-  border: 1px solid $water;
+  border: 1px solid $foodie;
 }
 
 input[type="radio"] + label {
   cursor: pointer;
   &:hover {
-    color: $water;
+    color: $foodie;
   }
 }
 
@@ -162,7 +162,7 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  -webkit-text-fill-color: $water;
+  -webkit-text-fill-color: $foodie;
   box-shadow: none;
   -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset;
   transition: background-color 5000s ease-in-out 0s;

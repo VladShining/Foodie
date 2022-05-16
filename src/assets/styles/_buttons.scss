@@ -23,13 +23,13 @@ $font-size-button-label: calc($button-width - 10px);
   transition: all 0.5s;
 
   &:hover {
-    box-shadow: 0 0 5px 1px $water, inset 1px 1px 5px 1px $dark,
+    box-shadow: 0 0 5px 1px $foodie, inset 1px 1px 5px 1px $dark,
       inset -1px -1px 5px 1px $font-color;
     color: $button-fonts-hover-color;
     cursor: pointer;
     background-color: $button-hover-color;
     transition: all 0.5s;
-    text-shadow: 0 0 5px $water;
+    text-shadow: 0 0 5px $foodie;
   }
   &:active {
     background-color: $button-active-color;
@@ -53,7 +53,7 @@ button {
   background-color: transparent;
   overflow-x: hidden;
 
-  border: solid 1px $water;
+  border: solid 1px $foodie;
 }
 .circular-btn {
   @extend %btn;

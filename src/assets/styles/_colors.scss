@@ -1,31 +1,31 @@
 //theme foodie
-$dark: #040609;
-$dark-background: #1a2230;
-$dark-color: #212c3d;
-$font-color: #92abcd;
-$light-background: #e5e5e5;
-$light-color: #f1f1f1;
+$dark: #656464;
+$dark-background: #989795;
+$dark-color: #754824;
+$font-color: #ff5e0091;
+$font-light-color: #fefdfd;
+$light-background: #fefdfb;
+$light-color: #fdfcfa;
 $sunny: #ff5e00;
-$ruddy: #ff0028;
-$water: #11ece5;
+$foodie: #eb791c;
 $transparent: transparent;
 //shadow
-$box-shadow-inset: inset 2px 2px 5px $dark-color,
+$box-shadow-inset: inset 2px 2px 5px $dark-background,
   inset -5px -5px 10px $light-color;
-$box-shadow: -5px -5px 20px $light-color, 5px 5px 20px $dark-color;
+$box-shadow: -5px -5px 20px $light-color, 5px 5px 20px $dark-background;
 $shadow-gradiant: -0.1rem -0.1rem 0.2rem $light-color,
   0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.4);
 $shadow-gradiant-inside: inset -6px -6px 9px $light-color,
   inset 6px 6px 9px rgba(0, 0, 0, 0.4);
 
 //button
-$button-color: $water;
-$button-border-color: $water;
+$button-color: $foodie;
+$button-border-color: $foodie;
 $button-hover-color: $transparent;
 $button-active-color: $transparent;
 $button-fonts-color: $font-color;
-$button-fonts-active-color: $water;
-$button-fonts-hover-color: $water;
+$button-fonts-active-color: $foodie;
+$button-fonts-hover-color: $foodie;
 $disabled-button-color: $transparent;
 $disabled-font-color: $font-color;
 
@@ -38,3 +38,42 @@ $subparagraph-font-color: $light-color;
 $subsubpara-font-color: $light-color;
 $text-font-color: $font-color;
 $span-font-color: $font-color;
+/// other theme
+/* 
+ // BLUE GRAY
+#ECEFF1
+#CFD8DC
+#B0BEC5
+#90A4AE
+#78909C
+#607D8B
+#546E7A
+#455A64
+#37474F
+#263238
+*/
+/*
+//WHITE MAT
+//tints
+FDFCFA
+FEFCFB
+FEFDFB
+FEFDFC
+FEFDFD
+FEFEFD
+//tones
+E4E2E1
+D8D6D5
+CBCAC9
+BFBEBD
+B2B1B0
+A6A5A4
+//shade
+CAC9C7
+B1B0AE
+989795
+7F7E7D
+656464
+4C4B4B
+
+*/

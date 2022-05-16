@@ -1,27 +1,43 @@
+@import "_colors";
 .navbar {
   width: 100%;
   height: fit-content;
-  background-color: white;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   gap: 10px;
   align-items: center;
   justify-content: space-between;
+  box-shadow: $box-shadow;
 }
 .pub {
-  background-color: yellow;
+  position: relative;
   padding: 0.5em;
   margin: 0;
+  z-index: 9999;
+  background-color: $font-color;
+  text-align: center;
   * {
     text-align: center;
+    color: white;
   }
 }
+.menuList {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  width: 100px;
+  box-sizing: border-box;
+  border-right: dashed 2px $font-color;
+}
 .menu {
-  width: fit-content;
-  // height: fit-content;
-  border-right: solid 2px rgba(128, 128, 128, 0.432);
+  box-sizing: border-box;
+  text-align: center;
+  width: 100px;
+  border-right: dashed 2px $font-color;
   padding: 0.7em;
+  cursor: pointer;
+
   img {
     width: 35px;
   }
@@ -29,25 +45,46 @@
 .logo {
   width: 150px;
   height: 50px;
-  background-color: red;
   display: inline-flex;
   align-items: center;
-  img {
-    width: 100%;
-    height: 100%;
+  cursor: pointer;
+  .title {
+    margin: 0;
+    padding: 0;
+    font-size: 2em;
+    color: $sunny;
+    transform: rotate(-5deg);
   }
 }
 .recherche {
-  width: 200px;
+  width: 400px;
   height: 50px;
-  background-color: green;
 }
 .profil {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   width: 200px;
   height: 50px;
-  background-color: blue;
-  img {
-    width: 100%;
-    height: 100%;
+  padding: 5px;
+  cursor: pointer;
+
+  span {
+    margin: 0 0.5em;
+  }
+  .profilPic {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: solid 1px $sunny;
+    background: transparent;
+    overflow: hidden;
+    padding: 5px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
   }
 }

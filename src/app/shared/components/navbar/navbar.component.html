@@ -1,20 +1,21 @@
-<div class="pub" *ngIf="isPub">
+<div class="pub" *ngIf="isPub" [@inOutAnimation]>
   <app-pubbar></app-pubbar>
 </div>
 <nav class="navbar">
   <div class="menu" (click)="toogleMenu()" (clickOutside)="isOpen = false">
     <img src="{{ menu }}" alt="menu" />
-    <app-menu [isOpen]="isOpen"></app-menu>
+    <app-menu [isOpen]="isOpen" class="menuList"></app-menu>
   </div>
-  <div class="logo">
-    <img src="{{ logoSrc }}" alt="Logo" />
-    <span class="title"> {{ title }} </span>
+  <div class="logo" [routerLink]="['']">
+    <h1 class="title">{{ title }}</h1>
   </div>
   <div class="recherche">
-    <app-searchbar></app-searchbar>
+    <app-searchbar style="margin-top: 8px; height: 100%"></app-searchbar>
   </div>
-  <div class="profil" [routerLink]="['users', 'all']">
-    <img src="{{ picture }}" alt="profil" />
+  <div class="profil" [routerLink]="['users', 'profil']">
+    <div class="profilPic">
+      <img src="{{ picture }}" alt="profil" />
+    </div>
     <span class="user">
       {{ user.name }}
     </span>

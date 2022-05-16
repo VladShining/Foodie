@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
   title: string = 'Titre';
   user: any = {
-    name: 'ruddy',
+    name: 'User49',
     id: 49,
   };
   pub: boolean = true;

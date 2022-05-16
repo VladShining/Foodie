@@ -1,0 +1,17 @@
+@import "_colors";
+.menu {
+  background-color: $light-background;
+  display: flex;
+  flex-direction: column;
+  span {
+    margin: 0.2em;
+    cursor: pointer;
+    color: $sunny;
+    &:hover {
+      color: $light-color;
+      text-shadow: 1px 1px $sunny;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+  }
+}
