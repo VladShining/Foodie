@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { RootContainerComponent } from './components/root-container/root-container.component';
 import { RootComponent } from './components/root/root.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: RootComponent,
+    component: RootContainerComponent,
   },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
