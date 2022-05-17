@@ -14,7 +14,7 @@ $transparent: transparent;
 $box-shadow-inset: inset 2px 2px 5px $dark-background,
   inset -5px -5px 10px $light-color;
 $box-shadow: -5px -5px 20px $light-color, 5px 5px 20px $dark-background;
-$soft-shadow: -2px -2px 5px $light-color, 2px 2px 5px $dark-background;
+$soft-shadow: 0px -2px 5px $light-color, 0px 2px 5px $dark-background;
 $shadow-gradiant: -0.1rem -0.1rem 0.2rem $light-color,
   0.1rem 0.1rem 0.2rem rgba(0, 0, 0, 0.4);
 $shadow-gradiant-inside: inset -6px -6px 9px $light-color,

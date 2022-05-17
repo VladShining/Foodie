@@ -1,8 +1,13 @@
 <div
-  class="card flexibleVerti"
+  class="card"
   [ngStyle]="{ background: 'url(' + image + ')', backgroundPosition: 'center' }"
 >
-  <h3>{{ title }}</h3>
-  <p>{{ paragraph }}</p>
-  <div>Containt</div>
+  <div class="react">
+    <img src="/assets/icons/svg/zoom-2.svg" alt="like" />
+  </div>
+  <div class="label">
+    <h3>{{ title }}</h3>
+    <p>{{ paragraph }}</p>
+    <div>Containt</div>
+  </div>
 </div>
