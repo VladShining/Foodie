@@ -1,1 +1,9 @@
-<p>root-container works!</p>
+<div class="container flexible root">
+  <h2>Storie</h2>
+  <div *ngFor="let item of list">
+    <app-root-card
+      [title]="item.title"
+      [paragraph]="item.paragraph"
+    ></app-root-card>
+  </div>
+</div>

@@ -68,7 +68,6 @@
   height: 50px;
   padding: 5px;
   cursor: pointer;
-
   span {
     margin: 0 0.5em;
   }
@@ -79,7 +78,7 @@
     border: solid 1px $sunny;
     background: transparent;
     overflow: hidden;
-    padding: 5px;
+    padding: 0;
 
     img {
       width: 100%;

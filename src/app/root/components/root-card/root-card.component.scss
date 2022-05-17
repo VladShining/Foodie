@@ -1,0 +1,16 @@
+@import "_colors";
+.card {
+  min-height: fit-content;
+  min-height: fit-content;
+  max-width: 400px;
+  max-height: 400px;
+  box-sizing: border-box;
+  border: solid 1px $sunny;
+  border-radius: 7px;
+  box-shadow: $box-shadow;
+  padding: 1em;
+  margin: 0.5em;
+  h3 {
+    color: $foodie;
+  }
+}

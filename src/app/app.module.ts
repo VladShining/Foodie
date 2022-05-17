@@ -14,6 +14,7 @@ import { SearchbarComponent } from './shared/components/searchbar/searchbar.comp
 import { PubbarComponent } from './shared/components/pubbar/pubbar.component';
 import { MenuComponent } from './shared/components/menu/menu.component';
 import { ClickOutsideModule } from 'ng-click-outside';
+import { CardComponent } from './shared/components/card/card.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ClickOutsideModule } from 'ng-click-outside';
     SearchbarComponent,
     PubbarComponent,
     MenuComponent,
+    CardComponent,
   ],
   imports: [
     ClickOutsideModule,

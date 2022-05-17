@@ -6,6 +6,7 @@ import {
   animate,
   transition,
 } from '@angular/animations';
+import { firebaseAuth } from 'src/environments/firebase';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -26,6 +27,7 @@ import {
 export class NavbarComponent implements OnInit {
   @Input() title!: string;
   @Input() user!: any;
+  currentUser: any;
   @Input() isPub!: boolean;
   isOpen: boolean = false;
   constructor() {}
@@ -33,8 +35,10 @@ export class NavbarComponent implements OnInit {
   picture!: string;
   menu: string = '/assets/icons/72.png';
   ngOnInit(): void {
+    this.currentUser = firebaseAuth().currentUser;
     this.logoSrc = '/assets/images/Placeholder.png';
-    this.picture = '/assets/icons/svg/single-01.svg';
+    this.picture =
+      this.currentUser?.photoURL || '/assets/icons/svg/single-01.svg';
   }
   toogleMenu() {
     this.isOpen = !this.isOpen;

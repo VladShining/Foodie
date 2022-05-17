@@ -10,8 +10,9 @@ import { Observable } from 'rxjs';
 import { firebaseAuth } from 'src/environments/firebase';
 
 @Injectable()
-export class UsersPrivilegeGuard implements CanActivate {
+export class UserLoginGuard implements CanActivate {
   constructor(private router: Router) {}
+
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
@@ -20,8 +21,11 @@ export class UsersPrivilegeGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    let log = !!firebaseAuth().currentUser;
-    !log && this.router.navigate(['users', 'login']);
-    return log;
+    let log;
+    setTimeout(() => {
+      log = !!firebaseAuth().currentUser;
+    }, 200);
+    log && this.router.navigate(['users', 'profil']);
+    return !log;
   }
 }

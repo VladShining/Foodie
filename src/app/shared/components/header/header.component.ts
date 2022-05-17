@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit {
     this.title = 'Sakafo';
     this.initPub();
   }
+
   initPub() {
     setTimeout(() => {
       this.pub = false;
