@@ -7,6 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class RootCardComponent implements OnInit {
   @Input() title!: string;
+  @Input() image!: string;
   @Input() paragraph!: Array<string>;
   constructor() {}
 

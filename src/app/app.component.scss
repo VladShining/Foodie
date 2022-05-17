@@ -1,3 +1,4 @@
+@import "_colors";
 .app {
   width: 100%;
   height: 100%;
@@ -9,4 +10,7 @@
 .footer {
   position: sticky;
   top: 100vh;
+}
+.body {
+  background-color: $background;
 }

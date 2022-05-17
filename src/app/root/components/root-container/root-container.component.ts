@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { firebaseAuth, fireGoogleAuth } from 'src/environments/firebase';
+import { list } from '../../root.mock';
 
 @Component({
   selector: 'app-root-container',
@@ -7,46 +7,10 @@ import { firebaseAuth, fireGoogleAuth } from 'src/environments/firebase';
   styleUrls: ['./root-container.component.scss'],
 })
 export class RootContainerComponent implements OnInit {
+  //mock
+  list: any = list;
+
   constructor() {}
 
   ngOnInit(): void {}
-
-  list = [
-    {
-      title: 'untiti',
-      paragraph: ['blablabla', 'blablablllabbl'],
-    },
-    {
-      title: 'untiti',
-      paragraph: ['blablabla', 'blablablllabbl'],
-    },
-    {
-      title: 'untiti',
-      paragraph: ['blablabla', 'blablablllabbl'],
-    },
-    {
-      title: 'untiti',
-      paragraph: ['blablabla', 'blablablllabbl'],
-    },
-    {
-      title: 'untiti',
-      paragraph: ['blablabla', 'blablablllabbl'],
-    },
-    {
-      title: 'untiti',
-      paragraph: ['blablabla', 'blablablllabbl'],
-    },
-    {
-      title: 'untiti',
-      paragraph: ['blablabla', 'blablablllabbl'],
-    },
-    {
-      title: 'untiti',
-      paragraph: ['blablabla', 'blablablllabbl'],
-    },
-    {
-      title: 'untiti',
-      paragraph: ['blablabla', 'blablablllabbl'],
-    },
-  ];
 }

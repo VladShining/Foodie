@@ -1,9 +1,13 @@
-<div class="container flexible root">
+<div class="container flexibleVerti root">
   <h2>Storie</h2>
-  <div *ngFor="let item of list">
+  <div class="ligne"></div>
+  <hr />
+  <div class="flexible">
     <app-root-card
       [title]="item.title"
+      [image]="item.imageLink"
       [paragraph]="item.paragraph"
+      *ngFor="let item of list"
     ></app-root-card>
   </div>
 </div>

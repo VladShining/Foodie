@@ -1,4 +1,7 @@
-<div class="card flexibleVerti">
+<div
+  class="card flexibleVerti"
+  [ngStyle]="{ background: 'url(' + image + ')', backgroundPosition: 'center' }"
+>
   <h3>{{ title }}</h3>
   <p>{{ paragraph }}</p>
   <div>Containt</div>

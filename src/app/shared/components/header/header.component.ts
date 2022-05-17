@@ -11,12 +11,12 @@ export class HeaderComponent implements OnInit {
     name: 'User49',
     id: 49,
   };
-  pub: boolean = true;
+  pub: boolean = false;
   constructor() {}
 
   ngOnInit(): void {
     this.title = 'Sakafo';
-    this.initPub();
+    // this.initPub();
   }
 
   initPub() {
