@@ -5,9 +5,8 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: $background;
+  background-color: $sunny;
   padding: 0.5em;
-  box-shadow: $box-shadow-inset, $box-shadow;
 }
 .help {
   kbd {

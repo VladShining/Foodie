@@ -15,6 +15,8 @@ import { PubbarComponent } from './shared/components/pubbar/pubbar.component';
 import { MenuComponent } from './shared/components/menu/menu.component';
 import { ClickOutsideModule } from 'ng-click-outside';
 import { CardComponent } from './shared/components/card/card.component';
+import { BannerComponent } from './shared/components/banner/banner.component';
+import { CarouselComponent } from './shared/components/carousel/carousel.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,8 @@ import { CardComponent } from './shared/components/card/card.component';
     PubbarComponent,
     MenuComponent,
     CardComponent,
+    BannerComponent,
+    CarouselComponent,
   ],
   imports: [
     ClickOutsideModule,
