@@ -1,5 +1,65 @@
 @import "_colors";
 .header {
   width: 100%;
-  background-color: $light-background;
+  background-image: url("../../../../assets/images/F-color.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: $box-shadow;
+}
+.header * {
+  background: transparent;
+}
+nav.navbar {
+  backdrop-filter: blur(5px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5px;
+  width: 100%;
+  height: 100px;
+}
+#logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    font-size: 50px;
+    margin: 0;
+    margin-left: 0.5em;
+  }
+  img {
+    width: 50px;
+  }
+}
+.searchbar {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  width: 50%;
+  img {
+    width: 20px;
+    height: 20px;
+    transform: translateX(42px);
+    cursor: pointer;
+  }
+  input {
+    background-color: #ffffffaa;
+    width: 100%;
+    border: none;
+    padding-left: 35px;
+  }
+  img#arrow {
+    transform: translateX(-42px) rotate(180deg);
+  }
+}
+.user {
+  padding: 0.5em;
+  border-radius: 50%;
+  background-color: #ffffffaa !important;
+  cursor: pointer;
+
+  img {
+    width: 30px;
+  }
 }

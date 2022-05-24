@@ -1,7 +1,7 @@
 @import "_colors";
 .navbar {
   width: 100%;
-  height: fit-content;
+  height: 150px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: space-between;
   box-shadow: $box-shadow;
+  backdrop-filter: blur(5px);
 }
 .pub {
   position: relative;
@@ -43,7 +44,6 @@
   }
 }
 .logo {
-  width: 150px;
   height: 50px;
   display: inline-flex;
   align-items: center;
@@ -51,9 +51,8 @@
   .title {
     margin: 0;
     padding: 0;
-    font-size: 2em;
-    color: $sunny;
-    transform: rotate(-5deg);
+    font-size: 60px;
+    color: white;
   }
 }
 .recherche {
