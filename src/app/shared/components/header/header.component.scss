@@ -1,4 +1,5 @@
 @import "_colors";
+@import "_media.scss";
 .header {
   width: 100%;
   background-image: url("../../../../assets/images/F-color.jpg");
@@ -11,25 +12,26 @@
   background: transparent;
 }
 nav.navbar {
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(3px);
   display: inline-flex;
   align-items: center;
   justify-content: space-around;
   gap: 5px;
   width: 100%;
-  height: 100px;
+  height: calc(100vw * 0.05);
+  color: white;
 }
 #logo {
   display: flex;
   align-items: center;
   justify-content: center;
   h1 {
-    font-size: 50px;
+    font-size: calc(100vw * 0.026);
     margin: 0;
     margin-left: 0.5em;
   }
   img {
-    width: 50px;
+    width: calc(100vw * 0.026);
   }
 }
 .searchbar {
@@ -48,6 +50,7 @@ nav.navbar {
     width: 100%;
     border: none;
     padding-left: 35px;
+    height: calc(100vw * 0.02);
   }
   img#arrow {
     transform: translateX(-42px) rotate(180deg);
@@ -55,11 +58,49 @@ nav.navbar {
 }
 .user {
   padding: 0.5em;
-  border-radius: 50%;
+  height: calc(100vw * 0.015);
+  border-radius: 30px;
+  text-align: center;
   background-color: #ffffffaa !important;
   cursor: pointer;
-
   img {
-    width: 30px;
+    width: calc(100vw * 0.015);
+    height: calc(100vw * 0.015);
+  }
+}
+@include small-desktop {
+  .user {
+    height: 20px;
+    width: 20px;
+    padding: 0.2em;
+  }
+  .searchbar {
+    img {
+      width: 15px;
+      height: 15px;
+    }
+  }
+}
+@include tablette {
+  nav.navbar {
+    font-size: 15px;
+  }
+  .searchbar {
+    img {
+      width: 10px;
+      transform: translateX(30px);
+      height: 10px;
+    }
+    input {
+      font-size: 10px;
+    }
+    img#arrow {
+      transform: translateX(-30px) rotate(180deg);
+    }
+  }
+  .user {
+    width: 15px;
+    height: 15px;
+    padding: 0.1em;
   }
 }

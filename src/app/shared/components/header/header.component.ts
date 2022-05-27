@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
-  title: string = 'Titre';
   user: any = {
     name: 'User49',
     id: 49,
@@ -14,14 +13,5 @@ export class HeaderComponent implements OnInit {
   pub: boolean = false;
   constructor() {}
 
-  ngOnInit(): void {
-    this.title = 'Sakafo';
-    // this.initPub();
-  }
-
-  initPub() {
-    setTimeout(() => {
-      this.pub = false;
-    }, 2000);
-  }
+  ngOnInit(): void {}
 }

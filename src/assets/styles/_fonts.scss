@@ -26,13 +26,25 @@
   font-family: "Nunito Light";
   src: url("../../assets/fonts/Nunito-Light.ttf");
 }
+@font-face {
+  font-family: "Montserrat", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&display=swap");
+}
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap");
+}
+@font-face {
+  font-family: "Kaushan Script", cursive;
+  src: url("https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap");
+}
 $Isocp: "ISOCP2";
 $Isocteur: "ISOCTEUR";
-$base-font: "Marck Script";
+$base-font: "Montserrat";
 $roboto: "Roboto Mono", monospace;
 $nunito: "Nunito";
 $nunito-bold: "Nunito Bold";
-$nunito-light: "Nunito Light";
+$nunito-light: "Roboto", sans-serif;
 
 $title-text: $base-font;
 $subtitle-text: $nunito-light;
