@@ -3,9 +3,11 @@
 .container {
   padding-top: 0;
   padding-bottom: 0;
+  height: 100%;
 }
 main {
   background-color: #fff;
+  height: 100%;
   padding: 1em;
   article {
     section {
@@ -63,5 +65,10 @@ main {
 @include tablette {
   main article section p {
     font-size: 10px;
+  }
+}
+@include mobile {
+  main article section {
+    height: 15vh;
   }
 }

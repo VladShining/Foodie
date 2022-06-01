@@ -25,6 +25,8 @@ nav.navbar {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: filter 0.5s;
+  filter: opacity(0.7);
   h1 {
     font-size: calc(100vw * 0.026);
     margin: 0;
@@ -32,6 +34,15 @@ nav.navbar {
   }
   img {
     width: calc(100vw * 0.026);
+    transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    &:hover {
+      transform: rotate(360deg);
+      transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+  }
+  &:hover {
+    filter: none;
+    transition: filter 0.5s;
   }
 }
 .searchbar {
@@ -102,5 +113,8 @@ nav.navbar {
     width: 15px;
     height: 15px;
     padding: 0.1em;
+  }
+  #logo {
+    filter: none;
   }
 }
